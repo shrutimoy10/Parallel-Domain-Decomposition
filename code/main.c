@@ -15,17 +15,28 @@ Here,
 In the code below, CAM_PARAMS refer to the EO and IO camera parameters and
 STRUCT_PARAMS refer to the no of structure parameters which is 3 x no of object points.
 The matrices are read from files with the name of the blocks(Hcc,...).
+For ROMA dataset, atleast 5GB RAM is required
 */
 
 #include<stdio.h>
-#include<mpi.h>
+#include<string.h>
+#include<malloc.h>
+
+#include"read_coo_matrix.h"
 
 #define CAM_PARAMS 353 		
-#define STRUCT_PARAMS 78963 
+#define STRUCT_PARAMS 78963
+#define NNZ 3417034 
 
 //driver function
 int main()
 {
+	double** Hcc;
+	double** Hcs;
+	double** Hsc;
+	double** Hss;
+
+	Hcc = read_coo_matrix("Hcc",CAM_PARAMS,CAM_PARAMS,NNZ);
 
 	return 0;
 }
