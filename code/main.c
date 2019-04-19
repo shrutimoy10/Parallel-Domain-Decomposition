@@ -23,9 +23,11 @@ Compile as : cc -o main main.c st_io.c
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<malloc.h>
 
 #include"st_io.h"
 #include"read_coo_matrix.h"
+#include"read_b.h"
 
 
 #define CAM_PARAMS 353 		
@@ -38,13 +40,13 @@ int main()
 	double** Hcs;
 	double** Hsc;
 	double** Hss;
-	double** b;
+	double*  b;
 
 	Hcc = read_coo_matrix("Hcc",CAM_PARAMS,CAM_PARAMS);
 	Hcs = read_coo_matrix("Hcs",CAM_PARAMS,CAM_PARAMS);
 	Hsc = read_coo_matrix("Hsc",CAM_PARAMS,CAM_PARAMS);
 	Hss = read_coo_matrix("Hss",CAM_PARAMS,CAM_PARAMS);
-	//b = read_coo_matrix("b",CAM_PARAMS+STRUCT_PARAMS,1);
+	b = read_b(CAM_PARAMS+STRUCT_PARAMS); // read the RHS of the system
 
 	return 0;
 }
