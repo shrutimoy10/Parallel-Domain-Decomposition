@@ -17,7 +17,7 @@ STRUCT_PARAMS refer to the no of structure parameters which is 3 x no of object 
 The matrices are read from files with the name of the blocks(Hcc,...). In these files, the 
 first entry gives the no of non zeros in the matrix block.
 
-Compile as : cc -o main main.c st_io.c
+Compile as : cc -w main.c st_io.c
 */
 
 #include<stdio.h>
