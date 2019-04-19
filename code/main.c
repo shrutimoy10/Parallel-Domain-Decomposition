@@ -24,8 +24,9 @@ Compile as : cc -o main main.c st_io.c
 #include<stdlib.h>
 #include<string.h>
 
-#include"read_coo_matrix.h"
 #include"st_io.h"
+#include"read_coo_matrix.h"
+
 
 #define CAM_PARAMS 353 		
 #define STRUCT_PARAMS 78963
@@ -43,7 +44,7 @@ int main()
 	Hcs = read_coo_matrix("Hcs",CAM_PARAMS,CAM_PARAMS);
 	Hsc = read_coo_matrix("Hsc",CAM_PARAMS,CAM_PARAMS);
 	Hss = read_coo_matrix("Hss",CAM_PARAMS,CAM_PARAMS);
-	b = read_coo_matrix("b",CAM_PARAMS+STRUCT_PARAMS,1);
+	//b = read_coo_matrix("b",CAM_PARAMS+STRUCT_PARAMS,1);
 
 	return 0;
 }
