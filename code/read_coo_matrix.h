@@ -9,10 +9,14 @@ double** densify(int row,int col,int* row_idx,int* col_idx,double* val,int nnz)
 	double** M;
 	double* ptr;
 	int i,j,k;
-	int len;
+	unsigned int len;
 
 	len = sizeof(double*)*row + sizeof(double)*row*col;
+	printf("\nlen -> %u\n",len);
 	M = (double**)malloc(len);
+
+	if(M == NULL)
+		printf("\nError in pointer allocation.\n");
 
 	ptr = M + row; // ptr pointing to the first element of the 2D array, since malloc 
 					//allocates contiguous memory.
@@ -26,6 +30,8 @@ double** densify(int row,int col,int* row_idx,int* col_idx,double* val,int nnz)
 		k = col_idx[i];
 		M[j][k] = val[i];
 	}
+
+	printf("\nM -> %lf\n", M[0][2]); // -1.4099e+07
 
 	return M;
 
@@ -72,22 +78,26 @@ double** read_coo_matrix(char* block_type,int row,int col)
 
 	if (strcmp(block_type,"Hcc") == 0)
 	{
-		H = read_file("/home/iiit/shrutimoy.das/Parallel-Domain-Decomposition/Results/Matrices/Hcc.txt");
+		printf("\nHcc\n");
+		H = read_file("../Results/Matrices/Hcc.txt");
 	}
 
 	else if (strcmp(block_type,"Hcs") == 0)
 	{
-		H = read_file("/home/iiit/shrutimoy.das/Parallel-Domain-Decomposition/Results/Matrices/Hcs.txt");
+		printf("\nHcs\n");
+		H = read_file("../Results/Matrices/Hcs.txt");
 	}
 
 	else if (strcmp(block_type,"Hsc") == 0)
 	{
-		H = read_file("/home/iiit/shrutimoy.das/Parallel-Domain-Decomposition/Results/Matrices/Hsc.txt");
+		printf("\nHsc\n");
+		H = read_file("../Results/Matrices/Hsc.txt");
 	}
 
 	else if (strcmp(block_type,"Hss") == 0)
 	{
-		H = read_file("/home/iiit/shrutimoy.das/Parallel-Domain-Decomposition/Results/Matrices/Hss.txt");
+		printf("\nHss\n");
+		H = read_file("../Results/Matrices/Hss.txt");
 	}
 
 	return H;
