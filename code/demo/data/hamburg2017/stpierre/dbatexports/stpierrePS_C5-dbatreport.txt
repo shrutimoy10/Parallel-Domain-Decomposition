@@ -1,0 +1,4870 @@
+Damped Bundle Adjustment Toolbox result file
+   Project
+      Name        : Photoscan import
+      File name   : $DBATROOT/demo/data/hamburg2017/stpierre/psprojects/C5.psz
+   Problems and suggestions:
+      Project Problems:
+         Structural rank: ok.
+         Numerical rank: ok.
+      Problems related to the processing: (2)
+         One or more of the camera parameter has a high correlation (see below).
+         One or more of the object point coordinates has a high correlation.
+   Information from last bundle
+      Last Bundle Run:        21-Apr-2019 01:16:05
+      DBAT version:           0.8.5.1 (2019-01-13)
+      MATLAB version:         9.3.0.713579 (R2017b)
+      Host system:            GLNXA64 (endian=L, max #elems=281474976710655)
+      Host name:              <unknown>
+      Status:                 OK
+      Sigma0:                 1.36031
+      Sigma0 (pixels):        1.36031
+      Redundancy              338744
+      Number of params:       55421 (8 IO, 1434 EO, 53979 OP)
+      Number of observations: 394165 (393430 IP, 0 IO, 717 EO, 18 OP)
+      Processing options:
+         Orientation:             on
+         Global optimization:     on
+         Calibration:             on
+         Constraints:             off
+         Maximum # of iterations: 20
+         Convergence tolerance:   1e-06
+         Termination criteria:    relative
+         Singular test:           on
+         Chirality veto:          off
+         Damping:                 lm
+         Camera unit (cu):        mm
+         Object space unit (ou):  m
+         Initial value comment:   
+      Total error:
+         Number of stages:     1
+         Number of iterations: 8
+         First error:          792.55
+         Last error:           791.723
+         Execution time (s):   117.12
+      Lens distortion models:
+         Forward (Computer Vision) model 1
+      Cameras:
+         Calibration: yes (cc px py K1 K2 K3 P1 P2)
+         Camera1 (simple)
+            Lens distortion model:
+               Forward (Computer Vision) model 1
+            Camera Constant:
+               Value:        7.92378 mm
+               Deviation:    0.000155 mm
+            px - principal point x:
+               Value:        5.05656 mm
+               Deviation:    0.000267 mm
+            py - principal point y:
+               Value:        3.79756 mm
+               Deviation:    0.000262 mm
+            Format width:
+               Value:        10.0128 mm
+            Format height:
+               Value:        7.5152 mm
+            K1 - radial distortion 1:
+               Value:        -0.00387225 mm^(-3)
+               Deviation:    2.29e-06 mm^(-3)
+               Significance: p=1.00
+               Cumulative significance:p=1.00
+               Correlations over 95%: K2:-97.4%.
+            K2 - radial distortion 2:
+               Value:        0.000162098 mm^(-5)
+               Deviation:    1.47e-07 mm^(-5)
+               Significance: p=1.00
+               Cumulative significance:p=1.00
+               Correlations over 95%: K1:-97.4%, K3:-98.5%.
+            K3 - radial distortion 3:
+               Value:        -2.01634e-06 mm^(-7)
+               Deviation:    2.83e-09 mm^(-7)
+               Significance: p=1.00
+               Cumulative significance:p=1.00
+               Correlations over 95%: K2:-98.5%.
+            P1 - decentering distortion 1:
+               Value:        -1.86368e-05 mm^(-3)
+               Deviation:    1.15e-06 mm^(-3)
+               Significance: p=1.00
+            P2 - decentering distortion 2:
+               Value:        -1.68198e-05 mm^(-3)
+               Deviation:    1.14e-06 mm^(-3)
+            as - off-unit aspect parameter:
+               Value:        0 
+            sk - skew:
+               Value:        0 
+            Image width:
+               Value:        7152 px
+            Image height:
+               Value:        5368 px
+            X resolution:
+               Value:        714.286 px/mm
+            Y resolution:
+               Value:        714.286 px/mm
+            Pixel width:
+               Value:        0.0014 mm
+            Pixel height:
+               Value:        0.0014 mm
+         Rated angle of view (h,v,d): (65, 51, 77) deg
+         Largest distortion: 0.21 mm (152.3 px, 3.4% of half-diagonal)
+      Precisions / Standard Deviations:
+         Photograph Standard Deviations:
+            Photo 1: EX-01-13510_0139_0000.jpg
+               Omega:
+                  Value:     107.537591 deg
+                  Deviation: 0.0272 deg
+               Phi:
+                  Value:     -7.583803 deg
+                  Deviation: 0.0209 deg
+               Kappa:
+                  Value:     3.586965 deg
+                  Deviation: 0.0168 deg
+               Xc:
+                  Value:     90.632905 ou
+                  Deviation: 0.00592 ou
+               Yc:
+                  Value:     172.274883 ou
+                  Deviation: 0.00763 ou
+               Zc:
+                  Value:     141.976354 ou
+                  Deviation: 0.00618 ou
+            Photo 2: EX-01-13510_0139_0001.jpg
+               Omega:
+                  Value:     107.449110 deg
+                  Deviation: 0.0271 deg
+               Phi:
+                  Value:     -7.330594 deg
+                  Deviation: 0.0208 deg
+               Kappa:
+                  Value:     3.013458 deg
+                  Deviation: 0.0167 deg
+               Xc:
+                  Value:     90.251566 ou
+                  Deviation: 0.00593 ou
+               Yc:
+                  Value:     172.301478 ou
+                  Deviation: 0.00764 ou
+               Zc:
+                  Value:     142.004196 ou
+                  Deviation: 0.00621 ou
+            Photo 3: EX-01-13510_0139_0002.jpg
+               Omega:
+                  Value:     107.510661 deg
+                  Deviation: 0.0273 deg
+               Phi:
+                  Value:     -8.762268 deg
+                  Deviation: 0.0209 deg
+               Kappa:
+                  Value:     3.975831 deg
+                  Deviation: 0.0168 deg
+               Xc:
+                  Value:     89.399138 ou
+                  Deviation: 0.00602 ou
+               Yc:
+                  Value:     172.293896 ou
+                  Deviation: 0.00772 ou
+               Zc:
+                  Value:     142.007838 ou
+                  Deviation: 0.00632 ou
+            Photo 4: EX-01-13510_0139_0003.jpg
+               Omega:
+                  Value:     107.541490 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -7.473697 deg
+                  Deviation: 0.0207 deg
+               Kappa:
+                  Value:     3.392090 deg
+                  Deviation: 0.0166 deg
+               Xc:
+                  Value:     88.872761 ou
+                  Deviation: 0.00555 ou
+               Yc:
+                  Value:     172.566934 ou
+                  Deviation: 0.00687 ou
+               Zc:
+                  Value:     144.424062 ou
+                  Deviation: 0.00588 ou
+            Photo 5: EX-01-13510_0139_0004.jpg
+               Omega:
+                  Value:     107.957515 deg
+                  Deviation: 0.0254 deg
+               Phi:
+                  Value:     -1.337574 deg
+                  Deviation: 0.0199 deg
+               Kappa:
+                  Value:     1.247159 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     88.728301 ou
+                  Deviation: 0.00483 ou
+               Yc:
+                  Value:     172.425017 ou
+                  Deviation: 0.00557 ou
+               Zc:
+                  Value:     148.680322 ou
+                  Deviation: 0.0053 ou
+            Photo 6: EX-01-13510_0139_0005.jpg
+               Omega:
+                  Value:     99.284120 deg
+                  Deviation: 0.0253 deg
+               Phi:
+                  Value:     -1.087156 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     1.314898 deg
+                  Deviation: 0.0161 deg
+               Xc:
+                  Value:     89.144341 ou
+                  Deviation: 0.00449 ou
+               Yc:
+                  Value:     171.698943 ou
+                  Deviation: 0.00476 ou
+               Zc:
+                  Value:     152.181467 ou
+                  Deviation: 0.0051 ou
+            Photo 7: EX-01-13510_0139_0006.jpg
+               Omega:
+                  Value:     99.379184 deg
+                  Deviation: 0.0253 deg
+               Phi:
+                  Value:     -1.746191 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     1.563641 deg
+                  Deviation: 0.0161 deg
+               Xc:
+                  Value:     88.825864 ou
+                  Deviation: 0.00421 ou
+               Yc:
+                  Value:     172.192840 ou
+                  Deviation: 0.00438 ou
+               Zc:
+                  Value:     155.958725 ou
+                  Deviation: 0.00484 ou
+            Photo 8: EX-01-13510_0139_0007.jpg
+               Omega:
+                  Value:     99.320585 deg
+                  Deviation: 0.0254 deg
+               Phi:
+                  Value:     -2.458883 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     1.857633 deg
+                  Deviation: 0.0161 deg
+               Xc:
+                  Value:     87.777755 ou
+                  Deviation: 0.0044 ou
+               Yc:
+                  Value:     172.098232 ou
+                  Deviation: 0.00481 ou
+               Zc:
+                  Value:     159.494559 ou
+                  Deviation: 0.00509 ou
+            Photo 9: EX-01-13510_0139_0008.jpg
+               Omega:
+                  Value:     99.275679 deg
+                  Deviation: 0.0253 deg
+               Phi:
+                  Value:     -1.940600 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     1.820546 deg
+                  Deviation: 0.0161 deg
+               Xc:
+                  Value:     88.916961 ou
+                  Deviation: 0.00416 ou
+               Yc:
+                  Value:     172.464182 ou
+                  Deviation: 0.00446 ou
+               Zc:
+                  Value:     159.113892 ou
+                  Deviation: 0.00477 ou
+            Photo 10: EX-01-13510_0139_0009.jpg
+               Omega:
+                  Value:     99.416238 deg
+                  Deviation: 0.0253 deg
+               Phi:
+                  Value:     -2.471341 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     1.703820 deg
+                  Deviation: 0.0161 deg
+               Xc:
+                  Value:     89.116151 ou
+                  Deviation: 0.00421 ou
+               Yc:
+                  Value:     171.934049 ou
+                  Deviation: 0.0044 ou
+               Zc:
+                  Value:     158.294923 ou
+                  Deviation: 0.00487 ou
+            Photo 11: EX-01-13510_0139_0010.jpg
+               Omega:
+                  Value:     99.272088 deg
+                  Deviation: 0.0254 deg
+               Phi:
+                  Value:     -2.901124 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     1.628329 deg
+                  Deviation: 0.0161 deg
+               Xc:
+                  Value:     89.533804 ou
+                  Deviation: 0.00449 ou
+               Yc:
+                  Value:     170.861085 ou
+                  Deviation: 0.00455 ou
+               Zc:
+                  Value:     153.661328 ou
+                  Deviation: 0.00521 ou
+            Photo 12: EX-01-13510_0139_0011.jpg
+               Omega:
+                  Value:     99.112070 deg
+                  Deviation: 0.0255 deg
+               Phi:
+                  Value:     -2.473228 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     1.950009 deg
+                  Deviation: 0.0161 deg
+               Xc:
+                  Value:     89.697345 ou
+                  Deviation: 0.00479 ou
+               Yc:
+                  Value:     171.484552 ou
+                  Deviation: 0.00533 ou
+               Zc:
+                  Value:     149.299941 ou
+                  Deviation: 0.00534 ou
+            Photo 13: EX-01-13510_0139_0012.jpg
+               Omega:
+                  Value:     99.606635 deg
+                  Deviation: 0.0256 deg
+               Phi:
+                  Value:     -2.146164 deg
+                  Deviation: 0.0204 deg
+               Kappa:
+                  Value:     1.992559 deg
+                  Deviation: 0.0161 deg
+               Xc:
+                  Value:     89.562259 ou
+                  Deviation: 0.00539 ou
+               Yc:
+                  Value:     171.144832 ou
+                  Deviation: 0.00635 ou
+               Zc:
+                  Value:     146.007640 ou
+                  Deviation: 0.00588 ou
+            Photo 14: EX-01-13510_0139_0013.jpg
+               Omega:
+                  Value:     99.619819 deg
+                  Deviation: 0.0258 deg
+               Phi:
+                  Value:     -4.228310 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     2.257229 deg
+                  Deviation: 0.0161 deg
+               Xc:
+                  Value:     91.107155 ou
+                  Deviation: 0.00554 ou
+               Yc:
+                  Value:     171.867262 ou
+                  Deviation: 0.00694 ou
+               Zc:
+                  Value:     143.678262 ou
+                  Deviation: 0.00585 ou
+            Photo 15: EX-01-13510_0139_0014.jpg
+               Omega:
+                  Value:     99.705628 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -9.339449 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     3.013665 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     92.654779 ou
+                  Deviation: 0.00548 ou
+               Yc:
+                  Value:     171.530559 ou
+                  Deviation: 0.00684 ou
+               Zc:
+                  Value:     143.722337 ou
+                  Deviation: 0.00577 ou
+            Photo 16: EX-01-13510_0139_0015.jpg
+               Omega:
+                  Value:     99.640884 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -9.239838 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     3.079520 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     92.575106 ou
+                  Deviation: 0.00496 ou
+               Yc:
+                  Value:     171.518301 ou
+                  Deviation: 0.00584 ou
+               Zc:
+                  Value:     146.561644 ou
+                  Deviation: 0.00534 ou
+            Photo 17: EX-01-13510_0139_0016.jpg
+               Omega:
+                  Value:     94.959206 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -6.280824 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     1.354038 deg
+                  Deviation: 0.0161 deg
+               Xc:
+                  Value:     92.156697 ou
+                  Deviation: 0.00443 ou
+               Yc:
+                  Value:     171.379399 ou
+                  Deviation: 0.00469 ou
+               Zc:
+                  Value:     150.571621 ou
+                  Deviation: 0.00495 ou
+            Photo 18: EX-01-13510_0139_0017.jpg
+               Omega:
+                  Value:     87.361037 deg
+                  Deviation: 0.0264 deg
+               Phi:
+                  Value:     -7.098946 deg
+                  Deviation: 0.0204 deg
+               Kappa:
+                  Value:     1.026579 deg
+                  Deviation: 0.0162 deg
+               Xc:
+                  Value:     92.383075 ou
+                  Deviation: 0.00403 ou
+               Yc:
+                  Value:     171.642449 ou
+                  Deviation: 0.0039 ou
+               Zc:
+                  Value:     154.307345 ou
+                  Deviation: 0.00461 ou
+            Photo 19: EX-01-13510_0139_0018.jpg
+               Omega:
+                  Value:     87.590670 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -8.144429 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     0.838357 deg
+                  Deviation: 0.0162 deg
+               Xc:
+                  Value:     91.737818 ou
+                  Deviation: 0.00391 ou
+               Yc:
+                  Value:     171.982567 ou
+                  Deviation: 0.00387 ou
+               Zc:
+                  Value:     158.508578 ou
+                  Deviation: 0.00448 ou
+            Photo 20: EX-01-13510_0139_0019.jpg
+               Omega:
+                  Value:     87.081319 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -9.410908 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     0.841945 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     92.136683 ou
+                  Deviation: 0.00428 ou
+               Yc:
+                  Value:     170.822918 ou
+                  Deviation: 0.00448 ou
+               Zc:
+                  Value:     161.900530 ou
+                  Deviation: 0.00495 ou
+            Photo 21: EX-01-13510_0139_0020.jpg
+               Omega:
+                  Value:     88.016416 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -10.193961 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     2.003998 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     94.227883 ou
+                  Deviation: 0.00424 ou
+               Yc:
+                  Value:     170.302864 ou
+                  Deviation: 0.00423 ou
+               Zc:
+                  Value:     161.644033 ou
+                  Deviation: 0.00488 ou
+            Photo 22: EX-01-13510_0139_0021.jpg
+               Omega:
+                  Value:     87.628118 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -8.232688 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     0.705102 deg
+                  Deviation: 0.0162 deg
+               Xc:
+                  Value:     94.357823 ou
+                  Deviation: 0.00452 ou
+               Yc:
+                  Value:     168.631848 ou
+                  Deviation: 0.00397 ou
+               Zc:
+                  Value:     157.704330 ou
+                  Deviation: 0.00534 ou
+            Photo 23: EX-01-13510_0139_0022.jpg
+               Omega:
+                  Value:     86.816610 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -9.193377 deg
+                  Deviation: 0.0204 deg
+               Kappa:
+                  Value:     1.367359 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     93.994006 ou
+                  Deviation: 0.00423 ou
+               Yc:
+                  Value:     170.611916 ou
+                  Deviation: 0.004 ou
+               Zc:
+                  Value:     153.315548 ou
+                  Deviation: 0.00482 ou
+            Photo 24: EX-01-13510_0139_0023.jpg
+               Omega:
+                  Value:     87.466849 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -7.634450 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     0.908810 deg
+                  Deviation: 0.0162 deg
+               Xc:
+                  Value:     93.806716 ou
+                  Deviation: 0.00473 ou
+               Yc:
+                  Value:     169.686347 ou
+                  Deviation: 0.0048 ou
+               Zc:
+                  Value:     150.367141 ou
+                  Deviation: 0.00534 ou
+            Photo 25: EX-01-13510_0139_0027.jpg
+               Omega:
+                  Value:     86.917467 deg
+                  Deviation: 0.0266 deg
+               Phi:
+                  Value:     -11.444678 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     0.174057 deg
+                  Deviation: 0.0165 deg
+               Xc:
+                  Value:     96.140420 ou
+                  Deviation: 0.0057 ou
+               Yc:
+                  Value:     170.418932 ou
+                  Deviation: 0.00715 ou
+               Zc:
+                  Value:     142.947645 ou
+                  Deviation: 0.00595 ou
+            Photo 26: EX-01-13510_0139_0028.jpg
+               Omega:
+                  Value:     86.869302 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -9.296835 deg
+                  Deviation: 0.0205 deg
+               Kappa:
+                  Value:     0.141278 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     96.637290 ou
+                  Deviation: 0.00491 ou
+               Yc:
+                  Value:     170.719678 ou
+                  Deviation: 0.00565 ou
+               Zc:
+                  Value:     146.989491 ou
+                  Deviation: 0.00521 ou
+            Photo 27: EX-01-13510_0139_0029.jpg
+               Omega:
+                  Value:     86.905895 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -10.068726 deg
+                  Deviation: 0.0205 deg
+               Kappa:
+                  Value:     0.747775 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     97.126711 ou
+                  Deviation: 0.00459 ou
+               Yc:
+                  Value:     170.114183 ou
+                  Deviation: 0.00472 ou
+               Zc:
+                  Value:     150.155912 ou
+                  Deviation: 0.00499 ou
+            Photo 28: EX-01-13510_0139_0030.jpg
+               Omega:
+                  Value:     87.104283 deg
+                  Deviation: 0.0266 deg
+               Phi:
+                  Value:     -8.958037 deg
+                  Deviation: 0.0207 deg
+               Kappa:
+                  Value:     0.788175 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     95.524408 ou
+                  Deviation: 0.00401 ou
+               Yc:
+                  Value:     171.002894 ou
+                  Deviation: 0.00364 ou
+               Zc:
+                  Value:     154.709564 ou
+                  Deviation: 0.0045 ou
+            Photo 29: EX-01-13510_0139_0031.jpg
+               Omega:
+                  Value:     86.953883 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -9.016962 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     0.413370 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     95.446442 ou
+                  Deviation: 0.00426 ou
+               Yc:
+                  Value:     169.517748 ou
+                  Deviation: 0.00379 ou
+               Zc:
+                  Value:     158.594402 ou
+                  Deviation: 0.00493 ou
+            Photo 30: EX-01-13510_0139_0032.jpg
+               Omega:
+                  Value:     86.876103 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -9.458982 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     0.378410 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     94.962161 ou
+                  Deviation: 0.0045 ou
+               Yc:
+                  Value:     169.439852 ou
+                  Deviation: 0.00451 ou
+               Zc:
+                  Value:     162.664757 ou
+                  Deviation: 0.00519 ou
+            Photo 31: EX-01-13510_0139_0035.jpg
+               Omega:
+                  Value:     86.483768 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -9.267049 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     0.538688 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     96.700411 ou
+                  Deviation: 0.00449 ou
+               Yc:
+                  Value:     168.783710 ou
+                  Deviation: 0.00411 ou
+               Zc:
+                  Value:     160.641328 ou
+                  Deviation: 0.00517 ou
+            Photo 32: EX-01-13510_0139_0036.jpg
+               Omega:
+                  Value:     86.755302 deg
+                  Deviation: 0.0263 deg
+               Phi:
+                  Value:     -9.321387 deg
+                  Deviation: 0.0204 deg
+               Kappa:
+                  Value:     0.239496 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     96.398765 ou
+                  Deviation: 0.00426 ou
+               Yc:
+                  Value:     169.594932 ou
+                  Deviation: 0.00369 ou
+               Zc:
+                  Value:     156.514716 ou
+                  Deviation: 0.00486 ou
+            Photo 33: EX-01-13510_0139_0037.jpg
+               Omega:
+                  Value:     86.940922 deg
+                  Deviation: 0.0263 deg
+               Phi:
+                  Value:     -9.037533 deg
+                  Deviation: 0.0204 deg
+               Kappa:
+                  Value:     0.502477 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     95.949316 ou
+                  Deviation: 0.00464 ou
+               Yc:
+                  Value:     169.068435 ou
+                  Deviation: 0.00437 ou
+               Zc:
+                  Value:     152.125858 ou
+                  Deviation: 0.00524 ou
+            Photo 34: EX-01-13510_0139_0038.jpg
+               Omega:
+                  Value:     86.362033 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -9.005784 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     0.362868 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     95.624811 ou
+                  Deviation: 0.00513 ou
+               Yc:
+                  Value:     168.812551 ou
+                  Deviation: 0.00541 ou
+               Zc:
+                  Value:     148.374132 ou
+                  Deviation: 0.00568 ou
+            Photo 35: EX-01-13510_0139_0039.jpg
+               Omega:
+                  Value:     86.634422 deg
+                  Deviation: 0.0267 deg
+               Phi:
+                  Value:     -10.041404 deg
+                  Deviation: 0.0204 deg
+               Kappa:
+                  Value:     0.368513 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     95.753784 ou
+                  Deviation: 0.00544 ou
+               Yc:
+                  Value:     170.270294 ou
+                  Deviation: 0.00656 ou
+               Zc:
+                  Value:     144.549565 ou
+                  Deviation: 0.00577 ou
+            Photo 36: EX-01-13510_0139_0040.jpg
+               Omega:
+                  Value:     86.861310 deg
+                  Deviation: 0.0267 deg
+               Phi:
+                  Value:     -11.812864 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     -0.566980 deg
+                  Deviation: 0.0165 deg
+               Xc:
+                  Value:     98.124445 ou
+                  Deviation: 0.00541 ou
+               Yc:
+                  Value:     170.166810 ou
+                  Deviation: 0.00654 ou
+               Zc:
+                  Value:     144.777040 ou
+                  Deviation: 0.00564 ou
+            Photo 37: EX-01-13510_0139_0041.jpg
+               Omega:
+                  Value:     86.717835 deg
+                  Deviation: 0.0266 deg
+               Phi:
+                  Value:     -12.038137 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     0.245370 deg
+                  Deviation: 0.0165 deg
+               Xc:
+                  Value:     97.805005 ou
+                  Deviation: 0.00549 ou
+               Yc:
+                  Value:     169.245792 ou
+                  Deviation: 0.0064 ou
+               Zc:
+                  Value:     145.357102 ou
+                  Deviation: 0.00583 ou
+            Photo 38: EX-01-13510_0139_0042.jpg
+               Omega:
+                  Value:     86.717220 deg
+                  Deviation: 0.0266 deg
+               Phi:
+                  Value:     -11.971575 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     0.462376 deg
+                  Deviation: 0.0165 deg
+               Xc:
+                  Value:     98.107537 ou
+                  Deviation: 0.00476 ou
+               Yc:
+                  Value:     169.651228 ou
+                  Deviation: 0.00497 ou
+               Zc:
+                  Value:     149.593380 ou
+                  Deviation: 0.00516 ou
+            Photo 39: EX-01-13510_0139_0043.jpg
+               Omega:
+                  Value:     86.898746 deg
+                  Deviation: 0.0266 deg
+               Phi:
+                  Value:     -11.377654 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     0.346118 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     99.047052 ou
+                  Deviation: 0.00439 ou
+               Yc:
+                  Value:     169.751286 ou
+                  Deviation: 0.00413 ou
+               Zc:
+                  Value:     153.143324 ou
+                  Deviation: 0.00481 ou
+            Photo 40: EX-01-13510_0139_0044.jpg
+               Omega:
+                  Value:     86.506037 deg
+                  Deviation: 0.0264 deg
+               Phi:
+                  Value:     -11.075860 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     0.369896 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     97.839478 ou
+                  Deviation: 0.00439 ou
+               Yc:
+                  Value:     168.958731 ou
+                  Deviation: 0.00379 ou
+               Zc:
+                  Value:     157.436443 ou
+                  Deviation: 0.005 ou
+            Photo 41: EX-01-13510_0139_0045.jpg
+               Omega:
+                  Value:     86.750279 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -11.010702 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     0.296469 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     97.777864 ou
+                  Deviation: 0.00416 ou
+               Yc:
+                  Value:     170.254800 ou
+                  Deviation: 0.00398 ou
+               Zc:
+                  Value:     161.268650 ou
+                  Deviation: 0.00464 ou
+            Photo 42: EX-01-13510_0139_0046.jpg
+               Omega:
+                  Value:     86.750541 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -11.285877 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     0.327849 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     96.919565 ou
+                  Deviation: 0.00447 ou
+               Yc:
+                  Value:     169.767665 ou
+                  Deviation: 0.00457 ou
+               Zc:
+                  Value:     163.487638 ou
+                  Deviation: 0.00502 ou
+            Photo 43: EX-01-13510_0139_0047.jpg
+               Omega:
+                  Value:     87.078574 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -11.633262 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     0.278217 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     98.185379 ou
+                  Deviation: 0.0045 ou
+               Yc:
+                  Value:     169.625604 ou
+                  Deviation: 0.00453 ou
+               Zc:
+                  Value:     163.281198 ou
+                  Deviation: 0.005 ou
+            Photo 44: EX-01-13510_0139_0048.jpg
+               Omega:
+                  Value:     86.940156 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -11.983122 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     0.713747 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     98.563857 ou
+                  Deviation: 0.00457 ou
+               Yc:
+                  Value:     168.473109 ou
+                  Deviation: 0.00408 ou
+               Zc:
+                  Value:     160.060350 ou
+                  Deviation: 0.00517 ou
+            Photo 45: EX-01-13510_0139_0049.jpg
+               Omega:
+                  Value:     86.493475 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -11.596850 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     0.545775 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     97.891682 ou
+                  Deviation: 0.00454 ou
+               Yc:
+                  Value:     168.457784 ou
+                  Deviation: 0.00389 ou
+               Zc:
+                  Value:     156.511550 ou
+                  Deviation: 0.00519 ou
+            Photo 46: EX-01-13510_0139_0050.jpg
+               Omega:
+                  Value:     86.600637 deg
+                  Deviation: 0.0266 deg
+               Phi:
+                  Value:     -10.847740 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     0.143534 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     97.711156 ou
+                  Deviation: 0.0046 ou
+               Yc:
+                  Value:     168.999832 ou
+                  Deviation: 0.00428 ou
+               Zc:
+                  Value:     152.648181 ou
+                  Deviation: 0.00515 ou
+            Photo 47: EX-01-13510_0139_0051.jpg
+               Omega:
+                  Value:     86.623656 deg
+                  Deviation: 0.0263 deg
+               Phi:
+                  Value:     -9.626259 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     0.235571 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     97.055526 ou
+                  Deviation: 0.00506 ou
+               Yc:
+                  Value:     168.718127 ou
+                  Deviation: 0.00526 ou
+               Zc:
+                  Value:     148.939955 ou
+                  Deviation: 0.00557 ou
+            Photo 48: EX-01-13510_0139_0052.jpg
+               Omega:
+                  Value:     86.591290 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -10.882092 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     0.450459 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     98.279498 ou
+                  Deviation: 0.00571 ou
+               Yc:
+                  Value:     168.948742 ou
+                  Deviation: 0.00678 ou
+               Zc:
+                  Value:     144.442411 ou
+                  Deviation: 0.00604 ou
+            Photo 49: EX-01-13510_0139_0053.jpg
+               Omega:
+                  Value:     86.688032 deg
+                  Deviation: 0.0266 deg
+               Phi:
+                  Value:     -10.823650 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     0.607221 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     99.828921 ou
+                  Deviation: 0.00577 ou
+               Yc:
+                  Value:     169.074284 ou
+                  Deviation: 0.00695 ou
+               Zc:
+                  Value:     144.205656 ou
+                  Deviation: 0.00602 ou
+            Photo 50: EX-01-13510_0139_0054.jpg
+               Omega:
+                  Value:     86.420776 deg
+                  Deviation: 0.0267 deg
+               Phi:
+                  Value:     -12.329634 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     0.765346 deg
+                  Deviation: 0.0165 deg
+               Xc:
+                  Value:     100.281549 ou
+                  Deviation: 0.00587 ou
+               Yc:
+                  Value:     168.697632 ou
+                  Deviation: 0.00703 ou
+               Zc:
+                  Value:     144.174101 ou
+                  Deviation: 0.00613 ou
+            Photo 51: EX-01-13510_0139_0055.jpg
+               Omega:
+                  Value:     86.289431 deg
+                  Deviation: 0.0266 deg
+               Phi:
+                  Value:     -11.768272 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     0.173078 deg
+                  Deviation: 0.0165 deg
+               Xc:
+                  Value:     98.899437 ou
+                  Deviation: 0.00591 ou
+               Yc:
+                  Value:     168.272706 ou
+                  Deviation: 0.00697 ou
+               Zc:
+                  Value:     144.212844 ou
+                  Deviation: 0.00626 ou
+            Photo 52: EX-01-13510_0139_0056.jpg
+               Omega:
+                  Value:     86.331901 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -11.206135 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     -0.060511 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     99.550108 ou
+                  Deviation: 0.00557 ou
+               Yc:
+                  Value:     168.721894 ou
+                  Deviation: 0.0064 ou
+               Zc:
+                  Value:     145.779935 ou
+                  Deviation: 0.00589 ou
+            Photo 53: EX-01-13510_0139_0057.jpg
+               Omega:
+                  Value:     86.635372 deg
+                  Deviation: 0.0266 deg
+               Phi:
+                  Value:     -10.677032 deg
+                  Deviation: 0.0204 deg
+               Kappa:
+                  Value:     0.576671 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     100.953437 ou
+                  Deviation: 0.0051 ou
+               Yc:
+                  Value:     168.615026 ou
+                  Deviation: 0.00528 ou
+               Zc:
+                  Value:     149.760207 ou
+                  Deviation: 0.00546 ou
+            Photo 54: EX-01-13510_0139_0058.jpg
+               Omega:
+                  Value:     86.455119 deg
+                  Deviation: 0.0264 deg
+               Phi:
+                  Value:     -9.628983 deg
+                  Deviation: 0.0203 deg
+               Kappa:
+                  Value:     0.225040 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     99.943819 ou
+                  Deviation: 0.00465 ou
+               Yc:
+                  Value:     168.710206 ou
+                  Deviation: 0.00426 ou
+               Zc:
+                  Value:     153.717003 ou
+                  Deviation: 0.00513 ou
+            Photo 55: EX-01-13510_0139_0059.jpg
+               Omega:
+                  Value:     86.656818 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -9.442339 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     0.225434 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     99.732173 ou
+                  Deviation: 0.00442 ou
+               Yc:
+                  Value:     169.054550 ou
+                  Deviation: 0.00387 ou
+               Zc:
+                  Value:     157.866415 ou
+                  Deviation: 0.0049 ou
+            Photo 56: EX-01-13510_0139_0060.jpg
+               Omega:
+                  Value:     86.755115 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -9.539182 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     0.613442 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     99.874873 ou
+                  Deviation: 0.00464 ou
+               Yc:
+                  Value:     168.796946 ou
+                  Deviation: 0.00439 ou
+               Zc:
+                  Value:     161.907769 ou
+                  Deviation: 0.00513 ou
+            Photo 57: EX-01-13510_0139_0061.jpg
+               Omega:
+                  Value:     86.891747 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -9.550328 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     0.486026 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     100.828561 ou
+                  Deviation: 0.00491 ou
+               Yc:
+                  Value:     167.864388 ou
+                  Deviation: 0.00457 ou
+               Zc:
+                  Value:     161.712337 ou
+                  Deviation: 0.00545 ou
+            Photo 58: EX-01-13510_0139_0062.jpg
+               Omega:
+                  Value:     86.584208 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -9.213626 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     0.348107 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     101.066316 ou
+                  Deviation: 0.00504 ou
+               Yc:
+                  Value:     166.979076 ou
+                  Deviation: 0.00438 ou
+               Zc:
+                  Value:     158.444829 ou
+                  Deviation: 0.00564 ou
+            Photo 59: EX-01-13510_0139_0063.jpg
+               Omega:
+                  Value:     86.559925 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -9.284380 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     0.496582 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     101.015680 ou
+                  Deviation: 0.00503 ou
+               Yc:
+                  Value:     167.306030 ou
+                  Deviation: 0.00448 ou
+               Zc:
+                  Value:     154.517011 ou
+                  Deviation: 0.00558 ou
+            Photo 60: EX-01-13510_0139_0064.jpg
+               Omega:
+                  Value:     86.405969 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -9.252021 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     0.513550 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     100.839364 ou
+                  Deviation: 0.00537 ou
+               Yc:
+                  Value:     167.204538 ou
+                  Deviation: 0.00529 ou
+               Zc:
+                  Value:     150.410930 ou
+                  Deviation: 0.00587 ou
+            Photo 61: EX-01-13510_0139_0065.jpg
+               Omega:
+                  Value:     86.517345 deg
+                  Deviation: 0.0263 deg
+               Phi:
+                  Value:     -9.051949 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     0.724576 deg
+                  Deviation: 0.0163 deg
+               Xc:
+                  Value:     100.288759 ou
+                  Deviation: 0.00588 ou
+               Yc:
+                  Value:     167.085000 ou
+                  Deviation: 0.00642 ou
+               Zc:
+                  Value:     146.458120 ou
+                  Deviation: 0.00632 ou
+            Photo 62: EX-01-13510_0139_0066.jpg
+               Omega:
+                  Value:     86.348365 deg
+                  Deviation: 0.0264 deg
+               Phi:
+                  Value:     -10.944184 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     0.514331 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     100.692153 ou
+                  Deviation: 0.0063 ou
+               Yc:
+                  Value:     167.089856 ou
+                  Deviation: 0.00737 ou
+               Zc:
+                  Value:     143.777257 ou
+                  Deviation: 0.00666 ou
+            Photo 63: EX-01-13510_0139_0067.jpg
+               Omega:
+                  Value:     86.436543 deg
+                  Deviation: 0.0267 deg
+               Phi:
+                  Value:     -11.292573 deg
+                  Deviation: 0.0204 deg
+               Kappa:
+                  Value:     0.535492 deg
+                  Deviation: 0.0165 deg
+               Xc:
+                  Value:     103.003415 ou
+                  Deviation: 0.00653 ou
+               Yc:
+                  Value:     166.591756 ou
+                  Deviation: 0.00756 ou
+               Zc:
+                  Value:     144.076381 ou
+                  Deviation: 0.00684 ou
+            Photo 64: EX-01-13510_0139_0068.jpg
+               Omega:
+                  Value:     86.504170 deg
+                  Deviation: 0.0269 deg
+               Phi:
+                  Value:     -14.946764 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     0.389634 deg
+                  Deviation: 0.0167 deg
+               Xc:
+                  Value:     103.041349 ou
+                  Deviation: 0.00575 ou
+               Yc:
+                  Value:     167.131677 ou
+                  Deviation: 0.00611 ou
+               Zc:
+                  Value:     148.426865 ou
+                  Deviation: 0.0061 ou
+            Photo 65: EX-01-13510_0139_0069.jpg
+               Omega:
+                  Value:     86.496710 deg
+                  Deviation: 0.0266 deg
+               Phi:
+                  Value:     -13.883955 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     0.072682 deg
+                  Deviation: 0.0166 deg
+               Xc:
+                  Value:     102.630076 ou
+                  Deviation: 0.00515 ou
+               Yc:
+                  Value:     167.752394 ou
+                  Deviation: 0.00497 ou
+               Zc:
+                  Value:     152.373757 ou
+                  Deviation: 0.00553 ou
+            Photo 66: EX-01-13510_0139_0070.jpg
+               Omega:
+                  Value:     86.538349 deg
+                  Deviation: 0.0264 deg
+               Phi:
+                  Value:     -13.606000 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     0.079561 deg
+                  Deviation: 0.0165 deg
+               Xc:
+                  Value:     102.612135 ou
+                  Deviation: 0.00511 ou
+               Yc:
+                  Value:     167.171851 ou
+                  Deviation: 0.00455 ou
+               Zc:
+                  Value:     156.352939 ou
+                  Deviation: 0.00559 ou
+            Photo 67: EX-01-13510_0139_0071.jpg
+               Omega:
+                  Value:     86.941581 deg
+                  Deviation: 0.0263 deg
+               Phi:
+                  Value:     -13.265321 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     0.430298 deg
+                  Deviation: 0.0165 deg
+               Xc:
+                  Value:     102.554617 ou
+                  Deviation: 0.00499 ou
+               Yc:
+                  Value:     167.691493 ou
+                  Deviation: 0.00454 ou
+               Zc:
+                  Value:     160.025785 ou
+                  Deviation: 0.00544 ou
+            Photo 68: EX-01-13510_0139_0072.jpg
+               Omega:
+                  Value:     86.245482 deg
+                  Deviation: 0.0251 deg
+               Phi:
+                  Value:     2.737792 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     0.343604 deg
+                  Deviation: 0.0161 deg
+               Xc:
+                  Value:     102.502991 ou
+                  Deviation: 0.00515 ou
+               Yc:
+                  Value:     167.136580 ou
+                  Deviation: 0.00466 ou
+               Zc:
+                  Value:     160.286210 ou
+                  Deviation: 0.00565 ou
+            Photo 69: EX-01-13510_0139_0073.jpg
+               Omega:
+                  Value:     86.194567 deg
+                  Deviation: 0.0246 deg
+               Phi:
+                  Value:     19.152027 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     1.040636 deg
+                  Deviation: 0.017 deg
+               Xc:
+                  Value:     102.853330 ou
+                  Deviation: 0.00507 ou
+               Yc:
+                  Value:     167.325675 ou
+                  Deviation: 0.00454 ou
+               Zc:
+                  Value:     158.426524 ou
+                  Deviation: 0.00554 ou
+            Photo 70: EX-01-13510_0139_0074.jpg
+               Omega:
+                  Value:     86.354540 deg
+                  Deviation: 0.0248 deg
+               Phi:
+                  Value:     17.169620 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     1.511523 deg
+                  Deviation: 0.0168 deg
+               Xc:
+                  Value:     103.354213 ou
+                  Deviation: 0.00482 ou
+               Yc:
+                  Value:     168.647771 ou
+                  Deviation: 0.00451 ou
+               Zc:
+                  Value:     155.289962 ou
+                  Deviation: 0.00513 ou
+            Photo 71: EX-01-13510_0139_0075.jpg
+               Omega:
+                  Value:     86.379298 deg
+                  Deviation: 0.0248 deg
+               Phi:
+                  Value:     17.086137 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     2.020862 deg
+                  Deviation: 0.0168 deg
+               Xc:
+                  Value:     103.169618 ou
+                  Deviation: 0.00514 ou
+               Yc:
+                  Value:     168.409536 ou
+                  Deviation: 0.00523 ou
+               Zc:
+                  Value:     151.168716 ou
+                  Deviation: 0.00542 ou
+            Photo 72: EX-01-13510_0139_0076.jpg
+               Omega:
+                  Value:     86.575518 deg
+                  Deviation: 0.0248 deg
+               Phi:
+                  Value:     17.198532 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     2.104808 deg
+                  Deviation: 0.0168 deg
+               Xc:
+                  Value:     101.110751 ou
+                  Deviation: 0.00612 ou
+               Yc:
+                  Value:     167.178254 ou
+                  Deviation: 0.00703 ou
+               Zc:
+                  Value:     144.855838 ou
+                  Deviation: 0.00648 ou
+            Photo 73: EX-01-13510_0139_0077.jpg
+               Omega:
+                  Value:     86.839584 deg
+                  Deviation: 0.0248 deg
+               Phi:
+                  Value:     17.433974 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     1.705562 deg
+                  Deviation: 0.0169 deg
+               Xc:
+                  Value:     102.352193 ou
+                  Deviation: 0.00624 ou
+               Yc:
+                  Value:     167.346859 ou
+                  Deviation: 0.00731 ou
+               Zc:
+                  Value:     144.330623 ou
+                  Deviation: 0.0065 ou
+            Photo 74: EX-01-13510_0139_0078.jpg
+               Omega:
+                  Value:     85.817021 deg
+                  Deviation: 0.0248 deg
+               Phi:
+                  Value:     16.891364 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     2.773042 deg
+                  Deviation: 0.0168 deg
+               Xc:
+                  Value:     102.418912 ou
+                  Deviation: 0.00626 ou
+               Yc:
+                  Value:     167.132746 ou
+                  Deviation: 0.00729 ou
+               Zc:
+                  Value:     144.494390 ou
+                  Deviation: 0.00655 ou
+            Photo 75: EX-01-13510_0139_0079.jpg
+               Omega:
+                  Value:     86.269985 deg
+                  Deviation: 0.0249 deg
+               Phi:
+                  Value:     17.733878 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     2.457828 deg
+                  Deviation: 0.0169 deg
+               Xc:
+                  Value:     100.091052 ou
+                  Deviation: 0.00569 ou
+               Yc:
+                  Value:     169.020748 ou
+                  Deviation: 0.00679 ou
+               Zc:
+                  Value:     144.722068 ou
+                  Deviation: 0.00593 ou
+            Photo 76: EX-01-13510_0139_0080.jpg
+               Omega:
+                  Value:     86.641832 deg
+                  Deviation: 0.0248 deg
+               Phi:
+                  Value:     18.137711 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     2.492246 deg
+                  Deviation: 0.0169 deg
+               Xc:
+                  Value:     99.385938 ou
+                  Deviation: 0.00554 ou
+               Yc:
+                  Value:     168.886445 ou
+                  Deviation: 0.00644 ou
+               Zc:
+                  Value:     145.624922 ou
+                  Deviation: 0.00585 ou
+            Photo 77: EX-01-13510_0139_0081.jpg
+               Omega:
+                  Value:     85.704031 deg
+                  Deviation: 0.0247 deg
+               Phi:
+                  Value:     19.011450 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     2.278784 deg
+                  Deviation: 0.017 deg
+               Xc:
+                  Value:     98.828926 ou
+                  Deviation: 0.00498 ou
+               Yc:
+                  Value:     168.652822 ou
+                  Deviation: 0.00512 ou
+               Zc:
+                  Value:     149.712408 ou
+                  Deviation: 0.00543 ou
+            Photo 78: EX-01-13510_0139_0082.jpg
+               Omega:
+                  Value:     86.008365 deg
+                  Deviation: 0.0247 deg
+               Phi:
+                  Value:     19.642205 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     2.180158 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     99.082359 ou
+                  Deviation: 0.00467 ou
+               Yc:
+                  Value:     168.569306 ou
+                  Deviation: 0.00433 ou
+               Zc:
+                  Value:     153.113179 ou
+                  Deviation: 0.00519 ou
+            Photo 79: EX-01-13510_0139_0083.jpg
+               Omega:
+                  Value:     85.933649 deg
+                  Deviation: 0.0246 deg
+               Phi:
+                  Value:     18.872914 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     2.647471 deg
+                  Deviation: 0.017 deg
+               Xc:
+                  Value:     100.739956 ou
+                  Deviation: 0.00443 ou
+               Yc:
+                  Value:     169.172270 ou
+                  Deviation: 0.00395 ou
+               Zc:
+                  Value:     157.994047 ou
+                  Deviation: 0.00485 ou
+            Photo 80: EX-01-13510_0139_0084.jpg
+               Omega:
+                  Value:     85.739360 deg
+                  Deviation: 0.0246 deg
+               Phi:
+                  Value:     19.400970 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     2.673125 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     100.394742 ou
+                  Deviation: 0.00464 ou
+               Yc:
+                  Value:     168.750941 ou
+                  Deviation: 0.00436 ou
+               Zc:
+                  Value:     161.487797 ou
+                  Deviation: 0.00512 ou
+            Photo 81: EX-01-13510_0139_0085.jpg
+               Omega:
+                  Value:     86.032118 deg
+                  Deviation: 0.0246 deg
+               Phi:
+                  Value:     22.133725 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     2.291568 deg
+                  Deviation: 0.0174 deg
+               Xc:
+                  Value:     96.931488 ou
+                  Deviation: 0.00463 ou
+               Yc:
+                  Value:     168.382189 ou
+                  Deviation: 0.00428 ou
+               Zc:
+                  Value:     161.235958 ou
+                  Deviation: 0.00534 ou
+            Photo 82: EX-01-13510_0139_0086.jpg
+               Omega:
+                  Value:     85.691053 deg
+                  Deviation: 0.0247 deg
+               Phi:
+                  Value:     23.377859 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     2.441295 deg
+                  Deviation: 0.0175 deg
+               Xc:
+                  Value:     97.724708 ou
+                  Deviation: 0.00452 ou
+               Yc:
+                  Value:     168.386500 ou
+                  Deviation: 0.0039 ou
+               Zc:
+                  Value:     157.622260 ou
+                  Deviation: 0.00519 ou
+            Photo 83: EX-01-13510_0139_0087.jpg
+               Omega:
+                  Value:     86.196438 deg
+                  Deviation: 0.0247 deg
+               Phi:
+                  Value:     23.297042 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     2.724498 deg
+                  Deviation: 0.0175 deg
+               Xc:
+                  Value:     97.119811 ou
+                  Deviation: 0.00439 ou
+               Yc:
+                  Value:     169.361366 ou
+                  Deviation: 0.00403 ou
+               Zc:
+                  Value:     153.643423 ou
+                  Deviation: 0.00494 ou
+            Photo 84: EX-01-13510_0139_0088.jpg
+               Omega:
+                  Value:     86.244763 deg
+                  Deviation: 0.0247 deg
+               Phi:
+                  Value:     23.865258 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     2.485536 deg
+                  Deviation: 0.0176 deg
+               Xc:
+                  Value:     96.179489 ou
+                  Deviation: 0.00473 ou
+               Yc:
+                  Value:     169.467260 ou
+                  Deviation: 0.00488 ou
+               Zc:
+                  Value:     149.885810 ou
+                  Deviation: 0.00524 ou
+            Photo 85: EX-01-13510_0139_0090.jpg
+               Omega:
+                  Value:     86.257880 deg
+                  Deviation: 0.0249 deg
+               Phi:
+                  Value:     21.113000 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     2.449909 deg
+                  Deviation: 0.0173 deg
+               Xc:
+                  Value:     95.173194 ou
+                  Deviation: 0.00555 ou
+               Yc:
+                  Value:     171.268983 ou
+                  Deviation: 0.00707 ou
+               Zc:
+                  Value:     142.978503 ou
+                  Deviation: 0.00577 ou
+            Photo 86: EX-01-13510_0139_0091.jpg
+               Omega:
+                  Value:     86.160576 deg
+                  Deviation: 0.025 deg
+               Phi:
+                  Value:     21.458963 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     2.452928 deg
+                  Deviation: 0.0174 deg
+               Xc:
+                  Value:     93.231616 ou
+                  Deviation: 0.00563 ou
+               Yc:
+                  Value:     171.153840 ou
+                  Deviation: 0.00708 ou
+               Zc:
+                  Value:     143.086220 ou
+                  Deviation: 0.00593 ou
+            Photo 87: EX-01-13510_0139_0092.jpg
+               Omega:
+                  Value:     85.914968 deg
+                  Deviation: 0.0248 deg
+               Phi:
+                  Value:     21.163373 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     2.339534 deg
+                  Deviation: 0.0173 deg
+               Xc:
+                  Value:     93.109624 ou
+                  Deviation: 0.00488 ou
+               Yc:
+                  Value:     171.946572 ou
+                  Deviation: 0.00586 ou
+               Zc:
+                  Value:     146.321004 ou
+                  Deviation: 0.0052 ou
+            Photo 88: EX-01-13510_0139_0093.jpg
+               Omega:
+                  Value:     86.208875 deg
+                  Deviation: 0.0247 deg
+               Phi:
+                  Value:     22.837708 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     2.701774 deg
+                  Deviation: 0.0175 deg
+               Xc:
+                  Value:     93.388068 ou
+                  Deviation: 0.00422 ou
+               Yc:
+                  Value:     171.936238 ou
+                  Deviation: 0.00454 ou
+               Zc:
+                  Value:     150.474910 ou
+                  Deviation: 0.00463 ou
+            Photo 89: EX-01-13510_0139_0094.jpg
+               Omega:
+                  Value:     85.887477 deg
+                  Deviation: 0.0247 deg
+               Phi:
+                  Value:     23.352512 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     2.564890 deg
+                  Deviation: 0.0176 deg
+               Xc:
+                  Value:     91.669491 ou
+                  Deviation: 0.00413 ou
+               Yc:
+                  Value:     171.209587 ou
+                  Deviation: 0.00403 ou
+               Zc:
+                  Value:     154.608093 ou
+                  Deviation: 0.00477 ou
+            Photo 90: EX-01-13510_0139_0095.jpg
+               Omega:
+                  Value:     86.354007 deg
+                  Deviation: 0.0247 deg
+               Phi:
+                  Value:     21.437276 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     2.875879 deg
+                  Deviation: 0.0173 deg
+               Xc:
+                  Value:     91.572180 ou
+                  Deviation: 0.004 ou
+               Yc:
+                  Value:     171.540852 ou
+                  Deviation: 0.00398 ou
+               Zc:
+                  Value:     158.622668 ou
+                  Deviation: 0.00465 ou
+            Photo 91: EX-01-13510_0139_0096.jpg
+               Omega:
+                  Value:     88.377041 deg
+                  Deviation: 0.0267 deg
+               Phi:
+                  Value:     -16.591680 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     2.513167 deg
+                  Deviation: 0.0167 deg
+               Xc:
+                  Value:     90.980161 ou
+                  Deviation: 0.00427 ou
+               Yc:
+                  Value:     170.650732 ou
+                  Deviation: 0.00421 ou
+               Zc:
+                  Value:     158.909364 ou
+                  Deviation: 0.00501 ou
+            Photo 92: EX-01-13510_0139_0098.jpg
+               Omega:
+                  Value:     86.167043 deg
+                  Deviation: 0.0295 deg
+               Phi:
+                  Value:     -33.232736 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     -0.616409 deg
+                  Deviation: 0.0192 deg
+               Xc:
+                  Value:     86.386083 ou
+                  Deviation: 0.00526 ou
+               Yc:
+                  Value:     168.760830 ou
+                  Deviation: 0.00546 ou
+               Zc:
+                  Value:     158.743700 ou
+                  Deviation: 0.00637 ou
+            Photo 93: EX-01-13510_0139_0099.jpg
+               Omega:
+                  Value:     84.754574 deg
+                  Deviation: 0.0295 deg
+               Phi:
+                  Value:     -33.281440 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     -2.047191 deg
+                  Deviation: 0.0194 deg
+               Xc:
+                  Value:     82.791807 ou
+                  Deviation: 0.00561 ou
+               Yc:
+                  Value:     170.014763 ou
+                  Deviation: 0.0063 ou
+               Zc:
+                  Value:     159.042643 ou
+                  Deviation: 0.00665 ou
+            Photo 94: EX-01-13510_0139_0100.jpg
+               Omega:
+                  Value:     67.154362 deg
+                  Deviation: 0.0296 deg
+               Phi:
+                  Value:     -32.232675 deg
+                  Deviation: 0.0194 deg
+               Kappa:
+                  Value:     -12.027470 deg
+                  Deviation: 0.02 deg
+               Xc:
+                  Value:     83.752095 ou
+                  Deviation: 0.00525 ou
+               Yc:
+                  Value:     171.004703 ou
+                  Deviation: 0.00593 ou
+               Zc:
+                  Value:     159.075583 ou
+                  Deviation: 0.00616 ou
+            Photo 95: EX-01-13510_0139_0101.jpg
+               Omega:
+                  Value:     76.681956 deg
+                  Deviation: 0.0297 deg
+               Phi:
+                  Value:     -33.186977 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     -6.761280 deg
+                  Deviation: 0.0197 deg
+               Xc:
+                  Value:     84.044057 ou
+                  Deviation: 0.00507 ou
+               Yc:
+                  Value:     171.712267 ou
+                  Deviation: 0.00574 ou
+               Zc:
+                  Value:     158.572251 ou
+                  Deviation: 0.00589 ou
+            Photo 96: EX-01-13510_0139_0102.jpg
+               Omega:
+                  Value:     79.749261 deg
+                  Deviation: 0.0299 deg
+               Phi:
+                  Value:     -34.001711 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     -5.569850 deg
+                  Deviation: 0.0197 deg
+               Xc:
+                  Value:     85.581788 ou
+                  Deviation: 0.0049 ou
+               Yc:
+                  Value:     171.161801 ou
+                  Deviation: 0.00539 ou
+               Zc:
+                  Value:     158.723044 ou
+                  Deviation: 0.00575 ou
+            Photo 97: EX-01-13510_0139_0103.jpg
+               Omega:
+                  Value:     75.311762 deg
+                  Deviation: 0.0354 deg
+               Phi:
+                  Value:     -49.914296 deg
+                  Deviation: 0.0197 deg
+               Kappa:
+                  Value:     -10.037426 deg
+                  Deviation: 0.0256 deg
+               Xc:
+                  Value:     87.269630 ou
+                  Deviation: 0.00456 ou
+               Yc:
+                  Value:     171.557723 ou
+                  Deviation: 0.00496 ou
+               Zc:
+                  Value:     159.177609 ou
+                  Deviation: 0.00533 ou
+            Photo 98: EX-01-13510_0139_0104.jpg
+               Omega:
+                  Value:     77.792597 deg
+                  Deviation: 0.0347 deg
+               Phi:
+                  Value:     -48.674618 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     -8.075886 deg
+                  Deviation: 0.0248 deg
+               Xc:
+                  Value:     87.115658 ou
+                  Deviation: 0.00491 ou
+               Yc:
+                  Value:     169.752631 ou
+                  Deviation: 0.00508 ou
+               Zc:
+                  Value:     157.496960 ou
+                  Deviation: 0.00589 ou
+            Photo 99: EX-01-13510_0139_0105.jpg
+               Omega:
+                  Value:     77.728306 deg
+                  Deviation: 0.0343 deg
+               Phi:
+                  Value:     -47.787583 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     -7.687996 deg
+                  Deviation: 0.0244 deg
+               Xc:
+                  Value:     86.735935 ou
+                  Deviation: 0.00492 ou
+               Yc:
+                  Value:     170.006886 ou
+                  Deviation: 0.00513 ou
+               Zc:
+                  Value:     157.260579 ou
+                  Deviation: 0.00587 ou
+            Photo 100: EX-01-13510_0139_0106.jpg
+               Omega:
+                  Value:     77.225126 deg
+                  Deviation: 0.0342 deg
+               Phi:
+                  Value:     -47.423399 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     -8.287372 deg
+                  Deviation: 0.0243 deg
+               Xc:
+                  Value:     85.943691 ou
+                  Deviation: 0.00465 ou
+               Yc:
+                  Value:     172.108224 ou
+                  Deviation: 0.00512 ou
+               Zc:
+                  Value:     157.365776 ou
+                  Deviation: 0.00539 ou
+            Photo 101: EX-01-13510_0139_0107.jpg
+               Omega:
+                  Value:     78.071714 deg
+                  Deviation: 0.0337 deg
+               Phi:
+                  Value:     -46.454210 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     -8.426946 deg
+                  Deviation: 0.0238 deg
+               Xc:
+                  Value:     88.174835 ou
+                  Deviation: 0.00447 ou
+               Yc:
+                  Value:     171.172044 ou
+                  Deviation: 0.00466 ou
+               Zc:
+                  Value:     157.526614 ou
+                  Deviation: 0.00526 ou
+            Photo 102: EX-01-13510_0139_0108.jpg
+               Omega:
+                  Value:     77.576280 deg
+                  Deviation: 0.0341 deg
+               Phi:
+                  Value:     -47.416984 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     -8.413076 deg
+                  Deviation: 0.0242 deg
+               Xc:
+                  Value:     87.640474 ou
+                  Deviation: 0.00469 ou
+               Yc:
+                  Value:     170.494367 ou
+                  Deviation: 0.00484 ou
+               Zc:
+                  Value:     156.463995 ou
+                  Deviation: 0.00556 ou
+            Photo 103: EX-01-13510_0139_0109.jpg
+               Omega:
+                  Value:     77.966031 deg
+                  Deviation: 0.0338 deg
+               Phi:
+                  Value:     -46.064323 deg
+                  Deviation: 0.0199 deg
+               Kappa:
+                  Value:     -8.092662 deg
+                  Deviation: 0.0236 deg
+               Xc:
+                  Value:     88.975626 ou
+                  Deviation: 0.0044 ou
+               Yc:
+                  Value:     171.801192 ou
+                  Deviation: 0.00464 ou
+               Zc:
+                  Value:     153.235631 ou
+                  Deviation: 0.00505 ou
+            Photo 104: EX-01-13510_0139_0111.jpg
+               Omega:
+                  Value:     78.961026 deg
+                  Deviation: 0.0333 deg
+               Phi:
+                  Value:     -44.371398 deg
+                  Deviation: 0.0199 deg
+               Kappa:
+                  Value:     -6.842374 deg
+                  Deviation: 0.023 deg
+               Xc:
+                  Value:     89.200422 ou
+                  Deviation: 0.00556 ou
+               Yc:
+                  Value:     171.659063 ou
+                  Deviation: 0.00684 ou
+               Zc:
+                  Value:     144.549879 ou
+                  Deviation: 0.006 ou
+            Photo 105: EX-01-13510_0139_0112.jpg
+               Omega:
+                  Value:     77.203625 deg
+                  Deviation: 0.0337 deg
+               Phi:
+                  Value:     -45.048202 deg
+                  Deviation: 0.0199 deg
+               Kappa:
+                  Value:     -9.184421 deg
+                  Deviation: 0.0234 deg
+               Xc:
+                  Value:     90.348452 ou
+                  Deviation: 0.00536 ou
+               Yc:
+                  Value:     172.860875 ou
+                  Deviation: 0.0068 ou
+               Zc:
+                  Value:     144.086528 ou
+                  Deviation: 0.00564 ou
+            Photo 106: EX-01-13510_0139_0113.jpg
+               Omega:
+                  Value:     77.378657 deg
+                  Deviation: 0.0353 deg
+               Phi:
+                  Value:     -49.109238 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     -8.741371 deg
+                  Deviation: 0.0252 deg
+               Xc:
+                  Value:     92.505493 ou
+                  Deviation: 0.00552 ou
+               Yc:
+                  Value:     170.950425 ou
+                  Deviation: 0.00681 ou
+               Zc:
+                  Value:     143.966692 ou
+                  Deviation: 0.00589 ou
+            Photo 107: EX-01-13510_0139_0114.jpg
+               Omega:
+                  Value:     77.147426 deg
+                  Deviation: 0.0352 deg
+               Phi:
+                  Value:     -49.062371 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     -8.912753 deg
+                  Deviation: 0.0252 deg
+               Xc:
+                  Value:     91.583225 ou
+                  Deviation: 0.00523 ou
+               Yc:
+                  Value:     171.061195 ou
+                  Deviation: 0.00623 ou
+               Zc:
+                  Value:     145.801551 ou
+                  Deviation: 0.00567 ou
+            Photo 108: EX-01-13510_0139_0116.jpg
+               Omega:
+                  Value:     77.576315 deg
+                  Deviation: 0.0342 deg
+               Phi:
+                  Value:     -47.456541 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     -8.042846 deg
+                  Deviation: 0.0242 deg
+               Xc:
+                  Value:     93.143958 ou
+                  Deviation: 0.0041 ou
+               Yc:
+                  Value:     170.856386 ou
+                  Deviation: 0.00391 ou
+               Zc:
+                  Value:     154.352909 ou
+                  Deviation: 0.00472 ou
+            Photo 109: EX-01-13510_0139_0117.jpg
+               Omega:
+                  Value:     79.080141 deg
+                  Deviation: 0.0317 deg
+               Phi:
+                  Value:     -40.906566 deg
+                  Deviation: 0.0199 deg
+               Kappa:
+                  Value:     -6.784642 deg
+                  Deviation: 0.0216 deg
+               Xc:
+                  Value:     93.866078 ou
+                  Deviation: 0.0042 ou
+               Yc:
+                  Value:     169.880151 ou
+                  Deviation: 0.00386 ou
+               Zc:
+                  Value:     158.258539 ou
+                  Deviation: 0.00493 ou
+            Photo 110: EX-01-13510_0139_0118.jpg
+               Omega:
+                  Value:     79.756223 deg
+                  Deviation: 0.03 deg
+               Phi:
+                  Value:     -35.000221 deg
+                  Deviation: 0.0199 deg
+               Kappa:
+                  Value:     -5.454652 deg
+                  Deviation: 0.0199 deg
+               Xc:
+                  Value:     93.107489 ou
+                  Deviation: 0.00437 ou
+               Yc:
+                  Value:     170.279091 ou
+                  Deviation: 0.00453 ou
+               Zc:
+                  Value:     162.408685 ou
+                  Deviation: 0.00506 ou
+            Photo 111: EX-01-13510_0139_0121.jpg
+               Omega:
+                  Value:     80.187234 deg
+                  Deviation: 0.0298 deg
+               Phi:
+                  Value:     -33.950991 deg
+                  Deviation: 0.0199 deg
+               Kappa:
+                  Value:     -4.408851 deg
+                  Deviation: 0.0196 deg
+               Xc:
+                  Value:     97.384180 ou
+                  Deviation: 0.00469 ou
+               Yc:
+                  Value:     167.853324 ou
+                  Deviation: 0.00405 ou
+               Zc:
+                  Value:     155.549529 ou
+                  Deviation: 0.00541 ou
+            Photo 112: EX-01-13510_0139_0122.jpg
+               Omega:
+                  Value:     79.374994 deg
+                  Deviation: 0.0297 deg
+               Phi:
+                  Value:     -33.771224 deg
+                  Deviation: 0.0199 deg
+               Kappa:
+                  Value:     -4.874474 deg
+                  Deviation: 0.0196 deg
+               Xc:
+                  Value:     96.080713 ou
+                  Deviation: 0.00471 ou
+               Yc:
+                  Value:     168.578904 ou
+                  Deviation: 0.00444 ou
+               Zc:
+                  Value:     152.164879 ou
+                  Deviation: 0.00537 ou
+            Photo 113: EX-01-13510_0139_0123.jpg
+               Omega:
+                  Value:     79.028113 deg
+                  Deviation: 0.0324 deg
+               Phi:
+                  Value:     -42.871104 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     -6.303687 deg
+                  Deviation: 0.0223 deg
+               Xc:
+                  Value:     97.075423 ou
+                  Deviation: 0.00489 ou
+               Yc:
+                  Value:     169.519926 ou
+                  Deviation: 0.00527 ou
+               Zc:
+                  Value:     148.596876 ou
+                  Deviation: 0.00532 ou
+            Photo 114: EX-01-13510_0139_0124.jpg
+               Omega:
+                  Value:     78.202337 deg
+                  Deviation: 0.0325 deg
+               Phi:
+                  Value:     -42.607469 deg
+                  Deviation: 0.0199 deg
+               Kappa:
+                  Value:     -7.388690 deg
+                  Deviation: 0.0223 deg
+               Xc:
+                  Value:     96.501592 ou
+                  Deviation: 0.00551 ou
+               Yc:
+                  Value:     170.368144 ou
+                  Deviation: 0.0068 ou
+               Zc:
+                  Value:     143.898055 ou
+                  Deviation: 0.00577 ou
+            Photo 115: EX-01-13510_0139_0125.jpg
+               Omega:
+                  Value:     78.910375 deg
+                  Deviation: 0.0327 deg
+               Phi:
+                  Value:     -43.260765 deg
+                  Deviation: 0.0199 deg
+               Kappa:
+                  Value:     -7.425372 deg
+                  Deviation: 0.0225 deg
+               Xc:
+                  Value:     99.392600 ou
+                  Deviation: 0.00574 ou
+               Yc:
+                  Value:     169.564576 ou
+                  Deviation: 0.00707 ou
+               Zc:
+                  Value:     143.682036 ou
+                  Deviation: 0.00594 ou
+            Photo 116: EX-01-13510_0139_0126.jpg
+               Omega:
+                  Value:     78.197321 deg
+                  Deviation: 0.0335 deg
+               Phi:
+                  Value:     -45.123786 deg
+                  Deviation: 0.0199 deg
+               Kappa:
+                  Value:     -7.538328 deg
+                  Deviation: 0.0233 deg
+               Xc:
+                  Value:     99.156640 ou
+                  Deviation: 0.00567 ou
+               Yc:
+                  Value:     169.519451 ou
+                  Deviation: 0.00692 ou
+               Zc:
+                  Value:     144.063735 ou
+                  Deviation: 0.0059 ou
+            Photo 117: EX-01-13510_0139_0127.jpg
+               Omega:
+                  Value:     78.502589 deg
+                  Deviation: 0.033 deg
+               Phi:
+                  Value:     -44.428799 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     -6.985778 deg
+                  Deviation: 0.0229 deg
+               Xc:
+                  Value:     100.837271 ou
+                  Deviation: 0.00509 ou
+               Yc:
+                  Value:     169.213105 ou
+                  Deviation: 0.00559 ou
+               Zc:
+                  Value:     148.444016 ou
+                  Deviation: 0.00536 ou
+            Photo 118: EX-01-13510_0139_0128.jpg
+               Omega:
+                  Value:     78.033194 deg
+                  Deviation: 0.0325 deg
+               Phi:
+                  Value:     -43.436728 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     -7.609353 deg
+                  Deviation: 0.0225 deg
+               Xc:
+                  Value:     100.072784 ou
+                  Deviation: 0.0043 ou
+               Yc:
+                  Value:     170.144572 ou
+                  Deviation: 0.00414 ou
+               Zc:
+                  Value:     153.223211 ou
+                  Deviation: 0.00462 ou
+            Photo 119: EX-01-13510_0139_0130.jpg
+               Omega:
+                  Value:     78.571883 deg
+                  Deviation: 0.032 deg
+               Phi:
+                  Value:     -41.763962 deg
+                  Deviation: 0.0199 deg
+               Kappa:
+                  Value:     -7.087277 deg
+                  Deviation: 0.0219 deg
+               Xc:
+                  Value:     99.913590 ou
+                  Deviation: 0.00426 ou
+               Yc:
+                  Value:     169.942413 ou
+                  Deviation: 0.00398 ou
+               Zc:
+                  Value:     160.554556 ou
+                  Deviation: 0.00468 ou
+            Photo 120: EX-01-13510_0139_0131.jpg
+               Omega:
+                  Value:     77.828178 deg
+                  Deviation: 0.0326 deg
+               Phi:
+                  Value:     -43.282879 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     -7.755863 deg
+                  Deviation: 0.0225 deg
+               Xc:
+                  Value:     100.140838 ou
+                  Deviation: 0.00443 ou
+               Yc:
+                  Value:     169.255127 ou
+                  Deviation: 0.00406 ou
+               Zc:
+                  Value:     160.220231 ou
+                  Deviation: 0.00489 ou
+            Photo 121: EX-01-13510_0139_0133.jpg
+               Omega:
+                  Value:     79.768702 deg
+                  Deviation: 0.0292 deg
+               Phi:
+                  Value:     -31.358183 deg
+                  Deviation: 0.0199 deg
+               Kappa:
+                  Value:     -4.562377 deg
+                  Deviation: 0.0191 deg
+               Xc:
+                  Value:     100.168202 ou
+                  Deviation: 0.00451 ou
+               Yc:
+                  Value:     169.473811 ou
+                  Deviation: 0.00435 ou
+               Zc:
+                  Value:     152.720034 ou
+                  Deviation: 0.00488 ou
+            Photo 122: EX-01-13510_0139_0134.jpg
+               Omega:
+                  Value:     81.081308 deg
+                  Deviation: 0.0271 deg
+               Phi:
+                  Value:     -15.817430 deg
+                  Deviation: 0.0202 deg
+               Kappa:
+                  Value:     -2.246441 deg
+                  Deviation: 0.0169 deg
+               Xc:
+                  Value:     100.183944 ou
+                  Deviation: 0.00476 ou
+               Yc:
+                  Value:     168.867621 ou
+                  Deviation: 0.00462 ou
+               Zc:
+                  Value:     151.919478 ou
+                  Deviation: 0.00518 ou
+            Photo 123: EX-01-13510_0139_0135.jpg
+               Omega:
+                  Value:     81.737135 deg
+                  Deviation: 0.025 deg
+               Phi:
+                  Value:     8.674764 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     0.885816 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     99.457605 ou
+                  Deviation: 0.00475 ou
+               Yc:
+                  Value:     169.681731 ou
+                  Deviation: 0.00497 ou
+               Zc:
+                  Value:     149.877018 ou
+                  Deviation: 0.00507 ou
+            Photo 124: EX-01-13510_0139_0136.jpg
+               Omega:
+                  Value:     82.609117 deg
+                  Deviation: 0.0251 deg
+               Phi:
+                  Value:     8.040572 deg
+                  Deviation: 0.0201 deg
+               Kappa:
+                  Value:     1.817734 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     99.654111 ou
+                  Deviation: 0.00545 ou
+               Yc:
+                  Value:     168.767100 ou
+                  Deviation: 0.00616 ou
+               Zc:
+                  Value:     146.491659 ou
+                  Deviation: 0.00576 ou
+            Photo 125: EX-01-13510_0139_0137.jpg
+               Omega:
+                  Value:     81.614790 deg
+                  Deviation: 0.025 deg
+               Phi:
+                  Value:     9.009686 deg
+                  Deviation: 0.02 deg
+               Kappa:
+                  Value:     2.435738 deg
+                  Deviation: 0.0164 deg
+               Xc:
+                  Value:     100.039647 ou
+                  Deviation: 0.00625 ou
+               Yc:
+                  Value:     166.731327 ou
+                  Deviation: 0.00714 ou
+               Zc:
+                  Value:     144.405318 ou
+                  Deviation: 0.00669 ou
+            Photo 126: EX-01-13510_0141_0000.jpg
+               Omega:
+                  Value:     120.503050 deg
+                  Deviation: 0.0258 deg
+               Phi:
+                  Value:     -9.444810 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     6.573548 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     92.433194 ou
+                  Deviation: 0.00554 ou
+               Yc:
+                  Value:     171.663584 ou
+                  Deviation: 0.007 ou
+               Zc:
+                  Value:     143.308308 ou
+                  Deviation: 0.00581 ou
+            Photo 127: EX-01-13510_0141_0001.jpg
+               Omega:
+                  Value:     120.119021 deg
+                  Deviation: 0.0258 deg
+               Phi:
+                  Value:     -9.343290 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     6.939129 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     91.502302 ou
+                  Deviation: 0.00555 ou
+               Yc:
+                  Value:     171.901040 ou
+                  Deviation: 0.00702 ou
+               Zc:
+                  Value:     143.369178 ou
+                  Deviation: 0.00583 ou
+            Photo 128: EX-01-13510_0141_0002.jpg
+               Omega:
+                  Value:     120.139203 deg
+                  Deviation: 0.0258 deg
+               Phi:
+                  Value:     -9.181993 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     6.023726 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     89.710820 ou
+                  Deviation: 0.00573 ou
+               Yc:
+                  Value:     172.339644 ou
+                  Deviation: 0.0073 ou
+               Zc:
+                  Value:     142.923467 ou
+                  Deviation: 0.00601 ou
+            Photo 129: EX-01-13510_0141_0003.jpg
+               Omega:
+                  Value:     119.555249 deg
+                  Deviation: 0.0255 deg
+               Phi:
+                  Value:     -3.743980 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     3.457024 deg
+                  Deviation: 0.0169 deg
+               Xc:
+                  Value:     89.532002 ou
+                  Deviation: 0.00539 ou
+               Yc:
+                  Value:     172.579799 ou
+                  Deviation: 0.0067 ou
+               Zc:
+                  Value:     144.662297 ou
+                  Deviation: 0.00569 ou
+            Photo 130: EX-01-13510_0141_0004.jpg
+               Omega:
+                  Value:     119.320108 deg
+                  Deviation: 0.0253 deg
+               Phi:
+                  Value:     2.996410 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     -1.174348 deg
+                  Deviation: 0.0169 deg
+               Xc:
+                  Value:     87.102658 ou
+                  Deviation: 0.0049 ou
+               Yc:
+                  Value:     173.722273 ou
+                  Deviation: 0.00584 ou
+               Zc:
+                  Value:     148.421655 ou
+                  Deviation: 0.00528 ou
+            Photo 131: EX-01-13510_0141_0005.jpg
+               Omega:
+                  Value:     119.510116 deg
+                  Deviation: 0.0253 deg
+               Phi:
+                  Value:     -0.289343 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     1.245007 deg
+                  Deviation: 0.0169 deg
+               Xc:
+                  Value:     87.523064 ou
+                  Deviation: 0.00449 ou
+               Yc:
+                  Value:     173.230741 ou
+                  Deviation: 0.005 ou
+               Zc:
+                  Value:     151.946032 ou
+                  Deviation: 0.00497 ou
+            Photo 132: EX-01-13510_0141_0006.jpg
+               Omega:
+                  Value:     119.726287 deg
+                  Deviation: 0.0256 deg
+               Phi:
+                  Value:     -7.169377 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     5.231263 deg
+                  Deviation: 0.017 deg
+               Xc:
+                  Value:     86.777560 ou
+                  Deviation: 0.00446 ou
+               Yc:
+                  Value:     172.642207 ou
+                  Deviation: 0.00484 ou
+               Zc:
+                  Value:     156.006497 ou
+                  Deviation: 0.00508 ou
+            Photo 133: EX-01-13510_0141_0009.jpg
+               Omega:
+                  Value:     119.618432 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -9.821408 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     6.788240 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     90.612204 ou
+                  Deviation: 0.00496 ou
+               Yc:
+                  Value:     170.778457 ou
+                  Deviation: 0.00553 ou
+               Zc:
+                  Value:     148.408341 ou
+                  Deviation: 0.00552 ou
+            Photo 134: EX-01-13510_0141_0010.jpg
+               Omega:
+                  Value:     119.540647 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -11.325869 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     7.583762 deg
+                  Deviation: 0.0172 deg
+               Xc:
+                  Value:     91.589774 ou
+                  Deviation: 0.0054 ou
+               Yc:
+                  Value:     171.323308 ou
+                  Deviation: 0.0066 ou
+               Zc:
+                  Value:     144.638630 ou
+                  Deviation: 0.00576 ou
+            Photo 135: EX-01-13510_0141_0011.jpg
+               Omega:
+                  Value:     120.129294 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -14.653944 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     9.664083 deg
+                  Deviation: 0.0174 deg
+               Xc:
+                  Value:     91.588793 ou
+                  Deviation: 0.00587 ou
+               Yc:
+                  Value:     171.142307 ou
+                  Deviation: 0.00744 ou
+               Zc:
+                  Value:     142.351544 ou
+                  Deviation: 0.00618 ou
+            Photo 136: EX-01-13510_0141_0012.jpg
+               Omega:
+                  Value:     119.423038 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -11.049204 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     6.706218 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     91.419424 ou
+                  Deviation: 0.00592 ou
+               Yc:
+                  Value:     171.119425 ou
+                  Deviation: 0.00752 ou
+               Zc:
+                  Value:     142.184195 ou
+                  Deviation: 0.00623 ou
+            Photo 137: EX-01-13510_0141_0013.jpg
+               Omega:
+                  Value:     119.488426 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -12.427803 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     7.749047 deg
+                  Deviation: 0.0172 deg
+               Xc:
+                  Value:     93.576042 ou
+                  Deviation: 0.00584 ou
+               Yc:
+                  Value:     170.709116 ou
+                  Deviation: 0.0074 ou
+               Zc:
+                  Value:     142.301950 ou
+                  Deviation: 0.00612 ou
+            Photo 138: EX-01-13510_0141_0014.jpg
+               Omega:
+                  Value:     119.252283 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -9.528031 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     6.153670 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     93.188720 ou
+                  Deviation: 0.00508 ou
+               Yc:
+                  Value:     171.106047 ou
+                  Deviation: 0.00602 ou
+               Zc:
+                  Value:     146.066100 ou
+                  Deviation: 0.00544 ou
+            Photo 139: EX-01-13510_0141_0015.jpg
+               Omega:
+                  Value:     119.147435 deg
+                  Deviation: 0.0257 deg
+               Phi:
+                  Value:     -6.793931 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     4.455527 deg
+                  Deviation: 0.0169 deg
+               Xc:
+                  Value:     93.785936 ou
+                  Deviation: 0.00463 ou
+               Yc:
+                  Value:     170.495345 ou
+                  Deviation: 0.00492 ou
+               Zc:
+                  Value:     149.622126 ou
+                  Deviation: 0.00513 ou
+            Photo 140: EX-01-13510_0141_0016.jpg
+               Omega:
+                  Value:     119.029175 deg
+                  Deviation: 0.0256 deg
+               Phi:
+                  Value:     -6.231932 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     4.216869 deg
+                  Deviation: 0.0169 deg
+               Xc:
+                  Value:     94.368216 ou
+                  Deviation: 0.00425 ou
+               Yc:
+                  Value:     170.370383 ou
+                  Deviation: 0.00403 ou
+               Zc:
+                  Value:     153.309804 ou
+                  Deviation: 0.00481 ou
+            Photo 141: EX-01-13510_0141_0020.jpg
+               Omega:
+                  Value:     118.153144 deg
+                  Deviation: 0.0255 deg
+               Phi:
+                  Value:     -5.271441 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     3.785651 deg
+                  Deviation: 0.0168 deg
+               Xc:
+                  Value:     96.386225 ou
+                  Deviation: 0.00421 ou
+               Yc:
+                  Value:     169.775214 ou
+                  Deviation: 0.00376 ou
+               Zc:
+                  Value:     155.129448 ou
+                  Deviation: 0.00477 ou
+            Photo 142: EX-01-13510_0141_0021.jpg
+               Omega:
+                  Value:     119.428793 deg
+                  Deviation: 0.0255 deg
+               Phi:
+                  Value:     -3.843416 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     3.400916 deg
+                  Deviation: 0.0168 deg
+               Xc:
+                  Value:     96.524337 ou
+                  Deviation: 0.00464 ou
+               Yc:
+                  Value:     169.676284 ou
+                  Deviation: 0.00468 ou
+               Zc:
+                  Value:     150.534092 ou
+                  Deviation: 0.0051 ou
+            Photo 143: EX-01-13510_0141_0022.jpg
+               Omega:
+                  Value:     117.972545 deg
+                  Deviation: 0.0255 deg
+               Phi:
+                  Value:     -3.055471 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     3.497850 deg
+                  Deviation: 0.0167 deg
+               Xc:
+                  Value:     96.159765 ou
+                  Deviation: 0.00527 ou
+               Yc:
+                  Value:     169.311452 ou
+                  Deviation: 0.00595 ou
+               Zc:
+                  Value:     146.545880 ou
+                  Deviation: 0.00568 ou
+            Photo 144: EX-01-13510_0141_0023.jpg
+               Omega:
+                  Value:     118.651236 deg
+                  Deviation: 0.0257 deg
+               Phi:
+                  Value:     -5.981584 deg
+                  Deviation: 0.0197 deg
+               Kappa:
+                  Value:     4.822139 deg
+                  Deviation: 0.0169 deg
+               Xc:
+                  Value:     96.344522 ou
+                  Deviation: 0.00562 ou
+               Yc:
+                  Value:     171.346326 ou
+                  Deviation: 0.00725 ou
+               Zc:
+                  Value:     142.529004 ou
+                  Deviation: 0.00576 ou
+            Photo 145: EX-01-13510_0141_0024.jpg
+               Omega:
+                  Value:     119.553078 deg
+                  Deviation: 0.0257 deg
+               Phi:
+                  Value:     -6.199344 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     5.179549 deg
+                  Deviation: 0.0169 deg
+               Xc:
+                  Value:     96.694179 ou
+                  Deviation: 0.00574 ou
+               Yc:
+                  Value:     171.178341 ou
+                  Deviation: 0.00744 ou
+               Zc:
+                  Value:     142.060389 ou
+                  Deviation: 0.00587 ou
+            Photo 146: EX-01-13510_0141_0025.jpg
+               Omega:
+                  Value:     119.597961 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -10.659063 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     7.139628 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     96.879872 ou
+                  Deviation: 0.00581 ou
+               Yc:
+                  Value:     170.377883 ou
+                  Deviation: 0.00738 ou
+               Zc:
+                  Value:     142.389167 ou
+                  Deviation: 0.006 ou
+            Photo 147: EX-01-13510_0141_0026.jpg
+               Omega:
+                  Value:     119.161821 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -10.331909 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     6.963898 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     97.851722 ou
+                  Deviation: 0.00597 ou
+               Yc:
+                  Value:     169.954528 ou
+                  Deviation: 0.0076 ou
+               Zc:
+                  Value:     141.985069 ou
+                  Deviation: 0.00615 ou
+            Photo 148: EX-01-13510_0141_0027.jpg
+               Omega:
+                  Value:     119.543198 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -9.448087 deg
+                  Deviation: 0.0197 deg
+               Kappa:
+                  Value:     6.501117 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     98.113638 ou
+                  Deviation: 0.0057 ou
+               Yc:
+                  Value:     171.470171 ou
+                  Deviation: 0.00746 ou
+               Zc:
+                  Value:     142.094323 ou
+                  Deviation: 0.00575 ou
+            Photo 149: EX-01-13510_0141_0028.jpg
+               Omega:
+                  Value:     119.303549 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -9.789706 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     6.654532 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     98.278260 ou
+                  Deviation: 0.00563 ou
+               Yc:
+                  Value:     171.828816 ou
+                  Deviation: 0.00742 ou
+               Zc:
+                  Value:     142.159828 ou
+                  Deviation: 0.00566 ou
+            Photo 150: EX-01-13510_0141_0029.jpg
+               Omega:
+                  Value:     119.600225 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -10.972019 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     6.880963 deg
+                  Deviation: 0.0172 deg
+               Xc:
+                  Value:     94.315035 ou
+                  Deviation: 0.00567 ou
+               Yc:
+                  Value:     171.983249 ou
+                  Deviation: 0.00741 ou
+               Zc:
+                  Value:     142.006057 ou
+                  Deviation: 0.00582 ou
+            Photo 151: EX-01-13510_0141_0030.jpg
+               Omega:
+                  Value:     119.417675 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -12.083657 deg
+                  Deviation: 0.0197 deg
+               Kappa:
+                  Value:     7.611225 deg
+                  Deviation: 0.0172 deg
+               Xc:
+                  Value:     96.365945 ou
+                  Deviation: 0.00566 ou
+               Yc:
+                  Value:     171.644538 ou
+                  Deviation: 0.00738 ou
+               Zc:
+                  Value:     142.138366 ou
+                  Deviation: 0.00576 ou
+            Photo 152: EX-01-13510_0141_0031.jpg
+               Omega:
+                  Value:     118.793486 deg
+                  Deviation: 0.0256 deg
+               Phi:
+                  Value:     -3.558820 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     2.349505 deg
+                  Deviation: 0.0168 deg
+               Xc:
+                  Value:     93.867664 ou
+                  Deviation: 0.0056 ou
+               Yc:
+                  Value:     172.606684 ou
+                  Deviation: 0.00738 ou
+               Zc:
+                  Value:     141.994438 ou
+                  Deviation: 0.00572 ou
+            Photo 153: EX-01-13510_0141_0032.jpg
+               Omega:
+                  Value:     118.622234 deg
+                  Deviation: 0.0255 deg
+               Phi:
+                  Value:     -3.980052 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     2.882659 deg
+                  Deviation: 0.0168 deg
+               Xc:
+                  Value:     92.514742 ou
+                  Deviation: 0.00564 ou
+               Yc:
+                  Value:     172.608117 ou
+                  Deviation: 0.00739 ou
+               Zc:
+                  Value:     142.115698 ou
+                  Deviation: 0.0058 ou
+            Photo 154: EX-01-13510_0141_0033.jpg
+               Omega:
+                  Value:     118.443238 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -7.780361 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     5.153212 deg
+                  Deviation: 0.017 deg
+               Xc:
+                  Value:     96.070365 ou
+                  Deviation: 0.00559 ou
+               Yc:
+                  Value:     172.207716 ou
+                  Deviation: 0.00736 ou
+               Zc:
+                  Value:     142.073841 ou
+                  Deviation: 0.00566 ou
+            Photo 155: EX-01-13510_0141_0034.jpg
+               Omega:
+                  Value:     119.168684 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -8.654989 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     5.934666 deg
+                  Deviation: 0.017 deg
+               Xc:
+                  Value:     96.451227 ou
+                  Deviation: 0.00571 ou
+               Yc:
+                  Value:     170.939182 ou
+                  Deviation: 0.00731 ou
+               Zc:
+                  Value:     142.430100 ou
+                  Deviation: 0.00587 ou
+            Photo 156: EX-01-13510_0141_0035.jpg
+               Omega:
+                  Value:     119.903281 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -16.930837 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     11.153909 deg
+                  Deviation: 0.0176 deg
+               Xc:
+                  Value:     95.828845 ou
+                  Deviation: 0.00499 ou
+               Yc:
+                  Value:     170.544058 ou
+                  Deviation: 0.00577 ou
+               Zc:
+                  Value:     146.708816 ou
+                  Deviation: 0.00531 ou
+            Photo 157: EX-01-13510_0141_0036.jpg
+               Omega:
+                  Value:     118.977754 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -11.624405 deg
+                  Deviation: 0.0198 deg
+               Kappa:
+                  Value:     7.232134 deg
+                  Deviation: 0.0172 deg
+               Xc:
+                  Value:     96.156485 ou
+                  Deviation: 0.00438 ou
+               Yc:
+                  Value:     170.904623 ou
+                  Deviation: 0.00454 ou
+               Zc:
+                  Value:     150.494946 ou
+                  Deviation: 0.00474 ou
+            Photo 158: EX-01-13510_0141_0037.jpg
+               Omega:
+                  Value:     118.850728 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -11.204672 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     7.047285 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     96.397768 ou
+                  Deviation: 0.00417 ou
+               Yc:
+                  Value:     170.086672 ou
+                  Deviation: 0.0038 ou
+               Zc:
+                  Value:     154.437356 ou
+                  Deviation: 0.00469 ou
+            Photo 159: EX-01-13510_0141_0038.jpg
+               Omega:
+                  Value:     119.292261 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -11.607952 deg
+                  Deviation: 0.0194 deg
+               Kappa:
+                  Value:     7.607932 deg
+                  Deviation: 0.0172 deg
+               Xc:
+                  Value:     96.450901 ou
+                  Deviation: 0.00397 ou
+               Yc:
+                  Value:     170.538447 ou
+                  Deviation: 0.00357 ou
+               Zc:
+                  Value:     158.414727 ou
+                  Deviation: 0.00448 ou
+            Photo 160: EX-01-13510_0141_0039.jpg
+               Omega:
+                  Value:     119.044886 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -11.764614 deg
+                  Deviation: 0.0194 deg
+               Kappa:
+                  Value:     7.114913 deg
+                  Deviation: 0.0172 deg
+               Xc:
+                  Value:     96.771938 ou
+                  Deviation: 0.00428 ou
+               Yc:
+                  Value:     169.331624 ou
+                  Deviation: 0.00381 ou
+               Zc:
+                  Value:     158.934709 ou
+                  Deviation: 0.0049 ou
+            Photo 161: EX-01-13510_0141_0040.jpg
+               Omega:
+                  Value:     118.950144 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -11.155819 deg
+                  Deviation: 0.0194 deg
+               Kappa:
+                  Value:     7.233301 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     97.802428 ou
+                  Deviation: 0.00426 ou
+               Yc:
+                  Value:     169.400615 ou
+                  Deviation: 0.00378 ou
+               Zc:
+                  Value:     158.792789 ou
+                  Deviation: 0.00482 ou
+            Photo 162: EX-01-13510_0141_0041.jpg
+               Omega:
+                  Value:     118.962012 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -11.623401 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     7.339045 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     97.956145 ou
+                  Deviation: 0.0042 ou
+               Yc:
+                  Value:     169.697418 ou
+                  Deviation: 0.00371 ou
+               Zc:
+                  Value:     155.934572 ou
+                  Deviation: 0.0047 ou
+            Photo 163: EX-01-13510_0141_0042.jpg
+               Omega:
+                  Value:     118.889995 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -11.220379 deg
+                  Deviation: 0.0197 deg
+               Kappa:
+                  Value:     7.351280 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     97.228273 ou
+                  Deviation: 0.00444 ou
+               Yc:
+                  Value:     169.803199 ou
+                  Deviation: 0.00429 ou
+               Zc:
+                  Value:     152.067923 ou
+                  Deviation: 0.00489 ou
+            Photo 164: EX-01-13510_0141_0043.jpg
+               Omega:
+                  Value:     118.969389 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -11.460234 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     7.338097 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     97.967442 ou
+                  Deviation: 0.00495 ou
+               Yc:
+                  Value:     169.476324 ou
+                  Deviation: 0.00536 ou
+               Zc:
+                  Value:     148.418184 ou
+                  Deviation: 0.00532 ou
+            Photo 165: EX-01-13510_0141_0044.jpg
+               Omega:
+                  Value:     119.234810 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -13.264260 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     8.367700 deg
+                  Deviation: 0.0173 deg
+               Xc:
+                  Value:     97.188378 ou
+                  Deviation: 0.00561 ou
+               Yc:
+                  Value:     169.739339 ou
+                  Deviation: 0.00682 ou
+               Zc:
+                  Value:     144.025345 ou
+                  Deviation: 0.00588 ou
+            Photo 166: EX-01-13510_0141_0045.jpg
+               Omega:
+                  Value:     119.031534 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -13.229528 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     7.302734 deg
+                  Deviation: 0.0172 deg
+               Xc:
+                  Value:     97.556421 ou
+                  Deviation: 0.00609 ou
+               Yc:
+                  Value:     169.285356 ou
+                  Deviation: 0.00764 ou
+               Zc:
+                  Value:     142.007607 ou
+                  Deviation: 0.00633 ou
+            Photo 167: EX-01-13510_0141_0046.jpg
+               Omega:
+                  Value:     119.565951 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -14.285675 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     9.260472 deg
+                  Deviation: 0.0174 deg
+               Xc:
+                  Value:     99.959984 ou
+                  Deviation: 0.00626 ou
+               Yc:
+                  Value:     168.687857 ou
+                  Deviation: 0.0078 ou
+               Zc:
+                  Value:     142.039911 ou
+                  Deviation: 0.00644 ou
+            Photo 168: EX-01-13510_0141_0047.jpg
+               Omega:
+                  Value:     119.066469 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -11.432064 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     7.011552 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     100.197164 ou
+                  Deviation: 0.00593 ou
+               Yc:
+                  Value:     168.067969 ou
+                  Deviation: 0.00694 ou
+               Zc:
+                  Value:     144.622369 ou
+                  Deviation: 0.00622 ou
+            Photo 169: EX-01-13510_0141_0048.jpg
+               Omega:
+                  Value:     118.753823 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -10.687470 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     6.711459 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     99.932042 ou
+                  Deviation: 0.00514 ou
+               Yc:
+                  Value:     168.732467 ou
+                  Deviation: 0.00548 ou
+               Zc:
+                  Value:     148.716331 ou
+                  Deviation: 0.00548 ou
+            Photo 170: EX-01-13510_0141_0049.jpg
+               Omega:
+                  Value:     118.960688 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -10.732190 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     6.824593 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     99.873122 ou
+                  Deviation: 0.0045 ou
+               Yc:
+                  Value:     169.569089 ou
+                  Deviation: 0.00435 ou
+               Zc:
+                  Value:     152.564854 ou
+                  Deviation: 0.00486 ou
+            Photo 171: EX-01-13510_0141_0050.jpg
+               Omega:
+                  Value:     118.761649 deg
+                  Deviation: 0.0258 deg
+               Phi:
+                  Value:     -10.338067 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     6.749573 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     100.269296 ou
+                  Deviation: 0.00432 ou
+               Yc:
+                  Value:     169.484042 ou
+                  Deviation: 0.00386 ou
+               Zc:
+                  Value:     156.709176 ou
+                  Deviation: 0.00472 ou
+            Photo 172: EX-01-13510_0141_0051.jpg
+               Omega:
+                  Value:     118.760934 deg
+                  Deviation: 0.0257 deg
+               Phi:
+                  Value:     -9.723124 deg
+                  Deviation: 0.0194 deg
+               Kappa:
+                  Value:     4.905396 deg
+                  Deviation: 0.017 deg
+               Xc:
+                  Value:     100.988806 ou
+                  Deviation: 0.00443 ou
+               Yc:
+                  Value:     169.274747 ou
+                  Deviation: 0.004 ou
+               Zc:
+                  Value:     158.824804 ou
+                  Deviation: 0.00482 ou
+            Photo 173: EX-01-13510_0141_0052.jpg
+               Omega:
+                  Value:     118.621511 deg
+                  Deviation: 0.0257 deg
+               Phi:
+                  Value:     -9.081356 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     6.338298 deg
+                  Deviation: 0.017 deg
+               Xc:
+                  Value:     102.663405 ou
+                  Deviation: 0.0048 ou
+               Yc:
+                  Value:     168.309093 ou
+                  Deviation: 0.00435 ou
+               Zc:
+                  Value:     158.386567 ou
+                  Deviation: 0.00518 ou
+            Photo 174: EX-01-13510_0141_0053.jpg
+               Omega:
+                  Value:     118.699645 deg
+                  Deviation: 0.0257 deg
+               Phi:
+                  Value:     -8.586784 deg
+                  Deviation: 0.0195 deg
+               Kappa:
+                  Value:     5.475817 deg
+                  Deviation: 0.017 deg
+               Xc:
+                  Value:     101.419303 ou
+                  Deviation: 0.00476 ou
+               Yc:
+                  Value:     168.148162 ou
+                  Deviation: 0.00425 ou
+               Zc:
+                  Value:     155.971175 ou
+                  Deviation: 0.00521 ou
+            Photo 175: EX-01-13510_0141_0054.jpg
+               Omega:
+                  Value:     119.119719 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -12.335755 deg
+                  Deviation: 0.0196 deg
+               Kappa:
+                  Value:     7.693908 deg
+                  Deviation: 0.0172 deg
+               Xc:
+                  Value:     100.328538 ou
+                  Deviation: 0.00509 ou
+               Yc:
+                  Value:     167.827114 ou
+                  Deviation: 0.00495 ou
+               Zc:
+                  Value:     151.244469 ou
+                  Deviation: 0.00555 ou
+            Photo 176: EX-01-13510_0141_0055.jpg
+               Omega:
+                  Value:     118.092192 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -8.938464 deg
+                  Deviation: 0.0197 deg
+               Kappa:
+                  Value:     5.679907 deg
+                  Deviation: 0.017 deg
+               Xc:
+                  Value:     101.730854 ou
+                  Deviation: 0.00592 ou
+               Yc:
+                  Value:     167.527845 ou
+                  Deviation: 0.00667 ou
+               Zc:
+                  Value:     145.980629 ou
+                  Deviation: 0.00621 ou
+            Photo 177: EX-01-13510_0141_0056.jpg
+               Omega:
+                  Value:     118.990609 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -9.768493 deg
+                  Deviation: 0.0197 deg
+               Kappa:
+                  Value:     6.569850 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     101.674787 ou
+                  Deviation: 0.00639 ou
+               Yc:
+                  Value:     167.510437 ou
+                  Deviation: 0.00766 ou
+               Zc:
+                  Value:     143.129337 ou
+                  Deviation: 0.00661 ou
+            Photo 178: EX-01-13510_0141_0057.jpg
+               Omega:
+                  Value:     118.990180 deg
+                  Deviation: 0.0259 deg
+               Phi:
+                  Value:     -10.528002 deg
+                  Deviation: 0.0197 deg
+               Kappa:
+                  Value:     6.652055 deg
+                  Deviation: 0.0171 deg
+               Xc:
+                  Value:     101.618943 ou
+                  Deviation: 0.00653 ou
+               Yc:
+                  Value:     167.150484 ou
+                  Deviation: 0.00782 ou
+               Zc:
+                  Value:     142.761129 ou
+                  Deviation: 0.00678 ou
+            Photo 179: EX-01-13510_0141_0058.jpg
+               Omega:
+                  Value:     131.357456 deg
+                  Deviation: 0.0257 deg
+               Phi:
+                  Value:     -8.754394 deg
+                  Deviation: 0.0189 deg
+               Kappa:
+                  Value:     8.866338 deg
+                  Deviation: 0.0178 deg
+               Xc:
+                  Value:     101.887498 ou
+                  Deviation: 0.00653 ou
+               Yc:
+                  Value:     167.193842 ou
+                  Deviation: 0.00784 ou
+               Zc:
+                  Value:     142.793762 ou
+                  Deviation: 0.00676 ou
+            Photo 180: EX-01-13510_0141_0059.jpg
+               Omega:
+                  Value:     131.372058 deg
+                  Deviation: 0.0257 deg
+               Phi:
+                  Value:     -9.002936 deg
+                  Deviation: 0.0189 deg
+               Kappa:
+                  Value:     9.121321 deg
+                  Deviation: 0.0179 deg
+               Xc:
+                  Value:     101.953917 ou
+                  Deviation: 0.00629 ou
+               Yc:
+                  Value:     168.235886 ou
+                  Deviation: 0.0077 ou
+               Zc:
+                  Value:     142.902083 ou
+                  Deviation: 0.00643 ou
+            Photo 181: EX-01-13510_0141_0060.jpg
+               Omega:
+                  Value:     131.683429 deg
+                  Deviation: 0.0257 deg
+               Phi:
+                  Value:     -9.047624 deg
+                  Deviation: 0.0188 deg
+               Kappa:
+                  Value:     10.234069 deg
+                  Deviation: 0.0178 deg
+               Xc:
+                  Value:     99.808809 ou
+                  Deviation: 0.00609 ou
+               Yc:
+                  Value:     168.704498 ou
+                  Deviation: 0.00748 ou
+               Zc:
+                  Value:     142.881464 ou
+                  Deviation: 0.00629 ou
+            Photo 182: EX-01-13510_0141_0061.jpg
+               Omega:
+                  Value:     131.947449 deg
+                  Deviation: 0.0257 deg
+               Phi:
+                  Value:     -10.047296 deg
+                  Deviation: 0.0188 deg
+               Kappa:
+                  Value:     11.366137 deg
+                  Deviation: 0.0179 deg
+               Xc:
+                  Value:     97.816132 ou
+                  Deviation: 0.00577 ou
+               Yc:
+                  Value:     170.051140 ou
+                  Deviation: 0.00723 ou
+               Zc:
+                  Value:     142.928901 ou
+                  Deviation: 0.00595 ou
+            Photo 183: EX-01-13510_0141_0062.jpg
+               Omega:
+                  Value:     131.684871 deg
+                  Deviation: 0.0256 deg
+               Phi:
+                  Value:     -7.571473 deg
+                  Deviation: 0.0188 deg
+               Kappa:
+                  Value:     8.433436 deg
+                  Deviation: 0.0178 deg
+               Xc:
+                  Value:     95.038677 ou
+                  Deviation: 0.00575 ou
+               Yc:
+                  Value:     170.272860 ou
+                  Deviation: 0.00719 ou
+               Zc:
+                  Value:     142.885539 ou
+                  Deviation: 0.00603 ou
+            Photo 184: EX-01-13510_0141_0063.jpg
+               Omega:
+                  Value:     131.841541 deg
+                  Deviation: 0.0256 deg
+               Phi:
+                  Value:     -8.652310 deg
+                  Deviation: 0.0188 deg
+               Kappa:
+                  Value:     9.670169 deg
+                  Deviation: 0.0178 deg
+               Xc:
+                  Value:     92.342880 ou
+                  Deviation: 0.00577 ou
+               Yc:
+                  Value:     170.782644 ou
+                  Deviation: 0.00721 ou
+               Zc:
+                  Value:     142.929192 ou
+                  Deviation: 0.0061 ou
+            Photo 185: EX-01-13510_0141_0064.jpg
+               Omega:
+                  Value:     131.638824 deg
+                  Deviation: 0.0256 deg
+               Phi:
+                  Value:     -8.625054 deg
+                  Deviation: 0.0188 deg
+               Kappa:
+                  Value:     9.096719 deg
+                  Deviation: 0.0178 deg
+               Xc:
+                  Value:     90.312348 ou
+                  Deviation: 0.00576 ou
+               Yc:
+                  Value:     171.747249 ou
+                  Deviation: 0.00729 ou
+               Zc:
+                  Value:     142.920040 ou
+                  Deviation: 0.00607 ou
+            Photo 186: EX-01-13510_0141_0065.jpg
+               Omega:
+                  Value:     131.793216 deg
+                  Deviation: 0.0257 deg
+               Phi:
+                  Value:     -8.629356 deg
+                  Deviation: 0.0192 deg
+               Kappa:
+                  Value:     8.304768 deg
+                  Deviation: 0.018 deg
+               Xc:
+                  Value:     87.174627 ou
+                  Deviation: 0.00581 ou
+               Yc:
+                  Value:     174.003711 ou
+                  Deviation: 0.00749 ou
+               Zc:
+                  Value:     143.016958 ou
+                  Deviation: 0.006 ou
+            Photo 187: EX-01-13510_0141_0071.jpg
+               Omega:
+                  Value:     51.737341 deg
+                  Deviation: 0.0258 deg
+               Phi:
+                  Value:     -3.906449 deg
+                  Deviation: 0.0186 deg
+               Kappa:
+                  Value:     -3.118557 deg
+                  Deviation: 0.0181 deg
+               Xc:
+                  Value:     86.887031 ou
+                  Deviation: 0.00473 ou
+               Yc:
+                  Value:     173.581088 ou
+                  Deviation: 0.00546 ou
+               Zc:
+                  Value:     150.258150 ou
+                  Deviation: 0.00516 ou
+            Photo 188: EX-01-13510_0141_0072.jpg
+               Omega:
+                  Value:     51.821779 deg
+                  Deviation: 0.0258 deg
+               Phi:
+                  Value:     -4.920453 deg
+                  Deviation: 0.0186 deg
+               Kappa:
+                  Value:     -3.653747 deg
+                  Deviation: 0.0181 deg
+               Xc:
+                  Value:     86.994849 ou
+                  Deviation: 0.00454 ou
+               Yc:
+                  Value:     172.725807 ou
+                  Deviation: 0.00496 ou
+               Zc:
+                  Value:     153.521413 ou
+                  Deviation: 0.00511 ou
+            Photo 189: EX-01-13510_0141_0073.jpg
+               Omega:
+                  Value:     51.379221 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -9.005539 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.461981 deg
+                  Deviation: 0.0182 deg
+               Xc:
+                  Value:     87.471070 ou
+                  Deviation: 0.00424 ou
+               Yc:
+                  Value:     173.185789 ou
+                  Deviation: 0.00468 ou
+               Zc:
+                  Value:     158.216156 ou
+                  Deviation: 0.00481 ou
+            Photo 190: EX-01-13510_0141_0074.jpg
+               Omega:
+                  Value:     51.137202 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -9.853687 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -7.239756 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     86.291968 ou
+                  Deviation: 0.00473 ou
+               Yc:
+                  Value:     172.432003 ou
+                  Deviation: 0.00557 ou
+               Zc:
+                  Value:     162.076729 ou
+                  Deviation: 0.00539 ou
+            Photo 191: EX-01-13510_0141_0075.jpg
+               Omega:
+                  Value:     51.003691 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -9.890025 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -7.537582 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     86.466806 ou
+                  Deviation: 0.00503 ou
+               Yc:
+                  Value:     171.423003 ou
+                  Deviation: 0.00602 ou
+               Zc:
+                  Value:     163.905004 ou
+                  Deviation: 0.00578 ou
+            Photo 192: EX-01-13510_0141_0076.jpg
+               Omega:
+                  Value:     50.862707 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -10.209918 deg
+                  Deviation: 0.0183 deg
+               Kappa:
+                  Value:     -7.322842 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     88.468707 ou
+                  Deviation: 0.00477 ou
+               Yc:
+                  Value:     171.002507 ou
+                  Deviation: 0.00548 ou
+               Zc:
+                  Value:     163.398041 ou
+                  Deviation: 0.00552 ou
+            Photo 193: EX-01-13510_0141_0077.jpg
+               Omega:
+                  Value:     50.864853 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -10.387701 deg
+                  Deviation: 0.0183 deg
+               Kappa:
+                  Value:     -7.261059 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     88.681799 ou
+                  Deviation: 0.00503 ou
+               Yc:
+                  Value:     169.749022 ou
+                  Deviation: 0.00567 ou
+               Zc:
+                  Value:     163.824565 ou
+                  Deviation: 0.00591 ou
+            Photo 194: EX-01-13510_0141_0078.jpg
+               Omega:
+                  Value:     50.606478 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -9.856694 deg
+                  Deviation: 0.0183 deg
+               Kappa:
+                  Value:     -7.412363 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     88.862295 ou
+                  Deviation: 0.00498 ou
+               Yc:
+                  Value:     168.692788 ou
+                  Deviation: 0.00503 ou
+               Zc:
+                  Value:     159.839003 ou
+                  Deviation: 0.00601 ou
+            Photo 195: EX-01-13510_0141_0079.jpg
+               Omega:
+                  Value:     51.183363 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -9.834516 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.236008 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     88.921267 ou
+                  Deviation: 0.00469 ou
+               Yc:
+                  Value:     170.159841 ou
+                  Deviation: 0.0047 ou
+               Zc:
+                  Value:     154.466083 ou
+                  Deviation: 0.0055 ou
+            Photo 196: EX-01-13510_0141_0080.jpg
+               Omega:
+                  Value:     51.330906 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -5.170053 deg
+                  Deviation: 0.0185 deg
+               Kappa:
+                  Value:     -3.893510 deg
+                  Deviation: 0.0181 deg
+               Xc:
+                  Value:     88.028405 ou
+                  Deviation: 0.00504 ou
+               Yc:
+                  Value:     170.189153 ou
+                  Deviation: 0.00534 ou
+               Zc:
+                  Value:     151.340800 ou
+                  Deviation: 0.00583 ou
+            Photo 197: EX-01-13510_0141_0082.jpg
+               Omega:
+                  Value:     51.411026 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -7.897268 deg
+                  Deviation: 0.019 deg
+               Kappa:
+                  Value:     -5.000872 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     91.875644 ou
+                  Deviation: 0.0056 ou
+               Yc:
+                  Value:     171.066069 ou
+                  Deviation: 0.00689 ou
+               Zc:
+                  Value:     143.824618 ou
+                  Deviation: 0.00596 ou
+            Photo 198: EX-01-13510_0141_0083.jpg
+               Omega:
+                  Value:     51.750403 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -9.737305 deg
+                  Deviation: 0.0187 deg
+               Kappa:
+                  Value:     -6.791196 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     93.540413 ou
+                  Deviation: 0.00544 ou
+               Yc:
+                  Value:     171.449593 ou
+                  Deviation: 0.00681 ou
+               Zc:
+                  Value:     143.730856 ou
+                  Deviation: 0.00571 ou
+            Photo 199: EX-01-13510_0141_0084.jpg
+               Omega:
+                  Value:     51.040990 deg
+                  Deviation: 0.0267 deg
+               Phi:
+                  Value:     -10.938406 deg
+                  Deviation: 0.0186 deg
+               Kappa:
+                  Value:     -7.069920 deg
+                  Deviation: 0.0184 deg
+               Xc:
+                  Value:     94.288137 ou
+                  Deviation: 0.00532 ou
+               Yc:
+                  Value:     170.159577 ou
+                  Deviation: 0.00626 ou
+               Zc:
+                  Value:     145.487703 ou
+                  Deviation: 0.00573 ou
+            Photo 200: EX-01-13510_0141_0086.jpg
+               Omega:
+                  Value:     51.331983 deg
+                  Deviation: 0.0263 deg
+               Phi:
+                  Value:     -10.616294 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -7.184328 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     93.973044 ou
+                  Deviation: 0.00405 ou
+               Yc:
+                  Value:     171.013068 ou
+                  Deviation: 0.00385 ou
+               Zc:
+                  Value:     154.081587 ou
+                  Deviation: 0.00458 ou
+            Photo 201: EX-01-13510_0141_0087.jpg
+               Omega:
+                  Value:     50.731718 deg
+                  Deviation: 0.0263 deg
+               Phi:
+                  Value:     -11.229194 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -7.777217 deg
+                  Deviation: 0.0184 deg
+               Xc:
+                  Value:     93.730531 ou
+                  Deviation: 0.00413 ou
+               Yc:
+                  Value:     170.291297 ou
+                  Deviation: 0.00381 ou
+               Zc:
+                  Value:     158.053773 ou
+                  Deviation: 0.00479 ou
+            Photo 202: EX-01-13510_0141_0088.jpg
+               Omega:
+                  Value:     50.763320 deg
+                  Deviation: 0.0263 deg
+               Phi:
+                  Value:     -11.581302 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -8.036443 deg
+                  Deviation: 0.0184 deg
+               Xc:
+                  Value:     94.411377 ou
+                  Deviation: 0.00428 ou
+               Yc:
+                  Value:     170.198278 ou
+                  Deviation: 0.00427 ou
+               Zc:
+                  Value:     161.781612 ou
+                  Deviation: 0.00491 ou
+            Photo 203: EX-01-13510_0141_0089.jpg
+               Omega:
+                  Value:     50.725232 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -11.241718 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -7.949284 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     94.070027 ou
+                  Deviation: 0.00476 ou
+               Yc:
+                  Value:     170.068128 ou
+                  Deviation: 0.00541 ou
+               Zc:
+                  Value:     165.840834 ou
+                  Deviation: 0.00537 ou
+            Photo 204: EX-01-13510_0141_0090.jpg
+               Omega:
+                  Value:     50.634393 deg
+                  Deviation: 0.0263 deg
+               Phi:
+                  Value:     -11.448629 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -8.203951 deg
+                  Deviation: 0.0184 deg
+               Xc:
+                  Value:     94.877719 ou
+                  Deviation: 0.00519 ou
+               Yc:
+                  Value:     170.337312 ou
+                  Deviation: 0.00641 ou
+               Zc:
+                  Value:     169.047743 ou
+                  Deviation: 0.00568 ou
+            Photo 205: EX-01-13510_0141_0091.jpg
+               Omega:
+                  Value:     51.077818 deg
+                  Deviation: 0.0263 deg
+               Phi:
+                  Value:     -11.940829 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -8.410029 deg
+                  Deviation: 0.0184 deg
+               Xc:
+                  Value:     96.129371 ou
+                  Deviation: 0.00536 ou
+               Yc:
+                  Value:     169.053650 ou
+                  Deviation: 0.00634 ou
+               Zc:
+                  Value:     168.709543 ou
+                  Deviation: 0.00593 ou
+            Photo 206: EX-01-13510_0141_0092.jpg
+               Omega:
+                  Value:     50.596160 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -11.334223 deg
+                  Deviation: 0.0183 deg
+               Kappa:
+                  Value:     -7.723967 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     96.075239 ou
+                  Deviation: 0.0054 ou
+               Yc:
+                  Value:     167.607876 ou
+                  Deviation: 0.00587 ou
+               Zc:
+                  Value:     166.814913 ou
+                  Deviation: 0.00615 ou
+            Photo 207: EX-01-13510_0141_0093.jpg
+               Omega:
+                  Value:     50.622864 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -10.655591 deg
+                  Deviation: 0.0183 deg
+               Kappa:
+                  Value:     -7.703925 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     96.044282 ou
+                  Deviation: 0.00485 ou
+               Yc:
+                  Value:     167.982859 ou
+                  Deviation: 0.00467 ou
+               Zc:
+                  Value:     162.654743 ou
+                  Deviation: 0.00562 ou
+            Photo 208: EX-01-13510_0141_0094.jpg
+               Omega:
+                  Value:     50.663840 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -11.058940 deg
+                  Deviation: 0.0183 deg
+               Kappa:
+                  Value:     -7.489037 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     96.017871 ou
+                  Deviation: 0.00443 ou
+               Yc:
+                  Value:     168.826738 ou
+                  Deviation: 0.00391 ou
+               Zc:
+                  Value:     158.750985 ou
+                  Deviation: 0.00513 ou
+            Photo 209: EX-01-13510_0141_0095.jpg
+               Omega:
+                  Value:     50.820696 deg
+                  Deviation: 0.0263 deg
+               Phi:
+                  Value:     -10.891743 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -7.540541 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     96.673283 ou
+                  Deviation: 0.00437 ou
+               Yc:
+                  Value:     169.283793 ou
+                  Deviation: 0.00392 ou
+               Zc:
+                  Value:     154.565382 ou
+                  Deviation: 0.00495 ou
+            Photo 210: EX-01-13510_0141_0096.jpg
+               Omega:
+                  Value:     50.901070 deg
+                  Deviation: 0.0264 deg
+               Phi:
+                  Value:     -10.136876 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.691178 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     96.133149 ou
+                  Deviation: 0.00501 ou
+               Yc:
+                  Value:     167.989955 ou
+                  Deviation: 0.00486 ou
+               Zc:
+                  Value:     150.873535 ou
+                  Deviation: 0.00568 ou
+            Photo 211: EX-01-13510_0141_0097.jpg
+               Omega:
+                  Value:     50.324128 deg
+                  Deviation: 0.0266 deg
+               Phi:
+                  Value:     -11.155391 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -7.445183 deg
+                  Deviation: 0.0184 deg
+               Xc:
+                  Value:     96.562858 ou
+                  Deviation: 0.0052 ou
+               Yc:
+                  Value:     169.311466 ou
+                  Deviation: 0.00583 ou
+               Zc:
+                  Value:     146.939720 ou
+                  Deviation: 0.00563 ou
+            Photo 212: EX-01-13510_0141_0098.jpg
+               Omega:
+                  Value:     50.883648 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -10.990532 deg
+                  Deviation: 0.0185 deg
+               Kappa:
+                  Value:     -8.303966 deg
+                  Deviation: 0.0184 deg
+               Xc:
+                  Value:     97.312167 ou
+                  Deviation: 0.00554 ou
+               Yc:
+                  Value:     169.811380 ou
+                  Deviation: 0.00671 ou
+               Zc:
+                  Value:     144.312079 ou
+                  Deviation: 0.00582 ou
+            Photo 213: EX-01-13510_0141_0099.jpg
+               Omega:
+                  Value:     50.763487 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -11.430181 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -7.767428 deg
+                  Deviation: 0.0184 deg
+               Xc:
+                  Value:     98.816613 ou
+                  Deviation: 0.00543 ou
+               Yc:
+                  Value:     169.004402 ou
+                  Deviation: 0.00625 ou
+               Zc:
+                  Value:     146.010571 ou
+                  Deviation: 0.00576 ou
+            Photo 214: EX-01-13510_0141_0100.jpg
+               Omega:
+                  Value:     51.397792 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -11.280950 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -7.261848 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     98.794902 ou
+                  Deviation: 0.00486 ou
+               Yc:
+                  Value:     168.879096 ou
+                  Deviation: 0.00494 ou
+               Zc:
+                  Value:     150.305515 ou
+                  Deviation: 0.0053 ou
+            Photo 215: EX-01-13510_0141_0101.jpg
+               Omega:
+                  Value:     50.475820 deg
+                  Deviation: 0.0266 deg
+               Phi:
+                  Value:     -14.070274 deg
+                  Deviation: 0.0183 deg
+               Kappa:
+                  Value:     -9.742099 deg
+                  Deviation: 0.0186 deg
+               Xc:
+                  Value:     98.321458 ou
+                  Deviation: 0.00467 ou
+               Yc:
+                  Value:     168.262603 ou
+                  Deviation: 0.00417 ou
+               Zc:
+                  Value:     154.221477 ou
+                  Deviation: 0.00526 ou
+            Photo 216: EX-01-13510_0141_0102.jpg
+               Omega:
+                  Value:     50.525735 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -12.857272 deg
+                  Deviation: 0.0183 deg
+               Kappa:
+                  Value:     -9.261319 deg
+                  Deviation: 0.0185 deg
+               Xc:
+                  Value:     97.726657 ou
+                  Deviation: 0.00453 ou
+               Yc:
+                  Value:     168.419824 ou
+                  Deviation: 0.00393 ou
+               Zc:
+                  Value:     158.410683 ou
+                  Deviation: 0.00518 ou
+            Photo 217: EX-01-13510_0141_0103.jpg
+               Omega:
+                  Value:     51.221564 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -9.151747 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.235271 deg
+                  Deviation: 0.0182 deg
+               Xc:
+                  Value:     97.883350 ou
+                  Deviation: 0.00462 ou
+               Yc:
+                  Value:     168.720935 ou
+                  Deviation: 0.0044 ou
+               Zc:
+                  Value:     162.160771 ou
+                  Deviation: 0.00523 ou
+            Photo 218: EX-01-13510_0141_0104.jpg
+               Omega:
+                  Value:     50.941585 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -9.663173 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -7.006406 deg
+                  Deviation: 0.0182 deg
+               Xc:
+                  Value:     97.652145 ou
+                  Deviation: 0.00503 ou
+               Yc:
+                  Value:     168.928979 ou
+                  Deviation: 0.00553 ou
+               Zc:
+                  Value:     166.421009 ou
+                  Deviation: 0.00558 ou
+            Photo 219: EX-01-13510_0141_0105.jpg
+               Omega:
+                  Value:     50.825669 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -9.153790 deg
+                  Deviation: 0.0183 deg
+               Kappa:
+                  Value:     -6.835989 deg
+                  Deviation: 0.0182 deg
+               Xc:
+                  Value:     99.988457 ou
+                  Deviation: 0.00535 ou
+               Yc:
+                  Value:     167.916341 ou
+                  Deviation: 0.00575 ou
+               Zc:
+                  Value:     166.616927 ou
+                  Deviation: 0.00588 ou
+            Photo 220: EX-01-13510_0141_0106.jpg
+               Omega:
+                  Value:     50.850500 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -9.109918 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.134282 deg
+                  Deviation: 0.0182 deg
+               Xc:
+                  Value:     99.938259 ou
+                  Deviation: 0.00508 ou
+               Yc:
+                  Value:     168.007072 ou
+                  Deviation: 0.00513 ou
+               Zc:
+                  Value:     164.523820 ou
+                  Deviation: 0.00562 ou
+            Photo 221: EX-01-13510_0141_0107.jpg
+               Omega:
+                  Value:     51.125318 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -8.565826 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -5.637313 deg
+                  Deviation: 0.0182 deg
+               Xc:
+                  Value:     100.330374 ou
+                  Deviation: 0.00499 ou
+               Yc:
+                  Value:     167.310050 ou
+                  Deviation: 0.0045 ou
+               Zc:
+                  Value:     160.888561 ou
+                  Deviation: 0.0056 ou
+            Photo 222: EX-01-13510_0141_0108.jpg
+               Omega:
+                  Value:     50.794799 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -8.960604 deg
+                  Deviation: 0.0183 deg
+               Kappa:
+                  Value:     -6.087515 deg
+                  Deviation: 0.0182 deg
+               Xc:
+                  Value:     99.921969 ou
+                  Deviation: 0.00487 ou
+               Yc:
+                  Value:     167.425366 ou
+                  Deviation: 0.00421 ou
+               Zc:
+                  Value:     156.467408 ou
+                  Deviation: 0.00547 ou
+            Photo 223: EX-01-13510_0141_0109.jpg
+               Omega:
+                  Value:     50.948345 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -9.033800 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -5.977263 deg
+                  Deviation: 0.0182 deg
+               Xc:
+                  Value:     99.765320 ou
+                  Deviation: 0.00498 ou
+               Yc:
+                  Value:     167.637957 ou
+                  Deviation: 0.00462 ou
+               Zc:
+                  Value:     152.706960 ou
+                  Deviation: 0.00552 ou
+            Photo 224: EX-01-13510_0141_0110.jpg
+               Omega:
+                  Value:     50.398198 deg
+                  Deviation: 0.0263 deg
+               Phi:
+                  Value:     -8.595733 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -5.960882 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     99.398418 ou
+                  Deviation: 0.00567 ou
+               Yc:
+                  Value:     166.552002 ou
+                  Deviation: 0.00576 ou
+               Zc:
+                  Value:     148.696742 ou
+                  Deviation: 0.00627 ou
+            Photo 225: EX-01-13510_0141_0111.jpg
+               Omega:
+                  Value:     50.592491 deg
+                  Deviation: 0.0264 deg
+               Phi:
+                  Value:     -10.424334 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.863000 deg
+                  Deviation: 0.0184 deg
+               Xc:
+                  Value:     99.442390 ou
+                  Deviation: 0.00587 ou
+               Yc:
+                  Value:     168.345743 ou
+                  Deviation: 0.00693 ou
+               Zc:
+                  Value:     144.396131 ou
+                  Deviation: 0.00618 ou
+            Photo 226: EX-01-13510_0141_0112.jpg
+               Omega:
+                  Value:     51.229222 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -10.664718 deg
+                  Deviation: 0.0185 deg
+               Kappa:
+                  Value:     -6.947648 deg
+                  Deviation: 0.0184 deg
+               Xc:
+                  Value:     101.669014 ou
+                  Deviation: 0.00628 ou
+               Yc:
+                  Value:     167.214357 ou
+                  Deviation: 0.00736 ou
+               Zc:
+                  Value:     144.051996 ou
+                  Deviation: 0.00657 ou
+            Photo 227: EX-01-13510_0141_0113.jpg
+               Omega:
+                  Value:     50.606029 deg
+                  Deviation: 0.0264 deg
+               Phi:
+                  Value:     -9.761795 deg
+                  Deviation: 0.0185 deg
+               Kappa:
+                  Value:     -6.608558 deg
+                  Deviation: 0.0184 deg
+               Xc:
+                  Value:     101.377456 ou
+                  Deviation: 0.00647 ou
+               Yc:
+                  Value:     166.233528 ou
+                  Deviation: 0.00739 ou
+               Zc:
+                  Value:     144.208745 ou
+                  Deviation: 0.00686 ou
+            Photo 228: EX-01-13510_0141_0114.jpg
+               Omega:
+                  Value:     50.799947 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -9.716174 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.639922 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     101.488953 ou
+                  Deviation: 0.00586 ou
+               Yc:
+                  Value:     166.433340 ou
+                  Deviation: 0.00611 ou
+               Zc:
+                  Value:     148.175120 ou
+                  Deviation: 0.00634 ou
+            Photo 229: EX-01-13510_0141_0115.jpg
+               Omega:
+                  Value:     50.865247 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -9.776976 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.661375 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     102.056776 ou
+                  Deviation: 0.00521 ou
+               Yc:
+                  Value:     167.383140 ou
+                  Deviation: 0.00497 ou
+               Zc:
+                  Value:     152.430109 ou
+                  Deviation: 0.00564 ou
+            Photo 230: EX-01-13510_0141_0116.jpg
+               Omega:
+                  Value:     50.745328 deg
+                  Deviation: 0.0262 deg
+               Phi:
+                  Value:     -10.038932 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.522678 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     102.182281 ou
+                  Deviation: 0.00492 ou
+               Yc:
+                  Value:     167.755813 ou
+                  Deviation: 0.0044 ou
+               Zc:
+                  Value:     156.554751 ou
+                  Deviation: 0.00536 ou
+            Photo 231: EX-01-13510_0141_0117.jpg
+               Omega:
+                  Value:     50.929972 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -9.367120 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.207156 deg
+                  Deviation: 0.0182 deg
+               Xc:
+                  Value:     102.510430 ou
+                  Deviation: 0.00482 ou
+               Yc:
+                  Value:     168.489801 ou
+                  Deviation: 0.00451 ou
+               Zc:
+                  Value:     160.753109 ou
+                  Deviation: 0.0052 ou
+            Photo 232: EX-01-13510_0141_0118.jpg
+               Omega:
+                  Value:     51.053749 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -9.399530 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.197579 deg
+                  Deviation: 0.0182 deg
+               Xc:
+                  Value:     102.585865 ou
+                  Deviation: 0.00507 ou
+               Yc:
+                  Value:     168.698060 ou
+                  Deviation: 0.00522 ou
+               Zc:
+                  Value:     164.464644 ou
+                  Deviation: 0.00541 ou
+            Photo 233: EX-01-13510_0141_0119.jpg
+               Omega:
+                  Value:     50.845098 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -10.429533 deg
+                  Deviation: 0.0183 deg
+               Kappa:
+                  Value:     -5.936334 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     100.702532 ou
+                  Deviation: 0.00517 ou
+               Yc:
+                  Value:     167.894822 ou
+                  Deviation: 0.00525 ou
+               Zc:
+                  Value:     164.740325 ou
+                  Deviation: 0.00568 ou
+            Photo 234: EX-01-13510_0141_0120.jpg
+               Omega:
+                  Value:     50.508769 deg
+                  Deviation: 0.0258 deg
+               Phi:
+                  Value:     -7.056262 deg
+                  Deviation: 0.0183 deg
+               Kappa:
+                  Value:     -5.492973 deg
+                  Deviation: 0.0181 deg
+               Xc:
+                  Value:     98.254294 ou
+                  Deviation: 0.00522 ou
+               Yc:
+                  Value:     166.336395 ou
+                  Deviation: 0.00467 ou
+               Zc:
+                  Value:     161.363660 ou
+                  Deviation: 0.00604 ou
+            Photo 235: EX-01-13510_0141_0121.jpg
+               Omega:
+                  Value:     50.676072 deg
+                  Deviation: 0.026 deg
+               Phi:
+                  Value:     -9.112225 deg
+                  Deviation: 0.0183 deg
+               Kappa:
+                  Value:     -5.827756 deg
+                  Deviation: 0.0182 deg
+               Xc:
+                  Value:     98.259930 ou
+                  Deviation: 0.00476 ou
+               Yc:
+                  Value:     167.621913 ou
+                  Deviation: 0.00409 ou
+               Zc:
+                  Value:     158.346625 ou
+                  Deviation: 0.00545 ou
+            Photo 236: EX-01-13510_0141_0122.jpg
+               Omega:
+                  Value:     51.022808 deg
+                  Deviation: 0.0261 deg
+               Phi:
+                  Value:     -9.225004 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.332791 deg
+                  Deviation: 0.0182 deg
+               Xc:
+                  Value:     99.378885 ou
+                  Deviation: 0.00456 ou
+               Yc:
+                  Value:     168.881280 ou
+                  Deviation: 0.00418 ou
+               Zc:
+                  Value:     153.875958 ou
+                  Deviation: 0.00502 ou
+            Photo 237: EX-01-13510_0141_0123.jpg
+               Omega:
+                  Value:     51.384700 deg
+                  Deviation: 0.0264 deg
+               Phi:
+                  Value:     -9.315742 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.006855 deg
+                  Deviation: 0.0182 deg
+               Xc:
+                  Value:     97.840147 ou
+                  Deviation: 0.00505 ou
+               Yc:
+                  Value:     168.244198 ou
+                  Deviation: 0.00509 ou
+               Zc:
+                  Value:     149.940690 ou
+                  Deviation: 0.00559 ou
+            Photo 238: EX-01-13510_0141_0124.jpg
+               Omega:
+                  Value:     50.522674 deg
+                  Deviation: 0.0263 deg
+               Phi:
+                  Value:     -9.223778 deg
+                  Deviation: 0.0184 deg
+               Kappa:
+                  Value:     -6.350948 deg
+                  Deviation: 0.0183 deg
+               Xc:
+                  Value:     99.091685 ou
+                  Deviation: 0.00538 ou
+               Yc:
+                  Value:     169.534807 ou
+                  Deviation: 0.00633 ou
+               Zc:
+                  Value:     145.675102 ou
+                  Deviation: 0.00564 ou
+            Photo 239: EX-01-13510_0141_0125.jpg
+               Omega:
+                  Value:     51.327086 deg
+                  Deviation: 0.0265 deg
+               Phi:
+                  Value:     -10.702073 deg
+                  Deviation: 0.0185 deg
+               Kappa:
+                  Value:     -6.873565 deg
+                  Deviation: 0.0184 deg
+               Xc:
+                  Value:     99.992371 ou
+                  Deviation: 0.00593 ou
+               Yc:
+                  Value:     170.145136 ou
+                  Deviation: 0.0076 ou
+               Zc:
+                  Value:     142.249493 ou
+                  Deviation: 0.00602 ou
+   Quality
+      Photographs
+         Total number: 239
+         Numbers used: 239
+      Cameras
+         Total number: 1 (1 simple, 0 mixed)
+         Camera1:
+            Calibration:                   yes
+            Number of photos using camera: 239
+            Photo point coverage:
+               Rectangular: 75%-97% (95% average, 98% union)
+               Convex hull: 65%-95% (90% average, 98% union)
+               Radial:      86%-97% (94% average, 97% union)
+      Photo Coverage
+         Reference points outside calibrated region:
+            Camera 1: none
+      Point Measurements
+         Number of control pts: 6
+         Number of check pts: 3
+         Number of object pts: 17984
+         CP ray count: 12-17 (14.0 avg)
+            1 points with 12 rays.
+            1 points with 13 rays.
+            3 points with 14 rays.
+            1 points with 17 rays.
+         CCP ray count: 13-17 (15.3 avg)
+            1 points with 13 rays.
+            1 points with 16 rays.
+            1 points with 17 rays.
+         OP ray count: 2-84 (10.9 avg)
+            3086 points with 2 rays.
+            2518 points with 3 rays.
+            1796 points with 4 rays.
+            1201 points with 5 rays.
+            959 points with 6 rays.
+            822 points with 7 rays.
+            593 points with 8 rays.
+            480 points with 9 rays.
+            495 points with 10 rays.
+            422 points with 11 rays.
+            375 points with 12 rays.
+            363 points with 13 rays.
+            313 points with 14 rays.
+            296 points with 15 rays.
+            270 points with 16 rays.
+            270 points with 17 rays.
+            245 points with 18 rays.
+            229 points with 19 rays.
+            195 points with 20 rays.
+            203 points with 21 rays.
+            218 points with 22 rays.
+            203 points with 23 rays.
+            175 points with 24 rays.
+            179 points with 25 rays.
+            132 points with 26 rays.
+            157 points with 27 rays.
+            131 points with 28 rays.
+            145 points with 29 rays.
+            115 points with 30 rays.
+            92 points with 31 rays.
+            93 points with 32 rays.
+            79 points with 33 rays.
+            74 points with 34 rays.
+            87 points with 35 rays.
+            81 points with 36 rays.
+            68 points with 37 rays.
+            64 points with 38 rays.
+            70 points with 39 rays.
+            50 points with 40 rays.
+            51 points with 41 rays.
+            49 points with 42 rays.
+            44 points with 43 rays.
+            48 points with 44 rays.
+            44 points with 45 rays.
+            41 points with 46 rays.
+            37 points with 47 rays.
+            33 points with 48 rays.
+            27 points with 49 rays.
+            22 points with 50 rays.
+            23 points with 51 rays.
+            33 points with 52 rays.
+            26 points with 53 rays.
+            21 points with 54 rays.
+            15 points with 55 rays.
+            16 points with 56 rays.
+            11 points with 57 rays.
+            16 points with 58 rays.
+            15 points with 59 rays.
+            14 points with 60 rays.
+            10 points with 61 rays.
+            5 points with 62 rays.
+            6 points with 63 rays.
+            5 points with 64 rays.
+            7 points with 65 rays.
+            3 points with 66 rays.
+            3 points with 67 rays.
+            1 points with 68 rays.
+            5 points with 69 rays.
+            2 points with 70 rays.
+            1 points with 71 rays.
+            2 points with 73 rays.
+            1 points with 74 rays.
+            1 points with 75 rays.
+            2 points with 76 rays.
+            1 points with 77 rays.
+            1 points with 82 rays.
+            1 points with 84 rays.
+      Point Marking Residuals
+         Overall point RMS: 1.698 pixels
+         Mark point residuals:
+            Maximum: 9.154 pixels (OP 18855 on photo 56)
+         Object point residuals (RMS over all images of a point):
+            Minimum: 0.001 pixels (OP 26357 over 2 images)
+            Maximum: 8.359 pixels (OP 18855 over 2 images)
+         Photo residuals (RMS over all points in an image):
+            Minimum: 1.253 pixels (photo 3 over 922 points)
+            Maximum: 2.085 pixels (photo 200 over 639 points)
+      Point Precision
+         Total standard deviation (RMS of X/Y/Z std):
+            Minimum: 0.0049 (OP 10471)
+            Maximum: 26 (OP 23679)
+         Maximum X standard deviation: 23 (OP 23679)
+         Maximum Y standard deviation: 12 (OP 23679)
+         Maximum Z standard deviation: 4.6 (OP 23679)
+         Points with high correlations
+            Points with correlation above 95%: 3734
+            Points with correlation above 99%: 1329
+            Points with highest correlations:
+               Points 11013: -100.00
+               Points 11048: -100.00
+               Points 13131: 100.00
+               Points 12526: 99.99
+               Points 12696: 99.99
+      Point Angles
+         CP
+            Minimum: 46.1 degrees (CP 9, label 110)
+            Maximum: 72.6 degrees (CP 6, label 107)
+            Average: 62.8 degrees
+         CCP
+            Minimum: 51.0 degrees (CCP 5, label 106)
+            Maximum: 74.8 degrees (CCP 4, label 105)
+            Average: 65.6 degrees
+         OP
+            Minimum: 0.2 degrees (OP 23679)
+            Maximum: 90.0 degrees (OP 12078)
+            Average: 37.5 degrees
+            Smallest angles (ID, angle [deg], vis in cameras)
+                23679:  0.17 ( 119  120)
+                22948:  0.18 ( 109  111)
+                23133:  0.18 ( 118  119  120)
+                23123:  0.19 ( 111  118  119  120  121)
+                22995:  0.19 ( 111  119  120)
+                23134:  0.19 ( 111  118  119  120  121)
+                21062:  0.19 (  83   94  103  189  190  191  192  193  194  195  200  201  202  206  207  208  209  216  217  220  221)
+                26119:  0.19 ( 187  196)
+                22994:  0.19 ( 111  119  120)
+                21100:  0.19 (  84   87   88)
+                26090:  0.26 ( 187  196)
+                26287:  0.27 ( 189  194)
+                23474:  0.28 ( 115  116)
+                22286:  0.28 (  94   95)
+                23424:  0.28 ( 115  116  117)
+                21094:  0.29 (  84   87)
+                23402:  0.29 ( 114  210  211  213  224  225  228  237  238)
+                26274:  0.30 ( 189  193)
+      Ctrl measurements
+         Prior
+             id,        x,        y,        z,     stdx,     stdy,     stdz, label
+              1,   89.073,  180.033,  148.240,    0.005,    0.005,    0.005, 101
+              2,  104.951,  176.549,  148.250,    0.005,    0.005,    0.005, 103
+              6,   87.366,  180.638,  159.528,    0.005,    0.005,    0.005, 107
+              7,   91.732,  179.553,  162.199,    0.005,    0.005,    0.005, 108
+              8,  102.354,  177.198,  163.191,    0.005,    0.005,    0.005, 109
+              9,  107.580,  176.062,  161.685,    0.005,    0.005,    0.005, 110
+         Posterior
+             id,        x,        y,        z,     stdx,     stdy,     stdz, rays, label
+              1,   89.071,  180.034,  148.240,  0.00436,  0.00538,  0.00431,   14, 101
+              2,  104.942,  176.542,  148.252,  0.00438,  0.00566,  0.00427,   14, 103
+              6,   87.365,  180.637,  159.525,  0.00398,  0.00467,  0.00395,   17, 107
+              7,   91.730,  179.551,  162.196,   0.0035,  0.00422,  0.00348,   13, 108
+              8,  102.357,  177.201,  163.198,  0.00364,  0.00424,  0.00356,   14, 109
+              9,  107.585,  176.060,  161.685,  0.00435,   0.0049,   0.0042,   12, 110
+         Diff (pos=abs diff, std=rel diff)
+             id,        x,        y,        z,       xy,      xyz,     stdx,     stdy,     stdz, rays, label
+              1,   -0.002,    0.001,   -0.000,    0.003,    0.003,   -12.8%,     7.5%,   -13.9%,   14, 101
+              2,   -0.009,   -0.007,    0.002,    0.011,    0.011,   -12.4%,    13.2%,   -14.7%,   14, 103
+              6,   -0.001,   -0.001,   -0.003,    0.001,    0.003,   -20.4%,    -6.5%,   -20.9%,   17, 107
+              7,   -0.002,   -0.002,   -0.003,    0.003,    0.004,   -30.0%,   -15.5%,   -30.3%,   13, 108
+              8,    0.003,    0.003,    0.007,    0.004,    0.008,   -27.2%,   -15.2%,   -28.8%,   14, 109
+              9,    0.005,   -0.002,    0.000,    0.005,    0.005,   -13.1%,    -2.1%,   -16.0%,   12, 110
+         Ctrl point delta
+            Max: 0.011 ou (103, pt 2)
+            Max X,Y,Z
+               X: 0.009 ou (103, pt 2)
+               Y: 0.007 ou (103, pt 2)
+               Z: 0.007 ou (109, pt 8)
+            RMS: 0.006 ou (from 6 items)
+      Check measurements
+         Prior
+             id,        x,        y,        z,     stdx,     stdy,     stdz, label
+              3,  104.983,  176.639,  154.018,    0.005,    0.005,    0.005, 104
+              4,   89.114,  180.139,  154.004,    0.005,    0.005,    0.005, 105
+              5,   96.940,  177.946,  159.787,    0.005,    0.005,    0.005, 106
+         Posterior
+             id,        x,        y,        z,     stdx,     stdy,     stdz, rays, label
+              3,  104.982,  176.636,  154.022,  0.00378,  0.00442,  0.00366,   17, 104
+              4,   89.120,  180.134,  153.999,  0.00375,  0.00437,  0.00372,   16, 105
+              5,   96.947,  177.943,  159.789,  0.00296,   0.0034,  0.00294,   13, 106
+         Diff (pos=abs diff, std=rel diff)
+             id,        x,        y,        z,       xy,      xyz,     stdx,     stdy,     stdz, rays, label
+              3,   -0.001,   -0.003,    0.004,    0.003,    0.005,   -24.3%,   -11.6%,   -26.8%,   17, 104
+              4,    0.006,   -0.005,   -0.005,    0.007,    0.009,   -24.9%,   -12.7%,   -25.7%,   16, 105
+              5,    0.007,   -0.003,    0.002,    0.007,    0.008,   -40.8%,   -32.1%,   -41.1%,   13, 106
+         Check point delta
+            Max: 0.009 ou (105, pt 4)
+            Max X,Y,Z
+               X: 0.007 ou (106, pt 5)
+               Y: 0.005 ou (105, pt 4)
+               Z: 0.005 ou (105, pt 4)
+            RMS: 0.007 ou (from 3 items)
+End of result file
