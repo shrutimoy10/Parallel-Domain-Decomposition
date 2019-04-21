@@ -6,7 +6,7 @@ double* read_b(int row)
 		int k;
 		FILE* fptr;
 
-		if((fptr = fopen("../Results/Matrices/b.txt","r")) == NULL)
+		if((fptr = fopen("../../../Matrices/b.txt","r")) == NULL)
 		{
 			printf("Error in opening b.txt");
 			exit(1);

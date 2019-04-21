@@ -12,7 +12,7 @@ double** densify(int row,int col,int* row_idx,int* col_idx,double* val,int nnz)
 	unsigned int len;
 
 	len = sizeof(double*)*row + sizeof(double)*row*col;
-	printf("\nlen -> %u\n",len);
+	//printf("\nlen -> %u\n",len);
 	M = (double**)malloc(len);
 
 	if(M == NULL)
@@ -79,25 +79,25 @@ double** read_coo_matrix(char* block_type,int row,int col)
 	if (strcmp(block_type,"Hcc") == 0)
 	{
 		printf("\nHcc\n");
-		H = read_file("../Results/Matrices/Hcc.txt");
+		H = read_file("../../../Matrices/Hcc.txt");
 	}
 
 	else if (strcmp(block_type,"Hcs") == 0)
 	{
 		printf("\nHcs\n");
-		H = read_file("../Results/Matrices/Hcs.txt");
+		H = read_file("../../../Matrices/Hcs.txt");
 	}
 
 	else if (strcmp(block_type,"Hsc") == 0)
 	{
 		printf("\nHsc\n");
-		H = read_file("../Results/Matrices/Hsc.txt");
+		H = read_file("../../../Matrices/Hsc.txt");
 	}
 
 	else if (strcmp(block_type,"Hss") == 0)
 	{
 		printf("\nHss\n");
-		H = read_file("../Results/Matrices/Hss.txt");
+		H = read_file("../../../Matrices/Hss.txt");
 	}
 
 	return H;

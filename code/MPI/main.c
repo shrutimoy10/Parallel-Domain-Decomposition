@@ -31,7 +31,7 @@ Compile as : cc -w main.c st_io.c
 
 
 #define CAM_PARAMS 353 		
-#define STRUCT_PARAMS 78963
+#define STRUCT_PARAMS 21000
 
 //driver function
 int main()
@@ -42,17 +42,17 @@ int main()
 	double** Hss;
 	double*  b;
 
-	//Hcc = read_coo_matrix("Hcc",CAM_PARAMS,CAM_PARAMS);
-	//Hcs = read_coo_matrix("Hcs",CAM_PARAMS,STRUCT_PARAMS);
-	//Hsc = read_coo_matrix("Hsc",STRUCT_PARAMS,CAM_PARAMS);
+	Hcc = read_coo_matrix("Hcc",CAM_PARAMS,CAM_PARAMS);
+	Hcs = read_coo_matrix("Hcs",CAM_PARAMS,STRUCT_PARAMS);
+	Hsc = read_coo_matrix("Hsc",STRUCT_PARAMS,CAM_PARAMS);
 	Hss = read_coo_matrix("Hss",STRUCT_PARAMS,STRUCT_PARAMS);
-	//b = read_b(CAM_PARAMS+STRUCT_PARAMS); // read the RHS of the system
+	b = read_b(CAM_PARAMS+STRUCT_PARAMS); // read the RHS of the system
 
-	//printf("\nHcc -> %d\n", Hcc[0][2]); // -1.4099e+07
-	//printf("\nHcs -> %d\n", Hcs[2][0]); // -2139.91
-	//printf("\nHsc -> %d\n", Hsc[2][0]); // -2139.91
-	printf("\nHss -> %d\n", Hss[2][0]); // 6479.53
-	//printf("\nb -> %d\n", b[2]); // -4.07038e+06
+	printf("\nHcc -> %lf\n", Hcc[0][2]); // -1.4099e+07
+	printf("\nHcs -> %lf\n", Hcs[2][0]); // -2139.91
+	printf("\nHsc -> %lf\n", Hsc[2][0]); // -2139.91
+	printf("\nHss -> %lf\n", Hss[2][0]); // 6479.53
+	printf("\nb -> %lf\n", b[2]); // -4.07038e+06
 
 	return 0;
 }
