@@ -1,0 +1,8 @@
+Damped Bundle Adjustment Toolbox result file
+   Project
+      Name        : Bundle Soln 
+      File name   : $DBATROOT/demo/data/dbat/pmexports/roma-pmexport.txt
+   Problems and suggestions:
+      Project Problems:
+         Structural rank: ok.
+         Numerical rank: ok.
