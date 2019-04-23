@@ -8,6 +8,7 @@ typedef struct
 	int* row_idx;
 	int* col_idx;
 	double* val;
+	int nnz;
 }coo_mat;
 
 
@@ -71,6 +72,7 @@ coo_mat* read_file(char* input_filename)
 	mat_read->row_idx = (int*)malloc(nnz*sizeof(int));
 	mat_read->col_idx = (int*)malloc(nnz*sizeof(int));
 	mat_read->val     = (double*)malloc(nnz*sizeof(double));
+	mat_read->nnz     = nnz;
 
 	r8st_data_read (input_filename, row, col, nnz, mat_read->row_idx, mat_read->col_idx, mat_read->val);
 

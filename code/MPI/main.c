@@ -18,20 +18,23 @@ The matrices are read from files with the name of the blocks(Hcc,...). In these 
 first entry gives the no of non zeros in the matrix block.
 
 Compile as : cc -w main.c st_io.c
+
+The no of processors this can be run on is 3
 */
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #include<malloc.h>
+#include<mpi.h>
 
 #include"st_io.h"
 #include"read_coo_matrix.h"
 #include"read_b.h"
 
-
+//parameters for the ROMA dataset
 #define CAM_PARAMS 353 		
-#define STRUCT_PARAMS 21000
+#define STRUCT_PARAMS 78963
 
 
 
@@ -43,6 +46,7 @@ int main()
 	coo_mat* Hcs;
 	coo_mat* Hsc;
 	coo_mat* Hss;
+	coo_mat* Hss_inv;
 	double*  b;
 
 	Hcc = read_coo_matrix("Hcc",CAM_PARAMS,CAM_PARAMS);
@@ -51,12 +55,9 @@ int main()
 	Hss = read_coo_matrix("Hss",STRUCT_PARAMS,STRUCT_PARAMS);
 	b = read_b(CAM_PARAMS+STRUCT_PARAMS); // read the RHS of the system
 
+	Hss_inv = compute_block_inverse(Hss);
+
 	
-	printf("\nHcc_row -> %d\n", Hcc->row_idx[8]); // -1.4099e+07
-	printf("\nHcc_col -> %d\n", Hcc->col_idx[8]); // -2139.91
-	//printf("\nHsc -> %lf\n", Hsc[2][0]); // -2139.91
-	printf("\nHcc_val -> %lf\n", Hcc->val[8]); // 6479.53
-	printf("\nb -> %lf\n", b[2]); // -4.07038e+06
 
 	return 0;
 }
