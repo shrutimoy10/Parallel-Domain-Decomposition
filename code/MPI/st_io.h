@@ -6,7 +6,7 @@ int i4vec_max ( int n, int a[] );
 int i4vec_min ( int n, int a[] );
 void sort_heap_external ( int n, int *indx, int *i, int *j, int isgn );
 void r8st_data_read ( char *input_filename, int m, int n, int nst, 
-  int ist[], int jst[], double a[] );
+  int ist[], int jst[], float a[] );
 void r8st_header_print ( int i_min, int i_max, int j_min, int j_max, int m, 
   int n, int nst );
 void r8st_header_read ( char *input_filename, int *i_min, int *i_max, int *j_min, 

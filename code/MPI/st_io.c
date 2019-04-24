@@ -475,9 +475,10 @@ void sort_heap_external ( int n, int *indx, int *i, int *j, int isgn )
 /******************************************************************************/
 
 void r8st_data_read ( char *input_filename, int m, int n, int nst, int ist[], 
-  int jst[], double ast[] )
+  int jst[], float ast[] )
 
 /******************************************************************************/
+//The code has been changed from double to float.
 /*
   Purpose:
 
@@ -511,7 +512,7 @@ file.
     Output, double AST[NST], the nonzero values.
 */
 {
-  double aij;
+  float aij;
   int i;
   FILE *input;
   int j;
@@ -522,7 +523,7 @@ file.
 
   for ( k = 0; k < nst; k++ )
   {
-    num = fscanf ( input, "%i%i%lf", &i, &j, &aij );
+    num = fscanf ( input, "%i%i%f", &i, &j, &aij );
 
     if ( num != 3 )
     {

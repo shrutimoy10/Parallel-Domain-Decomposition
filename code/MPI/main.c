@@ -31,7 +31,7 @@ The no of processors this can be run on is 3
 #include"st_io.h"
 #include"read_coo_matrix.h"
 #include"read_b.h"
-//#include"compute_block_inverse.h"
+#include"block_operations.h"
 
 //parameters for the ROMA dataset
 #define CAM_PARAMS 353 		
@@ -60,11 +60,12 @@ int main()
 	coo_mat* Hsc;
 	coo_mat* Hss;
 	coo_mat* Hss_inv;
-	double*  b;
+	float*  b;
 	int      Hss_block;
 	int*     recv_row;
 	int*     recv_col;
-	double*  recv_val;
+	float*  recv_val;
+	float** Hss_dense;
 	
 
 	MPI_Init(0,0);
@@ -98,7 +99,7 @@ int main()
 	//allocating memory to the receiving arrays
 	recv_row = (int*) malloc (Hss_block*sizeof(int));
 	recv_col = (int*) malloc (Hss_block*sizeof(int));
-	recv_val = (double*) malloc (Hss_block*sizeof(double));
+	recv_val = (float*) malloc (Hss_block*sizeof(float));
 
 
 	//read the matrices in the master process.
@@ -106,12 +107,17 @@ int main()
 	{
 		printf("\n==============Reading Matrices=================\n");
 
+		printf("\nHcc\n");
 		Hcc = read_coo_matrix("Hcc",CAM_PARAMS,CAM_PARAMS);
+		printf("\nHcs\n");
 		Hcs = read_coo_matrix("Hcs",CAM_PARAMS,STRUCT_PARAMS);
+		printf("\nHsc\n");
 		Hsc = read_coo_matrix("Hsc",STRUCT_PARAMS,CAM_PARAMS);
+		printf("\nHss\n");
 		Hss = read_coo_matrix("Hss",STRUCT_PARAMS,STRUCT_PARAMS);
 
 		// read the RHS of the system
+		printf("\nb\n");
 		b = read_b(CAM_PARAMS+STRUCT_PARAMS); 
 
 		//printf("\nIn Hss, nnz = %d\n",Hss->nnz); // 236889 = 3 x 78963
@@ -120,17 +126,39 @@ int main()
 
 		MPI_Scatter(Hss->row_idx, Hss_block, MPI_INT, recv_row, Hss_block, MPI_INT, root, new_comm);
 		MPI_Scatter(Hss->col_idx, Hss_block, MPI_INT, recv_col, Hss_block, MPI_INT, root, new_comm);
-		MPI_Scatter(Hss->val, Hss_block, MPI_DOUBLE, recv_val, Hss_block, MPI_DOUBLE, root, new_comm);
+		MPI_Scatter(Hss->val, Hss_block, MPI_FLOAT, recv_val, Hss_block, MPI_FLOAT, root, new_comm);
 
+		
 		printf("\nIn rank %d ,Hss_block : %d\n", rank,Hss_block);
-	}	
+		printf("\nIn rank %d ,Row : %d\n", rank,recv_row[3]);
+		printf("\nIn rank %d ,Col : %d\n", rank,recv_col[3]);
+		printf("\nIn rank %d ,Val : %f\n", rank,recv_val[3]);
+		
+
+		//densify the matrix
+		Hss_dense = densify(Hss,Hss_block);
+
+		printf("\nIn rank %d ,Hss_dense val : %f\n", rank,Hss_dense[3][3]);
+
+	}
 	else if(rank == 1 || rank == 2)
 	{
 		MPI_Scatter(NULL, 0, MPI_INT, recv_row, Hss_block, MPI_INT, root, new_comm);
 		MPI_Scatter(NULL, 0, MPI_INT, recv_col, Hss_block, MPI_INT, root, new_comm);
-		MPI_Scatter(NULL, 0, MPI_DOUBLE, recv_val, Hss_block, MPI_DOUBLE, root, new_comm);
+		MPI_Scatter(NULL, 0, MPI_FLOAT, recv_val, Hss_block, MPI_FLOAT, root, new_comm);
 
+		
 		printf("\nIn rank %d ,Hss_block : %d\n", rank,Hss_block);
+		printf("\nIn rank %d ,Row : %d\n", rank,recv_row[3]);
+		printf("\nIn rank %d ,Col : %d\n", rank,recv_col[3]);
+		printf("\nIn rank %d ,Val : %f\n", rank,recv_val[3]);
+		
+
+		//densify the matrix
+		Hss_dense = densify(Hss,Hss_block);
+
+		printf("\nIn rank %d ,Hss_dense val : %f\n", rank,Hss_dense[3][3]);
+	
 	}
 
 	//synchronize

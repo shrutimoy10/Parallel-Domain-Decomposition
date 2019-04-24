@@ -1,8 +1,8 @@
 		
-double* read_b(int row)
+float* read_b(int row)
 {
 
-		double* b;
+		float* b;
 		int k;
 		FILE* fptr;
 
@@ -12,10 +12,10 @@ double* read_b(int row)
 			exit(1);
 		}
 
-		b = (double*) malloc(row*sizeof(double));
+		b = (float*) malloc(row*sizeof(float));
 		
 		for(k=0;k<row;k++)
-			fscanf(fptr,"%lf[^\n]",(b+k));
+			fscanf(fptr,"%f[^\n]",(b+k));
 		
 		fclose(fptr);
 
