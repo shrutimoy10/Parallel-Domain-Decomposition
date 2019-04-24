@@ -61,7 +61,10 @@ int main()
 	coo_mat* Hss;
 	coo_mat* Hss_inv;
 	double*  b;
-
+	int      Hss_block;
+	int*     recv_row;
+	int*     recv_col;
+	double*  recv_val;
 	
 
 	MPI_Init(0,0);
@@ -87,20 +90,22 @@ int main()
 	//get rank of each process in a group
 	MPI_Group_rank(new_group,&new_rank);
 
-	if(rank == root)
-		printf("\nRank : %d, New Rank : %d\n",rank,new_rank);
-	else if(rank == 1)
-		printf("\nRank : %d, New Rank : %d\n",rank,new_rank);
-	else if(rank == 2)
-		printf("\nRank : %d, New Rank : %d\n",rank,new_rank);
-	else
-		printf("\nRank %d not in new group\n",rank);
 
-	//Hss_inv = compute_block_inverse(Hss);
+	//block size of Hss to be sent to each processor
+	//since Hss blocks are 3x3 blocks
+	Hss_block = STRUCT_PARAMS/3; 
+
+	//allocating memory to the receiving arrays
+	recv_row = (int*) malloc (Hss_block*sizeof(int));
+	recv_col = (int*) malloc (Hss_block*sizeof(int));
+	recv_val = (double*) malloc (Hss_block*sizeof(double));
+
 
 	//read the matrices in the master process.
 	if(rank == root)
 	{
+		printf("\n==============Reading Matrices=================\n");
+
 		Hcc = read_coo_matrix("Hcc",CAM_PARAMS,CAM_PARAMS);
 		Hcs = read_coo_matrix("Hcs",CAM_PARAMS,STRUCT_PARAMS);
 		Hsc = read_coo_matrix("Hsc",STRUCT_PARAMS,CAM_PARAMS);
@@ -108,11 +113,29 @@ int main()
 
 		// read the RHS of the system
 		b = read_b(CAM_PARAMS+STRUCT_PARAMS); 
+
+		//printf("\nIn Hss, nnz = %d\n",Hss->nnz); // 236889 = 3 x 78963
+
+		//printf("\nHss_block : %d\n", Hss_block);
+
+		MPI_Scatter(Hss->row_idx, Hss_block, MPI_INT, recv_row, Hss_block, MPI_INT, root, new_comm);
+		MPI_Scatter(Hss->col_idx, Hss_block, MPI_INT, recv_col, Hss_block, MPI_INT, root, new_comm);
+		MPI_Scatter(Hss->val, Hss_block, MPI_DOUBLE, recv_val, Hss_block, MPI_DOUBLE, root, new_comm);
+
+		printf("\nIn rank %d ,Hss_block : %d\n", rank,Hss_block);
 	}	
+	else if(rank == 1 || rank == 2)
+	{
+		MPI_Scatter(NULL, 0, MPI_INT, recv_row, Hss_block, MPI_INT, root, new_comm);
+		MPI_Scatter(NULL, 0, MPI_INT, recv_col, Hss_block, MPI_INT, root, new_comm);
+		MPI_Scatter(NULL, 0, MPI_DOUBLE, recv_val, Hss_block, MPI_DOUBLE, root, new_comm);
 
-	//free(&new_group);
-	//free(&new_comm);
+		printf("\nIn rank %d ,Hss_block : %d\n", rank,Hss_block);
+	}
 
+	//synchronize
+	MPI_Barrier(MPI_COMM_WORLD);
+	
 	MPI_Finalize();
 
 	return 0;

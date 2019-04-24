@@ -92,25 +92,21 @@ coo_mat* read_coo_matrix(char* block_type,int row,int col)
 
 	if (strcmp(block_type,"Hcc") == 0)
 	{
-		printf("\nHcc\n");
 		mat_read = read_file("../../../Matrices/Hcc.txt");
 	}
 
 	else if (strcmp(block_type,"Hcs") == 0)
 	{
-		printf("\nHcs\n");
 		mat_read = read_file("../../../Matrices/Hcs.txt");
 	}
 
 	else if (strcmp(block_type,"Hsc") == 0)
 	{
-		printf("\nHsc\n");
 		mat_read = read_file("../../../Matrices/Hsc.txt");
 	}
 
 	else if (strcmp(block_type,"Hss") == 0)
 	{
-		printf("\nHss\n");
 		mat_read = read_file("../../../Matrices/Hss.txt");
 	}
 
