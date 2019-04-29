@@ -1,5 +1,5 @@
 //this function converts the COO matrix into dense format
-float** densify(coo_mat* mat,int blk_size)
+float** densify(coo_mat* mat,int blk_size,int rank)
 {
 	float** M;
 	float* ptr;
@@ -7,11 +7,9 @@ float** densify(coo_mat* mat,int blk_size)
 	unsigned int len;
 	int blk_len;
 
-	printf("\nBefore Alloc....\n");
 	len = sizeof(float*) * blk_size + sizeof(float)* blk_size * blk_size;
 	//printf("\nlen -> %u\n",len);
 	M = (float**)malloc(len);
-	printf("\nAfter Alloc....\n");
 
 
 	ptr = M + blk_size; // ptr pointing to the first element of the 2D array, since malloc 
@@ -20,16 +18,17 @@ float** densify(coo_mat* mat,int blk_size)
 	for(i = 0; i < blk_size ; i++)
 		M[i] = ptr + blk_size * i; // each row pointer points to appropriate row now.
 
-	blk_len = mat->nnz/3;
+	//blk_len = mat->nnz/3;
 
 	printf("\nBefore Assign....\n");
-	printf("\nblock size : %d\n", blk_size);
-	printf("\nNNZ : %d\n", blk_len);
-	for(i = 0 ; i< blk_len ; i++)
+	printf("\nrow idx 0 : %d\n", mat->row_idx[0]);
+	printf("\ncol idx 0 : %d\n", mat->col_idx[0]);
+	printf("\nNNZ : %d\n", mat->nnz);
+	for(i = 0 ; i< mat->nnz ; i++)
 	{
 		j = mat->row_idx[i]-mat->row_idx[0];
 		k = mat->col_idx[i]-mat->col_idx[0];
-		//printf("\nj:%d, k:%d\n",j,k );
+		//printf("\nRank: %d ,j:%d, k:%d, val : %f\n",rank,j,k, mat->val[i]);
 		M[j][k] = mat->val[i];
 	}
 	printf("\nAfter Assign....\n");
