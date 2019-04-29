@@ -61,8 +61,9 @@ int main()
 	coo_mat* Hss;
 	coo_mat* Hss_inv;
 	float*  b;
-	int     Hss_block;
+	int     Hss_nz_block[3];
 	int* 	Hss_mat_block;
+	int 	displs[3];
 	int*    recv_row;
 	int*    recv_col;
 	float*  recv_val;
@@ -100,7 +101,7 @@ int main()
 	arrays accurately. So divide the blocks appropriately such that the smaller 3x3 blocks 
 	fit completely inside the matrix blocks.
 	*/
-	//Hss_mat_block = STRUCT_PARAMS/3; 
+	Hss_mat_block = generate_block_sizes(STRUCT_PARAMS); 
 	
 
 	
@@ -126,60 +127,66 @@ int main()
 
 		//printf("\nIn Hss, nnz = %d\n",Hss->nnz); // 236889 = 3 x 78963
 
+		Hss_nz_block[0] = Hss_mat_block[0]*3;
+		Hss_nz_block[1] = Hss_mat_block[1]*3;
+		Hss_nz_block[2] = Hss_mat_block[2]*3;
 
-		//printf("\nHss_block : %d\n", Hss_block);
-		Hss_block = Hss->nnz/3;
+		printf("\nBlock 1: %d Block 2 : %d block 3: %d\n", Hss_mat_block[0], Hss_mat_block[1],Hss_mat_block[2]);
+		printf("\nNon Zeros -> Block 1: %d Block 2 : %d block 3: %d\n", Hss_nz_block[0], Hss_nz_block[1],Hss_nz_block[2]);
 
-		printf("\nMod : %d\n", Hss_mat_block%3);
+		displs[0] = 0;
+		displs[1] = Hss_nz_block[1];
+		displs[2] = Hss_nz_block[2];
 
-		MPI_Bcast(&Hss_block, 1, MPI_INT, root, new_comm);
-		MPI_Scatter(Hss->row_idx, Hss_block, MPI_INT, recv_row, Hss_block, MPI_INT, root, new_comm);
-		MPI_Scatter(Hss->col_idx, Hss_block, MPI_INT, recv_col, Hss_block, MPI_INT, root, new_comm);
-		MPI_Scatter(Hss->val, Hss_block, MPI_FLOAT, recv_val, Hss_block, MPI_FLOAT, root, new_comm);
+		MPI_Bcast(Hss_nz_block, 3, MPI_INT, root, new_comm);
+		MPI_Scatterv(Hss->row_idx, Hss_nz_block, displs,MPI_INT, recv_row, Hss_nz_block, MPI_INT, root, new_comm);
+		MPI_Scatterv(Hss->col_idx, Hss_nz_block, displs,MPI_INT, recv_col, Hss_nz_block, MPI_INT, root, new_comm);
+		MPI_Scatterv(Hss->val, Hss_nz_block, displs,MPI_FLOAT, recv_val, Hss_nz_block, MPI_FLOAT, root, new_comm);
 		
-
-		printf("\nIn rank %d, Hss blk : %d\n",rank,Hss_block );
+		/*
+		printf("\nIn rank %d, Hss blk : %d\n",rank,Hss_nz_block[rank] );
 		printf("\nIn rank %d ,Row : %d\n", rank,recv_row[9]);
 		printf("\nIn rank %d ,Col : %d\n", rank,recv_col[9]);
 		printf("\nIn rank %d ,Val : %f\n", rank,recv_val[9]);
-		
+		*/
+
 		//coo_mat* Hss_recv = (coo_mat*) malloc(sizeof(coo_mat));
 		Hss_recv->row_idx = recv_row;
 		Hss_recv->col_idx = recv_col;
 		Hss_recv->val = recv_val;
-		Hss_recv->nnz = Hss_block;
+		Hss_recv->nnz = Hss_nz_block[rank];
 
 		//densify the matrix
-		Hss_dense = densify(Hss_recv,Hss_mat_block,rank);
+		Hss_dense = densify(Hss_recv,Hss_mat_block[rank],rank);
 
-		printf("\nIn rank %d ,Hss_dense val : %f\n", rank,Hss_dense[3][3]);
+		//printf("\nIn rank %d ,Hss_dense val : %f\n", rank,Hss_dense[3][3]);
 
 	}
 	else if(rank == 1 || rank == 2)
 	{
 
-		MPI_Bcast(&Hss_block, 1, MPI_INT, root, new_comm);
-		MPI_Scatter(NULL, 0, MPI_INT, recv_row, Hss_block, MPI_INT, root, new_comm);
-		MPI_Scatter(NULL, 0, MPI_INT, recv_col, Hss_block, MPI_INT, root, new_comm);
-		MPI_Scatter(NULL, 0, MPI_FLOAT, recv_val, Hss_block, MPI_FLOAT, root, new_comm);
+		MPI_Bcast(Hss_nz_block, 3, MPI_INT, root, new_comm);
+		MPI_Scatterv(NULL, 0, NULL,MPI_INT, recv_row, Hss_nz_block[rank], MPI_INT, root, new_comm);
+		MPI_Scatterv(NULL, 0, NULL,MPI_INT, recv_col, Hss_nz_block[rank], MPI_INT, root, new_comm);
+		MPI_Scatterv(NULL, 0, NULL,MPI_FLOAT, recv_val, Hss_nz_block[rank], MPI_FLOAT, root, new_comm);
 		
-
-		printf("\nIn rank %d, Hss blk : %d\n",rank,Hss_block );
+		/*
+		printf("\nIn rank %d, Hss blk : %d\n",rank,Hss_nz_block[rank] );
 		printf("\nIn rank %d ,Row : %d\n", rank,recv_row[9]);
 		printf("\nIn rank %d ,Col : %d\n", rank,recv_col[9]);
 		printf("\nIn rank %d ,Val : %f\n", rank,recv_val[9]);
-		
+		*/
 
 		//coo_mat* Hss_recv = (coo_mat*) malloc(sizeof(coo_mat));
 		Hss_recv->row_idx = recv_row;
 		Hss_recv->col_idx = recv_col;
 		Hss_recv->val = recv_val;
-		Hss_recv->nnz = Hss_block;
+		Hss_recv->nnz = Hss_nz_block[rank];
 
 		//densify the matrix
-		Hss_dense = densify(Hss_recv,Hss_mat_block,rank);
+		Hss_dense = densify(Hss_recv,Hss_mat_block[rank],rank);
 
-		printf("\nIn rank %d ,Hss_dense val : %f\n", rank,Hss_dense[3][3]);
+		//printf("\nIn rank %d ,Hss_dense val : %f\n", rank,Hss_dense[3][3]);
 	
 	}
 
