@@ -1,5 +1,11 @@
 //This function generates the block sizes into which the matrix
-//must be divided when scattering to the different processors
+//must be divided when scattering to the different processors.
+//since Hss blocks are 3x3 blocks
+/* we have 78963 / 3 = 26321 which is not divisible by 3.
+Hence, dividing the blocks into STRUCT_PARAMS/3 will not divide the non-zero
+arrays accurately. So divide the blocks appropriately such that the smaller 3x3 blocks 
+fit completely inside the matrix blocks.
+*/
 int* generate_block_sizes(int mat_size)
 {
 	int* block_sizes =  (int*) malloc(3*sizeof(int));
@@ -126,11 +132,11 @@ void compute_block_inverse(coo_mat* mat,int rank)
 	if(rank == 0)
 	{
 		printf("\nThe first block inverse is: \n");
-		for(k=0;k<9;k++)
+		for(k=50000;k<50010;k++)
 		{
-			printf("\n%d  %d  %f",mat->row_idx[k]+1,mat->col_idx[k]+1,mat->val[k] );
+			printf("\n%d  %d  %f",mat->row_idx[k],mat->col_idx[k],mat->val[k]);
 		}
-	}
-	*/
+	}*/
+	
 	
 }

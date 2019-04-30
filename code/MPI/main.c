@@ -38,8 +38,6 @@ The no of processors this can be run on is 3
 #define STRUCT_PARAMS 78963
 
 
-
-
 //driver function
 int main()
 {
@@ -60,11 +58,13 @@ int main()
 	coo_mat* Hsc;
 	coo_mat* Hss;
 	coo_mat* Hss_inv;
-	float*  b;
-	int     Hss_nz_block[3];
-	int* 	Hss_mat_block;
-	int 	displs[3];
-	//float** Hss_dense;
+	float*   b;
+	int      Hss_nz_block[3];
+	int* 	 Hss_mat_block;
+	int 	 displs[3];
+	int*     row;
+	int*     col;
+	float*   val;
 	
 
 	MPI_Init(0,0);
@@ -92,29 +92,22 @@ int main()
 
 
 	//block size of Hss to be sent to each processor
-	//since Hss blocks are 3x3 blocks
-	/* we have 78963 / 3 = 26321 which is not divisible by 3.
-	Hence, dividing the blocks into STRUCT_PARAMS/3 will not divide the non-zero
-	arrays accurately. So divide the blocks appropriately such that the smaller 3x3 blocks 
-	fit completely inside the matrix blocks.
-	*/
 	Hss_mat_block = generate_block_sizes(STRUCT_PARAMS); 
 	
 	coo_mat* Hss_recv = (coo_mat*) malloc(sizeof(coo_mat));
 
+	Hcc = read_coo_matrix("Hcc");
+	Hcs = read_coo_matrix("Hcs");
+	Hsc = read_coo_matrix("Hsc");
+	Hss = read_coo_matrix("Hss");
+
+	// read the RHS of the system
+	b = read_b(CAM_PARAMS+STRUCT_PARAMS); 
 
 	//read the matrices in the master process.
 	if(rank == root)
 	{
-		printf("\n==============Reading Matrices=================\n");
-
-		Hcc = read_coo_matrix("Hcc",CAM_PARAMS,CAM_PARAMS);
-		Hcs = read_coo_matrix("Hcs",CAM_PARAMS,STRUCT_PARAMS);
-		Hsc = read_coo_matrix("Hsc",STRUCT_PARAMS,CAM_PARAMS);
-		Hss = read_coo_matrix("Hss",STRUCT_PARAMS,STRUCT_PARAMS);
-
-		// read the RHS of the system
-		b = read_b(CAM_PARAMS+STRUCT_PARAMS); 
+			
 
 		//printf("\nIn Hss, nnz = %d\n",Hss->nnz); // 236889 = 3 x 78963
 
@@ -122,8 +115,8 @@ int main()
 		Hss_nz_block[1] = Hss_mat_block[1]*3;
 		Hss_nz_block[2] = Hss_mat_block[2]*3;
 
-		printf("\nBlock 1: %d Block 2 : %d block 3: %d\n", Hss_mat_block[0], Hss_mat_block[1],Hss_mat_block[2]);
-		printf("\nNon Zeros -> Block 1: %d Block 2 : %d block 3: %d\n", Hss_nz_block[0], Hss_nz_block[1],Hss_nz_block[2]);
+		//printf("\nBlock 1: %d Block 2 : %d block 3: %d\n", Hss_mat_block[0], Hss_mat_block[1],Hss_mat_block[2]);
+		//printf("\nNon Zeros -> Block 1: %d Block 2 : %d block 3: %d\n", Hss_nz_block[0], Hss_nz_block[1],Hss_nz_block[2]);
 
 		//allocating memory for the receiving buffers
 		//allocation may fail for dense matrix
@@ -139,18 +132,22 @@ int main()
 		MPI_Scatterv(Hss->row_idx, Hss_nz_block, displs,MPI_INT, Hss_recv->row_idx, Hss_nz_block, MPI_INT, root, new_comm);
 		MPI_Scatterv(Hss->col_idx, Hss_nz_block, displs,MPI_INT, Hss_recv->col_idx, Hss_nz_block, MPI_INT, root, new_comm);
 		MPI_Scatterv(Hss->val, Hss_nz_block, displs,MPI_FLOAT, Hss_recv->val, Hss_nz_block, MPI_FLOAT, root, new_comm);
-		/*
-		printf("\nIn rank %d, Hss blk : %d\n",rank,Hss_nz_block[rank] );
-		printf("\nIn rank %d ,Row : %d\n", rank,recv_row[9]);
-		printf("\nIn rank %d ,Col : %d\n", rank,recv_col[9]);
-		printf("\nIn rank %d ,Val : %f\n", rank,recv_val[9]);
-		*/
-
+		
 		Hss_recv->nnz = Hss_nz_block[rank];
 
 
 		//finding the block inverses of the matrix
 		compute_block_inverse(Hss_recv,rank);
+
+		//for gathering the values from different matrices
+		//row = (int*) malloc (Hss->nnz * sizeof(int));
+		//col = (int*) malloc (Hss->nnz * sizeof(int));
+		//val = (float*) malloc (Hss->nnz * sizeof(float));
+
+		//gather the inverted value into the original Hss structure to replace the old values
+		MPI_Gatherv(Hss_recv->row_idx, Hss_recv->nnz, MPI_FLOAT, Hss->row_idx,Hss_nz_block,displs,MPI_INT,root,new_comm);
+		MPI_Gatherv(Hss_recv->col_idx, Hss_recv->nnz, MPI_FLOAT, Hss->col_idx,Hss_nz_block,displs,MPI_INT,root,new_comm);
+		MPI_Gatherv(Hss_recv->val, Hss_recv->nnz, MPI_FLOAT, Hss->val,Hss_nz_block,displs,MPI_FLOAT,root,new_comm);
 
 	}
 	else if(rank == 1 || rank == 2)
@@ -167,26 +164,41 @@ int main()
 		MPI_Scatterv(NULL, 0, NULL,MPI_INT, Hss_recv->row_idx, Hss_nz_block[rank], MPI_INT, root, new_comm);
 		MPI_Scatterv(NULL, 0, NULL,MPI_INT, Hss_recv->col_idx, Hss_nz_block[rank], MPI_INT, root, new_comm);
 		MPI_Scatterv(NULL, 0, NULL,MPI_FLOAT, Hss_recv->val, Hss_nz_block[rank], MPI_FLOAT, root, new_comm);
-		/*
-		printf("\nIn rank %d, Hss blk : %d\n",rank,Hss_nz_block[rank] );
-		printf("\nIn rank %d ,Row : %d\n", rank,recv_row[9]);
-		printf("\nIn rank %d ,Col : %d\n", rank,recv_col[9]);
-		printf("\nIn rank %d ,Val : %f\n", rank,recv_val[9]);
-		*/
-
+		
 		Hss_recv->nnz = Hss_nz_block[rank];
 
 
 		//finding the block inverses of the matrix
 		compute_block_inverse(Hss_recv,rank);
-	
+
+		
+		//for gathering the values from different matrices
+		row = (int*) malloc (Hss->nnz * sizeof(int));
+		col = (int*) malloc (Hss->nnz * sizeof(int));
+		val = (float*) malloc (Hss->nnz * sizeof(float));
+
+		//gather the inverted value into the original Hss structure to replace the old values
+		MPI_Gatherv(Hss_recv->row_idx, Hss_recv->nnz, MPI_FLOAT, row,Hss_nz_block,displs,MPI_INT,root,new_comm);
+		MPI_Gatherv(Hss_recv->col_idx, Hss_recv->nnz, MPI_FLOAT, col,Hss_nz_block,displs,MPI_INT,root,new_comm);
+		MPI_Gatherv(Hss_recv->val, Hss_recv->nnz, MPI_FLOAT, val,Hss_nz_block,displs,MPI_FLOAT,root,new_comm);
+
+		free(row);
+		free(col);
+		free(val);
 	}
 
-	//write a gatherv call here to gather the total no of rows,cols,vals and nonzeros in root rank
+	if(rank == root || rank == 1 || rank == 2)
+		MPI_Barrier(new_comm);
 
+	if(rank == root)
+		MPI_Comm_free(&new_comm);
+
+	free(Hss_recv);
 
 	//synchronize
 	MPI_Barrier(MPI_COMM_WORLD);
+
+	
 	
 	MPI_Finalize();
 

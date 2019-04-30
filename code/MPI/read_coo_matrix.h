@@ -1,5 +1,4 @@
-//this file contains code for reading the coo matrix from the respective files.
-//input param block type refers to the type of block to be read
+
 
 //structure for containing the row_idx, col_idx and val arrays
 //of the COO representation of the matrix.
@@ -50,7 +49,10 @@ coo_mat* read_file(char* input_filename)
 	return mat_read;	
 }
 
-coo_mat* read_coo_matrix(char* block_type,int row,int col)
+
+//this file contains code for reading the coo matrix from the respective files.
+//input param block type refers to the type of block to be read
+coo_mat* read_coo_matrix(char* block_type)
 {
 	coo_mat* mat_read;
 
