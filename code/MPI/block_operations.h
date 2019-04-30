@@ -69,4 +69,68 @@ float** densify(coo_mat* mat,int blk_size,int rank)
 
 }
 
-//this is the function to compute the block inverses
+
+/*
+This function computes the inverse of the matrix by computing the block inverse
+of the 3x3 blocks using the formula Adj(A) / det(A).
+After computing the inverse, the elements of each 3x3 block is stored in the
+coo columns instead of dense storage.  
+Since each block is 3x3, so the row,col, val arrays represent these blocks in groups of 9.
+NOTE : The coo format is ordered by column.
+Thus the each block is of the form:
+		| a[0]  a[3]  a[6] |
+	B = | a[1]  a[4]  a[7] |
+		| a[2]  a[5]  a[8] |
+		
+*/
+void compute_block_inverse(coo_mat* mat,int rank)
+{
+	int i=0;
+	int j,k;
+	float a[9];
+	float adj[9];
+	float det;
+	float* orig_val = mat->val;
+	float res;
+
+	while(i < mat->nnz)
+	{
+		for(j=i,k=0;j < i+9,k<9;j++,k++)
+		{
+			a[k] = mat->val[j];
+		}
+		
+		//computing the determinant of the block
+		det = (a[0]*(a[4]*a[8] - a[5]*a[7])) - (a[3]*(a[1]*a[8] - a[2]*a[7])) + (a[6]*(a[1]*a[5] - a[2]*a[4]));
+		//printf("\ndet : %f\n",det);
+		//computing adjoint and dividing by det to get inverse of each element
+		adj[0] = (a[4]*a[8] - a[5]*a[7])/det;  adj[3] = (a[5]*a[6] - a[3]*a[8])/det;  adj[6] = (a[3]*a[7] - a[4]*a[6])/det;
+		adj[1] = (a[2]*a[7] - a[1]*a[8])/det;  adj[4] = (a[0]*a[8] - a[2]*a[6])/det;  adj[7] = (a[1]*a[6] - a[0]*a[7])/det;
+		adj[2] = (a[1]*a[5] - a[2]*a[4])/det;  adj[5] = (a[2]*a[3] - a[0]*a[5])/det;  adj[8] = (a[0]*a[4] - a[1]*a[3])/det;
+
+		//printf("\na[0] : %f\n",a[0]);
+		//filling the inverse values into the val array
+		for(j=i,k=0;j < i+9,k<9;j++,k++)
+		{
+			mat->val[j] = adj[k];
+		}
+
+		i = i + 9;
+	}
+
+	//verifying for the first block that inverse is correctly computed for the first element
+	//res = (orig_val[0]*mat->val[0]) + (orig_val[3]*mat->val[1]) + (orig_val[6]*mat->val[2]);
+
+	//printf("\nThe product is : %f\n",res);
+	/*
+	if(rank == 0)
+	{
+		printf("\nThe first block inverse is: \n");
+		for(k=0;k<9;k++)
+		{
+			printf("\n%d  %d  %f",mat->row_idx[k]+1,mat->col_idx[k]+1,mat->val[k] );
+		}
+	}
+	*/
+	
+}

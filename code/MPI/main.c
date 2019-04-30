@@ -64,10 +64,7 @@ int main()
 	int     Hss_nz_block[3];
 	int* 	Hss_mat_block;
 	int 	displs[3];
-	int*    recv_row;
-	int*    recv_col;
-	float*  recv_val;
-	float** Hss_dense;
+	//float** Hss_dense;
 	
 
 	MPI_Init(0,0);
@@ -103,14 +100,8 @@ int main()
 	*/
 	Hss_mat_block = generate_block_sizes(STRUCT_PARAMS); 
 	
-
-	
-	//allocating memory to the receiving arrays
-	recv_row = (int*) malloc (STRUCT_PARAMS*sizeof(int));
-	recv_col = (int*) malloc (STRUCT_PARAMS*sizeof(int));
-	recv_val = (float*) malloc (STRUCT_PARAMS*sizeof(float));
-	
 	coo_mat* Hss_recv = (coo_mat*) malloc(sizeof(coo_mat));
+
 
 	//read the matrices in the master process.
 	if(rank == root)
@@ -134,15 +125,20 @@ int main()
 		printf("\nBlock 1: %d Block 2 : %d block 3: %d\n", Hss_mat_block[0], Hss_mat_block[1],Hss_mat_block[2]);
 		printf("\nNon Zeros -> Block 1: %d Block 2 : %d block 3: %d\n", Hss_nz_block[0], Hss_nz_block[1],Hss_nz_block[2]);
 
+		//allocating memory for the receiving buffers
+		//allocation may fail for dense matrix
+		Hss_recv->row_idx = (int*) malloc (Hss_nz_block[rank]*sizeof(int));
+		Hss_recv->col_idx = (int*) malloc (Hss_nz_block[rank]*sizeof(int));
+		Hss_recv->val = (float*) malloc (Hss_nz_block[rank]*sizeof(float));
+
 		displs[0] = 0;
 		displs[1] = Hss_nz_block[1];
 		displs[2] = Hss_nz_block[2];
 
 		MPI_Bcast(Hss_nz_block, 3, MPI_INT, root, new_comm);
-		MPI_Scatterv(Hss->row_idx, Hss_nz_block, displs,MPI_INT, recv_row, Hss_nz_block, MPI_INT, root, new_comm);
-		MPI_Scatterv(Hss->col_idx, Hss_nz_block, displs,MPI_INT, recv_col, Hss_nz_block, MPI_INT, root, new_comm);
-		MPI_Scatterv(Hss->val, Hss_nz_block, displs,MPI_FLOAT, recv_val, Hss_nz_block, MPI_FLOAT, root, new_comm);
-		
+		MPI_Scatterv(Hss->row_idx, Hss_nz_block, displs,MPI_INT, Hss_recv->row_idx, Hss_nz_block, MPI_INT, root, new_comm);
+		MPI_Scatterv(Hss->col_idx, Hss_nz_block, displs,MPI_INT, Hss_recv->col_idx, Hss_nz_block, MPI_INT, root, new_comm);
+		MPI_Scatterv(Hss->val, Hss_nz_block, displs,MPI_FLOAT, Hss_recv->val, Hss_nz_block, MPI_FLOAT, root, new_comm);
 		/*
 		printf("\nIn rank %d, Hss blk : %d\n",rank,Hss_nz_block[rank] );
 		printf("\nIn rank %d ,Row : %d\n", rank,recv_row[9]);
@@ -150,26 +146,27 @@ int main()
 		printf("\nIn rank %d ,Val : %f\n", rank,recv_val[9]);
 		*/
 
-		//coo_mat* Hss_recv = (coo_mat*) malloc(sizeof(coo_mat));
-		Hss_recv->row_idx = recv_row;
-		Hss_recv->col_idx = recv_col;
-		Hss_recv->val = recv_val;
 		Hss_recv->nnz = Hss_nz_block[rank];
 
-		//densify the matrix
-		Hss_dense = densify(Hss_recv,Hss_mat_block[rank],rank);
 
-		//printf("\nIn rank %d ,Hss_dense val : %f\n", rank,Hss_dense[3][3]);
+		//finding the block inverses of the matrix
+		compute_block_inverse(Hss_recv,rank);
 
 	}
 	else if(rank == 1 || rank == 2)
 	{
-
 		MPI_Bcast(Hss_nz_block, 3, MPI_INT, root, new_comm);
-		MPI_Scatterv(NULL, 0, NULL,MPI_INT, recv_row, Hss_nz_block[rank], MPI_INT, root, new_comm);
-		MPI_Scatterv(NULL, 0, NULL,MPI_INT, recv_col, Hss_nz_block[rank], MPI_INT, root, new_comm);
-		MPI_Scatterv(NULL, 0, NULL,MPI_FLOAT, recv_val, Hss_nz_block[rank], MPI_FLOAT, root, new_comm);
+
+		//allocating memory for the receiving buffers
+		//allocation may fail for dense matrix
+		Hss_recv->row_idx = (int*) malloc (Hss_nz_block[rank]*sizeof(int));
+		Hss_recv->col_idx = (int*) malloc (Hss_nz_block[rank]*sizeof(int));
+		Hss_recv->val = (float*) malloc (Hss_nz_block[rank]*sizeof(float));
+
 		
+		MPI_Scatterv(NULL, 0, NULL,MPI_INT, Hss_recv->row_idx, Hss_nz_block[rank], MPI_INT, root, new_comm);
+		MPI_Scatterv(NULL, 0, NULL,MPI_INT, Hss_recv->col_idx, Hss_nz_block[rank], MPI_INT, root, new_comm);
+		MPI_Scatterv(NULL, 0, NULL,MPI_FLOAT, Hss_recv->val, Hss_nz_block[rank], MPI_FLOAT, root, new_comm);
 		/*
 		printf("\nIn rank %d, Hss blk : %d\n",rank,Hss_nz_block[rank] );
 		printf("\nIn rank %d ,Row : %d\n", rank,recv_row[9]);
@@ -177,18 +174,16 @@ int main()
 		printf("\nIn rank %d ,Val : %f\n", rank,recv_val[9]);
 		*/
 
-		//coo_mat* Hss_recv = (coo_mat*) malloc(sizeof(coo_mat));
-		Hss_recv->row_idx = recv_row;
-		Hss_recv->col_idx = recv_col;
-		Hss_recv->val = recv_val;
 		Hss_recv->nnz = Hss_nz_block[rank];
 
-		//densify the matrix
-		Hss_dense = densify(Hss_recv,Hss_mat_block[rank],rank);
 
-		//printf("\nIn rank %d ,Hss_dense val : %f\n", rank,Hss_dense[3][3]);
+		//finding the block inverses of the matrix
+		compute_block_inverse(Hss_recv,rank);
 	
 	}
+
+	//write a gatherv call here to gather the total no of rows,cols,vals and nonzeros in root rank
+
 
 	//synchronize
 	MPI_Barrier(MPI_COMM_WORLD);
