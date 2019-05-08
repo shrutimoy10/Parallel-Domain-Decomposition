@@ -65,7 +65,11 @@ int main()
 	int*     row;
 	int*     col;
 	float*   val;
-	
+	int* 	 Hcc_row_block_size;
+	int* 	 Hcs_row_block_size;
+	int* 	 Hsc_row_block_size;
+	int* 	 Hss_row_block_size;
+	int* 	 rhs_block_size;
 
 	MPI_Init(0,0);
 	MPI_Comm_size(MPI_COMM_WORLD,&size);
@@ -95,6 +99,8 @@ int main()
 	Hss_mat_block = generate_block_sizes(STRUCT_PARAMS); 
 	
 	coo_mat* Hss_recv = (coo_mat*) malloc(sizeof(coo_mat));
+
+	printf("\n=======Reading matrices=========\n");
 
 	Hcc = read_coo_matrix("Hcc");
 	Hcs = read_coo_matrix("Hcs");
@@ -139,16 +145,11 @@ int main()
 		//finding the block inverses of the matrix
 		compute_block_inverse(Hss_recv,rank);
 
-		//for gathering the values from different matrices
-		//row = (int*) malloc (Hss->nnz * sizeof(int));
-		//col = (int*) malloc (Hss->nnz * sizeof(int));
-		//val = (float*) malloc (Hss->nnz * sizeof(float));
 
 		//gather the inverted value into the original Hss structure to replace the old values
 		MPI_Gatherv(Hss_recv->row_idx, Hss_recv->nnz, MPI_FLOAT, Hss->row_idx,Hss_nz_block,displs,MPI_INT,root,new_comm);
 		MPI_Gatherv(Hss_recv->col_idx, Hss_recv->nnz, MPI_FLOAT, Hss->col_idx,Hss_nz_block,displs,MPI_INT,root,new_comm);
 		MPI_Gatherv(Hss_recv->val, Hss_recv->nnz, MPI_FLOAT, Hss->val,Hss_nz_block,displs,MPI_FLOAT,root,new_comm);
-
 	}
 	else if(rank == 1 || rank == 2)
 	{
@@ -197,9 +198,25 @@ int main()
 
 	//synchronize
 	MPI_Barrier(MPI_COMM_WORLD);
+/*
+	printf("\n============Inversion Complete==============\n");
 
+	//scatter the submatrices for LU solve
+	if(rank == root)
+	{
+		printf("\n============In rank 0 ==============\n");
+		Hcc_row_block_size = generate_nz_block_size(Hcc,size,CAM_PARAMS);
+		//Hcs_row_block_size = generate_nz_block_size(Hsc,size,CAM_PARAMS); //interchanging use of Hcs and Hsc as they are symmetric
+		//Hsc_row_block_size = generate_nz_block_size(Hcs,size,STRUCT_PARAMS);
+		//Hss_row_block_size = generate_nz_block_size(Hss,size,STRUCT_PARAMS);
+		//rhs_block_size = generate_nz_block_size(b,size,CAM_PARAMS+STRUCT_PARAMS);
+	}
+	else
+	{
+		printf("\nAfter barrier rank else\n");
+	}
 	
-	
+*/	
 	MPI_Finalize();
 
 	return 0;

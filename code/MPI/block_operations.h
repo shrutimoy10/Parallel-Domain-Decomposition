@@ -124,19 +124,76 @@ void compute_block_inverse(coo_mat* mat,int rank)
 		i = i + 9;
 	}
 
-	//verifying for the first block that inverse is correctly computed for the first element
-	//res = (orig_val[0]*mat->val[0]) + (orig_val[3]*mat->val[1]) + (orig_val[6]*mat->val[2]);
-
-	//printf("\nThe product is : %f\n",res);
-	/*
-	if(rank == 0)
-	{
-		printf("\nThe first block inverse is: \n");
-		for(k=50000;k<50010;k++)
-		{
-			printf("\n%d  %d  %f",mat->row_idx[k],mat->col_idx[k],mat->val[k]);
-		}
-	}*/
-	
-	
 }
+
+//This function returns the no of non-zero indices in each row block of the given matrix.
+//Counting only the row array is sufficient.
+// Input param : prev_row_idx is the index num of mat->row_idx array at which the previous block ended.
+//              so starting row_idx of next block will be mat->row_idx[prev_row_idx+1]
+// Input param : row_idx_end is the row num at which the current block will end.
+int nz_counts(coo_mat* mat,int block_num,int rows_per_block,int prev_row_idx,int row_idx_end)
+{
+	int count = 0;
+	int nz_row_idx_start = prev_row_idx+1;
+	int i = nz_row_idx_start;
+
+	printf("\nRow index end : %d\n", row_idx_end);
+
+	while(mat->row_idx[i] <= row_idx_end)
+		count++;
+
+	return count;
+}
+
+
+
+/* This function returns an array block_sizes which contains the sizes into which the arrays of indices of non-zero entries must be
+split so as to scatter the row blocks of the matrices.
+Input param size refers to the no of processors reserved for program execution. size will be the no of blocks
+*/
+int* generate_nz_block_size(coo_mat* mat,int size,int row)
+{
+	int* block_sizes;
+	int  rows_per_block;
+	int  m;
+	int  i;
+	int  prev_row_idx = -1;
+	int  row_idx_end;
+
+	m = row%size;
+	rows_per_block = row / size; //no of rows in each block
+
+	block_sizes = (int*) malloc (size*sizeof(int));
+
+	for(i=0;i<size-1;i++)
+	{
+		row_idx_end = i*rows_per_block + (rows_per_block-1);
+		block_sizes[i] = nz_counts(mat,i,rows_per_block,prev_row_idx,row_idx_end);
+		prev_row_idx +=  block_sizes[i]; //here the ith block ends in mat->row_idx
+	}
+
+	if(m ==0)
+	{
+		row_idx_end = (size-1)*rows_per_block + (rows_per_block-1);
+		block_sizes[size-1] = nz_counts(mat,i,rows_per_block,prev_row_idx,row_idx_end);
+	}
+	else
+	{
+		row_idx_end = (size-1)*rows_per_block + (rows_per_block+m-1);
+		block_sizes[size-1] = nz_counts(mat,i,rows_per_block,prev_row_idx,row_idx_end);
+	}
+	
+	/*****TEST****/
+	int sum = 0;
+	for(i=0;i<size;i++)
+	{
+		sum += block_sizes[i];
+	}
+
+	int nz_diff = sum - mat->nnz;
+	printf("\nThe error is : %d\n",nz_diff );
+
+	return block_sizes;
+}
+
+
