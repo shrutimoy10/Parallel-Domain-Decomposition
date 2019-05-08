@@ -137,7 +137,7 @@ int nz_counts(coo_mat* mat,int rows_per_block,int prev_row_idx,int row_idx_end)
 	int nz_row_idx_start = prev_row_idx+1;
 	int i = nz_row_idx_start;
 
-	printf("\nRow index end : %d\n", row_idx_end);
+	//printf("\nRow index end : %d\n", row_idx_end);
 
 	while(mat->row_idx[i] <= row_idx_end)
 	{
@@ -206,4 +206,18 @@ int* generate_nz_block_size(coo_mat* mat,int size,int row)
 	return block_sizes;
 }
 
+//This function splits the rhs b into b1 and b2 with b1 being a CAM_PARAMSx1 vector  and
+//b2 being a STRUCT_PARAMSx1 vector
+float* split_b(float* b,int vec_size,int offset)
+{
+	int i;
+	float* bi = (float*) malloc (vec_size * sizeof(float));
+
+	for(i = 0;i < vec_size;i++)
+		bi[i] = b[offset+i];
+
+	printf("\n i = %d\n", i);
+
+	return bi;
+}
 

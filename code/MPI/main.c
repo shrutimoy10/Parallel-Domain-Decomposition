@@ -70,6 +70,10 @@ int main()
 	int* 	 Hsc_row_block_size;
 	int* 	 Hss_row_block_size;
 	int* 	 rhs_block_size;
+	float*	 b1;
+	float*	 b2;
+	int*	 b1_block_size;
+	int* 	 b2_block_size;
 
 	MPI_Init(0,0);
 	MPI_Comm_size(MPI_COMM_WORLD,&size);
@@ -201,11 +205,19 @@ int main()
 	//scatter the submatrices for LU solve
 	if(rank == root)
 	{
-		//Hcc_row_block_size = generate_nz_block_size(Hcc,size,CAM_PARAMS);
-		//Hcs_row_block_size = generate_nz_block_size(Hsc,size,CAM_PARAMS); //interchanging use of Hcs and Hsc as they are symmetric
+		Hcc_row_block_size = generate_nz_block_size(Hcc,size,CAM_PARAMS);
+		Hcs_row_block_size = generate_nz_block_size(Hsc,size,CAM_PARAMS); //interchanging use of Hcs and Hsc as they are symmetric
 		Hsc_row_block_size = generate_nz_block_size(Hcs,size,STRUCT_PARAMS);
 		Hss_row_block_size = generate_nz_block_size(Hss,size,STRUCT_PARAMS);
-		//rhs_block_size = generate_nz_block_size(b,size,CAM_PARAMS+STRUCT_PARAMS);
+
+		//Since the rhs b is also split into b1 & b2 such that b1 is a CAM_PARAMS x 1 vector and
+		// b2 is a STRUCT_PARAMS x 1 vector, each of b1 and b2 will also be split in the same way
+		// as the row blocks of the submatrices
+		b1 = split_b(b,CAM_PARAMS,0);
+		b2 = split_b(b,STRUCT_PARAMS,CAM_PARAMS);
+		b1_block_size = Hcc_row_block_size;
+		b2_block_size = Hss_row_block_size;
+
 	}
 	else
 	{
