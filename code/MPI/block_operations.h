@@ -137,7 +137,7 @@ int nz_counts(coo_mat* mat,int rows_per_block,int prev_row_idx,int row_idx_end)
 	int nz_row_idx_start = prev_row_idx+1;
 	int i = nz_row_idx_start;
 
-	//printf("\nRow index end : %d\n", row_idx_end);
+	printf("\nRow index end : %d\n", row_idx_end);
 
 	while(mat->row_idx[i] <= row_idx_end)
 	{
@@ -156,7 +156,7 @@ Input param size refers to the no of processors reserved for program execution. 
 */
 int* generate_nz_block_size(coo_mat* mat,int size,int row)
 {
-	int* block_sizes;
+	int*  block_sizes = (int*) malloc(size*sizeof(int));
 	int  rows_per_block;
 	int  m;
 	int  i;
@@ -165,8 +165,6 @@ int* generate_nz_block_size(coo_mat* mat,int size,int row)
 
 	m = row%size;
 	rows_per_block = row / size; //no of rows in each block
-
-	block_sizes = (int*) malloc (size*sizeof(int));
 
 	for(i=0;i<size;i++)
 	{
@@ -216,8 +214,25 @@ float* split_b(float* b,int vec_size,int offset)
 	for(i = 0;i < vec_size;i++)
 		bi[i] = b[offset+i];
 
-	printf("\n i = %d\n", i);
-
 	return bi;
 }
 
+//This function returns an array containing the block sizes for scattering the b vectors
+int* generate_b_block_size(int rows,int size)
+{
+	int* b_row_block = (int*) malloc (size * sizeof(int));
+	int  m;
+	int  rows_per_block = rows/size; 
+	int  i;
+
+	m = rows%size;
+
+	for(i=0;i<size;i++)
+		b_row_block[i] = rows_per_block;
+
+	if(m != 0)
+		b_row_block[size-1] += m;
+
+
+	return b_row_block;
+}

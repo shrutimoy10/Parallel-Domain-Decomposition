@@ -53,6 +53,10 @@ int main()
 	MPI_Group orig_group, new_group; 
 	MPI_Comm new_comm;
 
+	MPI_Init(0,0);
+	MPI_Comm_size(MPI_COMM_WORLD,&size);
+	MPI_Comm_rank(MPI_COMM_WORLD,&rank);
+
 	coo_mat* Hcc;
 	coo_mat* Hcs;
 	coo_mat* Hsc;
@@ -69,15 +73,17 @@ int main()
 	int* 	 Hcs_row_block_size;
 	int* 	 Hsc_row_block_size;
 	int* 	 Hss_row_block_size;
-	int* 	 rhs_block_size;
 	float*	 b1;
 	float*	 b2;
 	int*	 b1_block_size;
 	int* 	 b2_block_size;
-
-	MPI_Init(0,0);
-	MPI_Comm_size(MPI_COMM_WORLD,&size);
-	MPI_Comm_rank(MPI_COMM_WORLD,&rank);
+	int 	 row_block_displs_Hcc[size]; 
+	int 	 row_block_displs_Hcs[size];
+	int 	 row_block_displs_Hsc[size];
+	int 	 row_block_displs_Hss[size];
+	int 	 row_block_displs_b1[size];
+	int 	 row_block_displs_b2[size];
+	int 	 i;
 
 	if(size < 3)
 	{
@@ -201,27 +207,88 @@ int main()
 	//synchronize
 	MPI_Barrier(MPI_COMM_WORLD);
 
+	coo_mat* Hcc_Recv = (coo_mat*) malloc (sizeof(coo_mat));
+	coo_mat* Hcs_Recv = (coo_mat*) malloc (sizeof(coo_mat));
+	coo_mat* Hsc_Recv = (coo_mat*) malloc (sizeof(coo_mat));
+	coo_mat* Hss_Recv = (coo_mat*) malloc (sizeof(coo_mat));
+	coo_mat* b1_Recv = (coo_mat*) malloc (sizeof(coo_mat));
+	coo_mat* b2_Recv = (coo_mat*) malloc (sizeof(coo_mat));
 
 	//scatter the submatrices for LU solve
 	if(rank == root)
 	{
 		Hcc_row_block_size = generate_nz_block_size(Hcc,size,CAM_PARAMS);
-		Hcs_row_block_size = generate_nz_block_size(Hsc,size,CAM_PARAMS); //interchanging use of Hcs and Hsc as they are symmetric
-		Hsc_row_block_size = generate_nz_block_size(Hcs,size,STRUCT_PARAMS);
+	/*	Hcs_row_block_size = generate_nz_block_size(Hsc,size,CAM_PARAMS); //interchanging use of Hcs and Hsc as they are symmetric
+		Hsc_row_block_size = generate_nz_block_size(Hcs,size,STRUCT_PARAMS); 
 		Hss_row_block_size = generate_nz_block_size(Hss,size,STRUCT_PARAMS);
-
+		//printf("\n1\n");
 		//Since the rhs b is also split into b1 & b2 such that b1 is a CAM_PARAMS x 1 vector and
 		// b2 is a STRUCT_PARAMS x 1 vector, each of b1 and b2 will also be split in the same way
 		// as the row blocks of the submatrices
 		b1 = split_b(b,CAM_PARAMS,0);
 		b2 = split_b(b,STRUCT_PARAMS,CAM_PARAMS);
-		b1_block_size = Hcc_row_block_size;
-		b2_block_size = Hss_row_block_size;
+		b1_block_size = generate_b_block_size(CAM_PARAMS,size);
+		b2_block_size = generate_b_block_size(STRUCT_PARAMS,size);*/
+		//printf("\n2\n");
+		//broadcasting the non zero block sizes
+		MPI_Bcast(Hcc_row_block_size,size,MPI_INT,root,MPI_COMM_WORLD);
+		//MPI_Bcast(Hcs_row_block_size,size,MPI_INT,root,MPI_COMM_WORLD);
+		//MPI_Bcast(Hsc_row_block_size,size,MPI_INT,root,MPI_COMM_WORLD);
+		//MPI_Bcast(Hss_row_block_size,size,MPI_INT,root,MPI_COMM_WORLD);
+		//MPI_Bcast(b1_block_size,size,MPI_INT,root,MPI_COMM_WORLD);
+		//MPI_Bcast(b2_block_size,size,MPI_INT,root,MPI_COMM_WORLD);
+		//printf("\n3\n");
+		//setting the displacement values for scatterv
+		//count of previous block should be added to get the correct displacement
+		row_block_displs_Hcc[0] = 0;
+		for(i = 1;i < size;i++)
+		{
+			row_block_displs_Hcc[i] = row_block_displs_Hcc[i-1] + Hcc_row_block_size[i-1];
+		/*	row_block_displs_Hcs[i] = Hcs_row_block_size[i];
+			row_block_displs_Hsc[i] = Hsc_row_block_size[i];
+			row_block_displs_Hss[i] = Hss_row_block_size[i];
+			row_block_displs_b1[i] = b1_block_size[i];
+			row_block_displs_b2[i] = b2_block_size[i];*/
+		}
+		//printf("\n4\n");
+		//allocating memory for individual matrices
+		Hcc_Recv->row_idx = (int*)malloc(Hcc_row_block_size[rank]*sizeof(int));
+		Hcc_Recv->col_idx = (int*)malloc(Hcc_row_block_size[rank]*sizeof(int));
+		Hcc_Recv->val = (float*)malloc(Hcc_row_block_size[rank]*sizeof(float));
+		//printf("\n5\n");
 
+		//scattering the matrices
+		MPI_Scatterv(Hcc->row_idx,Hcc_row_block_size,row_block_displs_Hcc,MPI_INT,Hcc_Recv->row_idx,Hcc_row_block_size[rank],MPI_INT,root,MPI_COMM_WORLD);
+		MPI_Scatterv(Hcc->col_idx,Hcc_row_block_size,row_block_displs_Hcc,MPI_INT,Hcc_Recv->col_idx,Hcc_row_block_size[rank],MPI_INT,root,MPI_COMM_WORLD);
+		MPI_Scatterv(Hcc->val,Hcc_row_block_size,row_block_displs_Hcc,MPI_FLOAT,Hcc_Recv->val,Hcc_row_block_size[rank],MPI_FLOAT,root,MPI_COMM_WORLD);
+		//printf("\n6\n");
+
+		printf("\nRank %d ,Hcc[0][0] = %10.5f\n", rank,Hcc_Recv->val[0]);
 	}
 	else
 	{
-		//printf("\nAfter barrier rank else\n");
+		//allocating memory for receiving buffer
+		Hcc_row_block_size = (int*) malloc (size * sizeof(int));
+
+		//receiving the non zero block sizes
+		MPI_Bcast(Hcc_row_block_size,size,MPI_INT,root,MPI_COMM_WORLD);
+		//MPI_Bcast(Hcs_row_block_size,size,MPI_INT,root,MPI_COMM_WORLD);
+		//MPI_Bcast(Hsc_row_block_size,size,MPI_INT,root,MPI_COMM_WORLD);
+		//MPI_Bcast(Hss_row_block_size,size,MPI_INT,root,MPI_COMM_WORLD);
+		//MPI_Bcast(b1_block_size,size,MPI_INT,root,MPI_COMM_WORLD);
+		//MPI_Bcast(b2_block_size,size,MPI_INT,root,MPI_COMM_WORLD);
+		//printf("\nRank : %d, 1\n", rank);
+
+		//allocating memory for individual matrices
+		Hcc_Recv->row_idx = (int*)malloc(Hcc_row_block_size[rank]*sizeof(int));
+		Hcc_Recv->col_idx = (int*)malloc(Hcc_row_block_size[rank]*sizeof(int));
+		Hcc_Recv->val = (float*)malloc(Hcc_row_block_size[rank]*sizeof(float));
+		//printf("\nRank : %d, 2\n", rank);
+		MPI_Scatterv(NULL,0,NULL,MPI_INT,Hcc_Recv->row_idx,Hcc_row_block_size[rank],MPI_INT,root,MPI_COMM_WORLD);
+		MPI_Scatterv(NULL,0,NULL,MPI_INT,Hcc_Recv->col_idx,Hcc_row_block_size[rank],MPI_INT,root,MPI_COMM_WORLD);
+		MPI_Scatterv(NULL,0,NULL,MPI_FLOAT,Hcc_Recv->val,Hcc_row_block_size[rank],MPI_FLOAT,root,MPI_COMM_WORLD);
+		//printf("\nRank : %d, 3\n", rank);
+		printf("\nRank %d ,Hcc[0][0] = %f\n", rank,Hcc_Recv->val[0]);
 	}
 	
 
