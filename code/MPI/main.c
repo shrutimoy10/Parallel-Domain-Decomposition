@@ -100,8 +100,6 @@ int main()
 	
 	coo_mat* Hss_recv = (coo_mat*) malloc(sizeof(coo_mat));
 
-	printf("\n=======Reading matrices=========\n");
-
 	Hcc = read_coo_matrix("Hcc");
 	Hcs = read_coo_matrix("Hcs");
 	Hsc = read_coo_matrix("Hsc");
@@ -198,25 +196,23 @@ int main()
 
 	//synchronize
 	MPI_Barrier(MPI_COMM_WORLD);
-/*
-	printf("\n============Inversion Complete==============\n");
+
 
 	//scatter the submatrices for LU solve
 	if(rank == root)
 	{
-		printf("\n============In rank 0 ==============\n");
-		Hcc_row_block_size = generate_nz_block_size(Hcc,size,CAM_PARAMS);
+		//Hcc_row_block_size = generate_nz_block_size(Hcc,size,CAM_PARAMS);
 		//Hcs_row_block_size = generate_nz_block_size(Hsc,size,CAM_PARAMS); //interchanging use of Hcs and Hsc as they are symmetric
-		//Hsc_row_block_size = generate_nz_block_size(Hcs,size,STRUCT_PARAMS);
-		//Hss_row_block_size = generate_nz_block_size(Hss,size,STRUCT_PARAMS);
+		Hsc_row_block_size = generate_nz_block_size(Hcs,size,STRUCT_PARAMS);
+		Hss_row_block_size = generate_nz_block_size(Hss,size,STRUCT_PARAMS);
 		//rhs_block_size = generate_nz_block_size(b,size,CAM_PARAMS+STRUCT_PARAMS);
 	}
 	else
 	{
-		printf("\nAfter barrier rank else\n");
+		//printf("\nAfter barrier rank else\n");
 	}
 	
-*/	
+
 	MPI_Finalize();
 
 	return 0;

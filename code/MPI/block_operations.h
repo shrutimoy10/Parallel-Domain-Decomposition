@@ -131,7 +131,7 @@ void compute_block_inverse(coo_mat* mat,int rank)
 // Input param : prev_row_idx is the index num of mat->row_idx array at which the previous block ended.
 //              so starting row_idx of next block will be mat->row_idx[prev_row_idx+1]
 // Input param : row_idx_end is the row num at which the current block will end.
-int nz_counts(coo_mat* mat,int block_num,int rows_per_block,int prev_row_idx,int row_idx_end)
+int nz_counts(coo_mat* mat,int rows_per_block,int prev_row_idx,int row_idx_end)
 {
 	int count = 0;
 	int nz_row_idx_start = prev_row_idx+1;
@@ -140,7 +140,10 @@ int nz_counts(coo_mat* mat,int block_num,int rows_per_block,int prev_row_idx,int
 	printf("\nRow index end : %d\n", row_idx_end);
 
 	while(mat->row_idx[i] <= row_idx_end)
+	{
 		count++;
+		i++;
+	}
 
 	return count;
 }
@@ -165,34 +168,41 @@ int* generate_nz_block_size(coo_mat* mat,int size,int row)
 
 	block_sizes = (int*) malloc (size*sizeof(int));
 
-	for(i=0;i<size-1;i++)
+	for(i=0;i<size;i++)
 	{
 		row_idx_end = i*rows_per_block + (rows_per_block-1);
-		block_sizes[i] = nz_counts(mat,i,rows_per_block,prev_row_idx,row_idx_end);
+		block_sizes[i] = nz_counts(mat,rows_per_block,prev_row_idx,row_idx_end);
 		prev_row_idx +=  block_sizes[i]; //here the ith block ends in mat->row_idx
 	}
-
+	/*
 	if(m ==0)
 	{
 		row_idx_end = (size-1)*rows_per_block + (rows_per_block-1);
-		block_sizes[size-1] = nz_counts(mat,i,rows_per_block,prev_row_idx,row_idx_end);
-	}
-	else
+		block_sizes[size-1] = nz_counts(mat,rows_per_block,prev_row_idx,row_idx_end);
+	}*/
+	if(m != 0)
 	{
-		row_idx_end = (size-1)*rows_per_block + (rows_per_block+m-1);
-		block_sizes[size-1] = nz_counts(mat,i,rows_per_block,prev_row_idx,row_idx_end);
+		//row_idx_end = (size-1)*rows_per_block + (rows_per_block+m-1);
+		//block_sizes[size-1] = nz_counts(mat,rows_per_block,prev_row_idx,row_idx_end);
+		block_sizes[size-1] += mat->nnz - prev_row_idx-1; // -1 because C is 0 indexed and nnz is 1 indexed
 	}
 	
+
+	
 	/*****TEST****/
+	/*
 	int sum = 0;
 	for(i=0;i<size;i++)
 	{
+		printf("\nBlock %d : %d\n",i,block_sizes[i] );
 		sum += block_sizes[i];
 	}
 
 	int nz_diff = sum - mat->nnz;
+	printf("\nSum nz : %d\n", sum);
+	printf("\nmat->nnz : %d\n", mat->nnz);
 	printf("\nThe error is : %d\n",nz_diff );
-
+	*/
 	return block_sizes;
 }
 
