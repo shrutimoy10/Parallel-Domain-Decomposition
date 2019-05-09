@@ -137,7 +137,7 @@ int nz_counts(coo_mat* mat,int rows_per_block,int prev_row_idx,int row_idx_end)
 	int nz_row_idx_start = prev_row_idx+1;
 	int i = nz_row_idx_start;
 
-	printf("\nRow index end : %d\n", row_idx_end);
+	//printf("\nRow index end : %d\n", row_idx_end);
 
 	while(mat->row_idx[i] <= row_idx_end)
 	{
@@ -233,6 +233,12 @@ int* generate_b_block_size(int rows,int size)
 	if(m != 0)
 		b_row_block[size-1] += m;
 
+
+	/***TEST****/
+	/*int sum =0;
+	for(i=0;i<size;i++)
+		sum += b_row_block[i];
+	printf("\nSum is : %d\n",sum );*/
 
 	return b_row_block;
 }
